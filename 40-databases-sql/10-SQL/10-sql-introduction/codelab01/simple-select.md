@@ -1,5 +1,5 @@
 # SQL
-
+e SQL developer
 **Oracle 11g Express Edition (XE)**
 
 Oracle Database XE is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It's free to develop, deploy, and distribute; fast to download; and simple to administer.
@@ -15,7 +15,7 @@ You need to unlock this account before you can view the HR objects or build any 
 
 - Download Oracle 11g XE database (you'll need an oracle account)
 - Install the Oracle 11g XE database (user:SYSTEM password:SYSTEM )
-- Download and install Oracle SQL developer
+- Download and install Oracle
 - Create a new connection in SQL developer to your local Oracle XE using the SYSTEM user
 - Unlock the HR user (can be found under Other Users)
 - Disconnect the SYSTEM user
