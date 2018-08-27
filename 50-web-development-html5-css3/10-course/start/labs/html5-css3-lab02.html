@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="js/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="js/reveal.js/css/theme/switchfully.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'js/reveal.js/css/print/pdf.css' : 'js/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="js/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level1">
+
+<figure>
+<img src="img/switchfully_logo.png" title="MODULE: HTML5/CSS3 - LAB 02" alt="MODULE: HTML5/CSS3 - LAB 02" /><figcaption>MODULE: HTML5/CSS3 - LAB 02</figcaption>
+</figure>
+</section>
+<section id="html5css3---lab-02-css3" class="slide level1">
+<h1>HTML5/CSS3 - LAB 02: CSS3</h1>
+<p>In this lab we will get you accustomed to the basics of CSS3.</p>
+</section>
+<section id="what-is-css3" class="slide level1">
+<h1>1. What is CSS(3)?</h1>
+<p>CSS stands for Cascading Style Sheets.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="what-can-we-do-with-it">What can we do with it?</h2>
+<p>CSS is language created to handle the look and feel of HTML web pages.</p>
+<p>With CSS we can <em>style</em> the entire layout and content (text, images, tables, backgrounds, etc.) of a page.</p>
+<p>Although HTML offers some limited styling possibilities of its own, CSS is faster, more reusable, easier to maintain and easier to write.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="css-or-css3">CSS or CSS3?</h2>
+<p>In general - when speaking of CSS - people are speaking of CSS3, which is the latest version of CSS.</p>
+<p>To avoid confusion: whenever <strong>we</strong> talk about CSS, we mean CSS3.</p>
+</section>
+<section id="adding-your-first-css-to-html-elements" class="slide level1">
+<h1>2. Adding your first CSS to HTML elements</h1>
+<p>We'll go through the essentials for writing CSS and adding it to HTML elements.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="inline-internal-and-external">Inline, Internal and External</h2>
+<p>There are actually 3 different ways of adding CSS to HTML elements:</p>
+<p>Inline, Internal and External:</p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Usage</th>
+<th>Reusability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Inline</strong></td>
+<td>Uses the style attribute on the HTML element</td>
+<td>Limited to HTML element</td>
+</tr>
+<tr class="even">
+<td><strong>Internal</strong></td>
+<td>Uses the <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> element</td>
+<td>Limited to the page</td>
+</tr>
+<tr class="odd">
+<td><strong>External</strong></td>
+<td>Uses an external CSS file</td>
+<td>Can be reused by &gt; 1 pages</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h3 id="external-css-for-the-win">External CSS for the win</h3>
+<p>Because of reusability, it's advised to use an <strong>external</strong> CSS file whenever possible.</p>
+<p>It's also more <em>&quot;clean&quot;</em> to separate HTML and CSS as much as possible. Intertwining both makes maintainability harder.</p>
+<p>However, there are certain Javascript frameworks (e.g.: React) who more or less promote inline CSS.</p>
+<p>We will cover all 3 different ways, though.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="inline-css">Inline CSS</h2>
+<p>Adding CSS to an HTML element the <em>inline</em> way is easy. Just add the attribute <code>style</code> to the HTML element you wish to <em>style</em>.</p>
+<p>Then, as the attribute's value, add one or more CSS <strong>properties</strong> and their <strong>values</strong> (noted as <code>property:value;</code>):</p>
+<pre><code>&lt;p style=&quot;color: orange;&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+<p><code>color</code> being the <strong>property</strong> and <code>orange</code> its <strong>value</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>HTML without CSS</th>
+<th>HTML with CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span>Hello World!</span></td>
+<td><span style="color:orange;">Hello World!</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<p>You can add more than one property:</p>
+<pre><code>&lt;p style=&quot;color: orange; text-transform: uppercase;&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>HTML without CSS</th>
+<th>HTML with CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span>Hello World!</span></td>
+<td><span style="color:orange; text-transform:uppercase;">Hello World!</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="css-properties">CSS properties</h2>
+<p>There is a huge amount of CSS properties. The list of CSS text properties that only manipulate text, is already a pretty long one.</p>
+<p>We'll provide you with some of the most common and useful.</p>
+<p>However, it's up to you to discover and experiment with them.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="css-text-properties">CSS text properties</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>direction</td>
+<td>ltr, rtl</td>
+</tr>
+<tr class="even">
+<td>text-align</td>
+<td>center, left, right</td>
+</tr>
+<tr class="odd">
+<td>text-decoration</td>
+<td>overline, line-through, underline</td>
+</tr>
+<tr class="even">
+<td>text-transform</td>
+<td>uppercase, lowercase, capitalize</td>
+</tr>
+<tr class="odd">
+<td>letter-spacing</td>
+<td>the amount of spacing in pixels (e.g.: 5px)</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td>color names (e.g.: orange) or hexadecimal colors (e.g.: #ff7800)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<p>You already did some experimenting with the text properties?</p>
+<p>Good, then let's continue.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="internal-css">Internal CSS</h2>
+<p>Using CSS the internal way is done by creating and nesting the <code>&lt;style&gt;</code> element inside the <code>&lt;head&gt;</code> element of a page.</p>
+<p>CSS properties are then added inside this <code>&lt;style&gt;</code> element.</p>
+<p>However, since we disconnected the CSS properties from the HTML element they need to style, we need to introduce a new concept: the <code>selector</code>.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="selector">Selector</h3>
+<p>The <code>selector</code> is used for referencing the HTML element to whom the CSS properties should apply.</p>
+<p>A selector can be:</p>
+<ul>
+<li>An HTML element (e.g.: p, section, h1, h2, etc.)</li>
+<li>An id value (prefixed by &quot;#&quot;)</li>
+<li>A class value (prefixed by &quot;.&quot;)</li>
+</ul>
+<p>A <code>selector</code> has the following notation: <code>selector { property: value; }</code>.</p>
+<p>We'll provide some examples to make this crystal clear.</p>
+</section>
+<section class="slide level1">
+
+<p>Let's take the following inline styled HTML element:</p>
+<pre><code>&lt;p style=&quot;color: orange; text-transform: uppercase;&quot; id=&quot;hello-world&quot; class=&quot;paragraph&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+<p>We're now going to transform it to internal CSS.</p>
+<p>To start, remove the inline CSS:</p>
+<pre><code>&lt;p id=&quot;hello-world&quot; class=&quot;paragraph&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Reintroduce the removed CSS properties in the <code>&lt;style&gt;</code> element.</p>
+<p>Use the <code>&lt;p&gt;</code> element as the <code>selector</code>. By doing so, <strong>every</strong> <code>&lt;p&gt;</code> element of that page will be styled accordingly:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            p {
+                color: orange;
+                text-transform: uppercase;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p>Both elements of that page will be styled the same way:</p>
+<pre><code>&lt;p&gt;I will be styled&lt;/p&gt;
+&lt;p id=&quot;hello-world&quot; class=&quot;paragraph&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>We could also use the <strong>id</strong>, of the HTML element to style, as the <code>selector</code>. By doing so, <strong>only</strong> the HTML element to whom the <strong>id</strong> belongs to, will be styled accordingly (notice the prefix &quot;#&quot;):</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            #hello-world {
+                color: orange;
+                text-transform: uppercase;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p>Only the second - hello-world - element of that page will be styled:</p>
+<pre><code>&lt;p&gt;I will not be styled&lt;/p&gt;
+&lt;p id=&quot;hello-world&quot; class=&quot;paragraph&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Alternatively, we could use the <strong>class</strong>, of the HTML element to style, as the <code>selector</code>. By doing so, <strong>only</strong> those HTML elements whom contain that <strong>class</strong> will be styled accordingly (notice the prefix &quot;.&quot;):</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .paragraph {
+                color: orange;
+                text-transform: uppercase;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p>Only the two last elements will be styled:</p>
+<pre><code>&lt;p&gt;I will not be styled&lt;/p&gt;
+&lt;p class=&quot;paragraph&quot;&gt;I will be styled&lt;/p&gt;
+&lt;p id=&quot;hello-world&quot; class=&quot;paragraph&quot;&gt;Hello World!&lt;/p&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="multiple-selectors">Multiple selectors</h3>
+<p>The <code>&lt;style&gt;</code> element can contain multiple <code>selectors</code>:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .shouting-text {
+                text-transform: uppercase;
+            }
+        
+            p {
+                color: #FFFFFF; /* this is the hexadecimal value of color white */
+            }
+            
+            section {
+                background-color: #000000; /* this is the hexadecimal value of color black */
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p><strong>Note:</strong> In CSS, <code>/* comment */</code> can be used for writing comments. These will be ignored by the browser but can be useful for developers.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="external-css">External CSS</h2>
+<p>Using CSS the external way is very similar to the internal way.</p>
+<p>The only difference is that with external CSS, the CSS is located in a different file.</p>
+<p>This allows for using the CSS on more than one page.</p>
+</section>
+<section class="slide level1">
+
+<p>External CSS consists of two parts:</p>
+<ul>
+<li>An external file with <code>.css</code> as its extension.</li>
+<li>An HTML <code>&lt;link&gt;</code> element to include the <code>.css</code> file.</li>
+</ul>
+<p>Every page that includes the <code>.css</code> file, will receive the same CSS styling.</p>
+<p>Let's demonstrate this with an example.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="creating-and-linking-an-external-css-file">Creating and linking an external CSS file</h3>
+<p>We start with our previous example:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .shouting-text {
+                text-transform: uppercase;
+            }
+        
+            p {
+                color: #FFFFFF; /* this is the hexadecimal value of color white */
+            }
+            
+            section {
+                background-color: #000000; /* this is the hexadecimal value of color black */
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>We copy the contents of the <code>&lt;style&gt;</code> tag (but not the tag itself) and paste them into a new file that we call <code>styles.css</code>:</p>
+<pre><code>.shouting-text {
+    text-transform: uppercase;
+}
+
+p {
+    color: #FFFFFF; /* this is the hexadecimal value of color white */
+}
+
+section {
+    background-color: #000000; /* this is the hexadecimal value of color black */
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<p>We then remove the <code>&lt;style&gt;</code> tag and all it contents from the HTML page and add a <code>&lt;link&gt;</code> element, which includes the <code>styles.css</code>.</p>
+<p>We do need to add it the following attributes:</p>
+<ul>
+<li>The <code>rel</code> attribute, where we indicate we're linking a <code>stylesheet</code></li>
+<li>the <code>href</code> attribute where we specify a relative path to the CSS file (or an absolute path if the css file is on an external server).</li>
+</ul>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>That's it, we're all linked up. All the CSS defined in <code>styles.css</code> will apply to all the pages who include that stylesheet.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="mixed-usage">Mixed usage</h3>
+<p>Using both the inline, internal and external way for adding CSS to HTML elements of a page, is possible.</p>
+<p>However, as a rule of thumb, use the external way as much as possible.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="inheriting-css-styles">Inheriting CSS styles</h3>
+<p>Elements nested inside other elements will inherit the CSS styles of their parent elements.</p>
+<p>Because of this, the text &quot;I am an orange child&quot; will also have an orange color in the following example:</p>
+<pre><code>&lt;div class=&quot;parent&quot; style=&quot;color:orange;&quot;&gt;
+    &lt;p&gt;I will have an orange color&lt;/p&gt;
+    &lt;div class=&quot;child&quot;&gt;
+        &lt;p&gt;I am an orange child&lt;/p&gt;
+    &lt;/div&gt;  
+&lt;/div&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself">Do it yourself</h2>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Create a new css file, name it <code>mystyles.css</code>, which contains the following styles:</p>
+<ul>
+<li>The background color of the <code>body</code> element should be <code>#222222</code></li>
+<li>All text of class <code>page-container</code> should have the color <code>#72a71f</code></li>
+<li>The background color of all <code>header</code> elements should be <code>#72a71f</code></li>
+<li>The text color of all <code>header</code> elements should be <code>#222222</code></li>
+<li>The <code>section</code> elements should have a solid, white border of 5px width (Google: &quot;css border&quot;)</li>
+</ul>
+<p>When you're done with these, go to the next slide.</p>
+<p>Spoiler: there are some more styles to add...</p>
+</section>
+<section class="slide level1">
+
+<p>Also add the following styles to the <code>mystyles.css</code> sheet:</p>
+<ul>
+<li>The element containing id <code>sign-in</code> should have background color <code>#b94f00</code></li>
+<li>The element containing id <code>sign-in</code> should have text color <code>white</code></li>
+<li>The text contained in <code>h2</code> headings should be uppercase'd</li>
+<li>All the links (<code>&lt;a&gt;</code>) should have color <code>orange</code></li>
+<li>All the links (<code>&lt;a&gt;</code>), when hovered, should have color <code>red</code> (Google: &quot;css :hover selector&quot;)</li>
+<li>All <code>input</code> form fields should have their font size set to large (Google: &quot;css font-size&quot;)</li>
+<li>Style the <code>footer</code> the same way as the <code>header</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>If you did things right, only one line of code should have been added to your <em>&quot;index.html&quot;</em> file, namely the <code>&lt;link&gt;</code> element inside your <code>&lt;head&gt;</code> section:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;mystyles.css&quot;&gt;
+    &lt;/head&gt;
+    ...
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Your <code>mystyles.css</code> sheet should look something like this. Inspect it closely. Google - or ask us - the questions you have.</p>
+<pre><code>body {
+    background-color: #222222;
+}
+
+.page-container {
+    color: #72a71f;
+}
+
+header, footer {
+    background-color: #72a71f;
+    color: #222222;
+}
+
+section {
+    border: solid 5px white;
+}
+
+#sign-in {
+    background-color: #b94f00;
+    color: white;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+}
+
+input {
+    font-size: large;
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Your web page should now look like this, which is not that, erm... Let's just say I bet it has a great personality!</p>
+<figure>
+<img src="img/css-website-first-styling.png" title="MODULE: HTML5/CSS3 - CSS Styling" />
+</figure>
+</section>
+<section id="the-box-model" class="slide level1">
+<h1>3. The Box Model</h1>
+<p>Up next, the box model.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="inline-level-elements-versus-block-level-elements">Inline-level elements versus Block-level elements</h2>
+<p>Before explaining what the box model is, we have to explain what inline-level and block-level elements are.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="inline-level-elements">Inline-level elements</h3>
+<p>Inline-level elements are HTML elements who do not take up the entire width of their parent HTML element (in which they are nested, their &quot;container&quot;).</p>
+<p>In other words: inline-level elements do not enforce an new entire horizontal line, they stay <em>in their current line</em>.</p>
+</section>
+<section class="slide level1">
+
+<p>The <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;a&gt;</code> and <code>&lt;span&gt;</code> elements are (some) examples of inline-level elements.</p>
+<p><strong>Note:</strong> The <code>&lt;span&gt;</code> element is actually <strong>thé</strong> element to group content in an <em>inline</em> way. It provides no visual change by itself. It's the ideal HTML element to add a <code>class</code>, <code>id</code> or another attribute, in an inline way, to content.</p>
+</section>
+<section class="slide level1">
+
+<p>To demonstrate an inline-level element, see the following example.</p>
+<p>The green border indicates the space the inline-level element takes up.</p>
+<pre><code>This is some text to demonstrate how an &lt;span&gt;inline-level&lt;/span&gt; element actually behaves.</code></pre>
+<figure>
+<img src="img/css-inline-level.png" title="MODULE: HTML5/CSS3 - Inline-level element" />
+</figure>
+<p>Notice how an inline-level element does not enforce a new horizontal line. It simply stays inside its current line, only taking up as much space as its content requires.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="block-level-elements">Block-level elements</h3>
+<p>In contrast, block-level elements do take up the entire width of their parent HTML element.</p>
+<p>Their content is fitted inside an invisible <code>box</code> which takes up the entire available horizontal space.</p>
+<p>Some examples of block-level elements are <code>&lt;section&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> and <code>&lt;ul&gt;</code>.</p>
+</section>
+<section class="slide level1">
+
+<p>To demonstrate a block-level element, see the following example.</p>
+<p>The green border indicates the space the block-level element takes up. (imagine its parent being the <code>&lt;body&gt;</code> element)</p>
+<pre><code>This is some text to demonstrate how a &lt;p&gt;block-level&lt;/p&gt; element actually behaves.</code></pre>
+<figure>
+<img src="img/css-block-level.png" title="MODULE: HTML5/CSS3 - block-level element" />
+</figure>
+<p>Notice how a block-level element enforces a new line and how it takes up a new line and - by default - the entire available horizontal space of that line.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-box-model-explained">The Box Model explained</h2>
+<p>We've talked about how block-level elements fit their content in an invisible <code>box</code> which takes up a new line and - by default - the entire available horizontal space of that line.</p>
+<p>Using the box model, we can describe:</p>
+<ul>
+<li>The amount of spacing required inside a single <code>box</code></li>
+<li>The borders and amount of spacing required between multiple <code>boxes</code></li>
+</ul>
+<p>In other words, we can decide the size of the box. It doesn't have to take up <em>all</em> the available space. The box model describes how we can achieve this.</p>
+</section>
+<section class="slide level1">
+
+<p>The box model consists of 4 parts:</p>
+<ul>
+<li>Content area</li>
+<li>Padding</li>
+<li>Border</li>
+<li>Margin</li>
+</ul>
+<figure>
+<img src="img/the-box-model.png" title="MODULE: HTML5/CSS3 - The Box Model" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>To make things more clear, try comparing the box model with a garage:</p>
+<ul>
+<li>The content area is the car.</li>
+<li>The padding is the space between your car and the walls.</li>
+<li>The borders are the walls.</li>
+<li>The margin is the space between your garage and other garages.</li>
+</ul>
+<figure>
+<img src="img/the-box-model-garage.png" title="MODULE: HTML5/CSS3 - The Box Model - garage" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h3 id="content-area">Content area</h3>
+<p>The content area can be given an absolute or relative width and height.</p>
+<p>If no width or height is provided, the content area will have a default width of 100%. The height adapts itself to the amount of content inside the content area.</p>
+</section>
+<section class="slide level1">
+
+<p>A content area (in green) with no defined width or height:</p>
+<div style="background-color:#72a71f;&quot;">
+Content area
+</div>
+<p>A content area (in green) with width and height defined:</p>
+<pre><code>div {
+    width: 20%; /* relative, meaning: &quot;take up 20% of the available width&quot;*/
+    height: 35px; /* absolute, meaning: &quot;take up exactly 35 pixels&quot;*/
+}</code></pre>
+<div style="width:20%; height:35px; background-color:#72a71f;">
+Content area
+</div>
+</section>
+<section class="slide level1">
+
+<h3 id="padding">Padding</h3>
+<p>Padding can be added to the top, bottom, left and right of the content area, all independently of each other.</p>
+</section>
+<section class="slide level1">
+
+<p>The previous content area (in green), without padding:</p>
+<div style="width:20%; height:35px; background-color:#72a71f;">
+Content area
+</div>
+<p>The content area (in green) with padding:</p>
+<pre><code>div {
+    width: 20%;
+    height: 35px;
+    padding 25px 150px 25px 25px; /* top right bottom left - clockwise */
+}</code></pre>
+<div style="width:20%; height:35px; padding-top:25px; padding-right:150px; padding-bottom:25px; padding-left:25px; background-color:#72a71f;">
+Content area
+</div>
+<p>Notice how padding expands the content area. However, it expands it with reserved space. Meaning no content can be placed inside this extra (padding) space.</p>
+</section>
+<section class="slide level1">
+
+<p>It also possible to provide padding using the direction padding properties instead of the shorthand notation:</p>
+<pre><code>div {
+    padding-top: 25px;
+    padding-right: 150px;
+    padding-bottom: 25px
+    padding-left: 25px;
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="borders">Borders</h3>
+<p>Borders can be added to the top, bottom, left and right of the content area + padding, all independently of each other.</p>
+<p>Borders have a width, color and style (solid, dotted, dashed, ...)</p>
+</section>
+<section class="slide level1">
+
+<p>The previous content area + padding (in green):</p>
+<div style="width:20%; height:35px; padding-top:25px; padding-right:150px; padding-bottom:25px; padding-left:25px; background-color:#72a71f;">
+Content area
+</div>
+<p>The content area + padding (in green) with a border:</p>
+<pre><code>div {
+    width: 20%;
+    height: 35px;
+    padding 25px 150px 25px 25px;
+    border: 10px solid white; /* width style color */
+}</code></pre>
+<div style="width:20%; height:35px; padding-top:25px; padding-right:150px; padding-bottom:25px; padding-left:25px; border-color: white; border-style:solid; border-width: 10px; background-color:#72a71f;">
+Content area
+</div>
+<p>Notice how the border is an extra layer around the content area.</p>
+</section>
+<section class="slide level1">
+
+<p>instead of the shorthand notation, we could use more specific border properties:</p>
+<pre><code>div {
+    border-width: 10px 5px 15px 20px; /* top right bottom left - clockwise*/
+    border-style: solid dashed solid dashed; /* top right bottom left - clockwise*/
+    border-color: white red white red; /* top right bottom left - clockwise*/
+}</code></pre>
+<p>Or, even more specific:</p>
+<pre><code>div {
+    border-top-width: 10px;
+    border-top-color: white;
+    border-top-style: solid;
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="margin">Margin</h3>
+<p>Margin can be added to the top, bottom, left and right of the border or - if no border is present - the content area + padding.</p>
+</section>
+<section class="slide level1">
+
+<p>No margin:</p>
+<div style="float:left; width:20%; height:35px; padding-top:25px; padding-right:150px; padding-bottom:25px; padding-left:25px; border-color: white; border-style:solid; border-width: 10px; background-color:#72a71f;">
+Content area
+</div>
+<div style="float:left; background-color:orange">
+Another element
+</div>
+<div style="clear: both;">
+
+</div>
+<p>With margin (notice the gap between the elements due to margin):</p>
+<pre><code>div {
+    width: 20%;
+    height: 35px;
+    padding 25px 150px 25px 25px;
+    border: 10px solid white;
+    margin: 10px; /* we could also do margin: 10px 10px 10px 10px */
+}</code></pre>
+<div style="float:left; width:20%; height:35px; padding-top:25px; padding-right:150px; padding-bottom:25px; padding-left:25px; border-color: white; border-style:solid; border-width: 10px; background-color:#72a71f; margin:10px;">
+Content area
+</div>
+<div style="float:left; background-color:orange">
+Another element
+</div>
+<div style="clear: both;">
+
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself-1">Do it yourself</h2>
+<p>It's time to add some margin, padding and borders to your own web page!</p>
+</section>
+<section class="slide level1">
+
+<p>Open up your <code>mystyles.css</code> file, add the following properties:</p>
+<ul>
+<li>All <code>section</code>, <code>header</code> en <code>footer</code> elements should have a <code>padding</code> of 15px and a <code>margin</code> of 25px</li>
+<li>Change to <code>section</code> background color to <code>black</code></li>
+<li>Change the border of <code>section</code> so that all sides have width 1px, except the bottom, it should have a border of 10px</li>
+<li>The border of <code>section</code> can remain of type <code>solid</code>, however change its color to <code>#72a71f</code></li>
+<li>Add a <code>padding</code> and <code>margin</code> of 25px to <code>#sign-in</code></li>
+<li>Set the width of <code>#sign-in</code> to 25%</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <code>mystyles.css</code> file should now look something like this:</p>
+<pre><code>body {
+    background-color: #222222;
+}
+
+.page-container {
+    color: #72a71f;
+}
+
+header, footer {
+    background-color: #72a71f;
+    color: #222222;
+    padding: 15px;
+    margin: 25px;
+}
+
+section {
+    background-color: black;
+    border-style: solid;
+    border-width: 1px 1px 10px 1px;
+    border-color: #72a71f;
+    padding: 15px;
+    margin: 25px;
+}
+
+#sign-in {
+    background-color: #b94f00;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    width: 25%;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+}
+
+input {
+    font-size: large;
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Open your index.html file in your browser, it should look like this:</p>
+<figure>
+<img src="img/css-box-model-website.png" title="MODULE: HTML5/CSS3 - Website updated with padding, margin and borders" />
+</figure>
+</section>
+<section id="css-grid-layout" class="slide level1">
+<h1>4. CSS Grid layout</h1>
+<p>We'll briefly walk you through the CSS Grid layout.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="what-is-grid-layout">What is Grid Layout?</h2>
+<p>&quot;CSS Grid Layout is the most powerful layout system available in CSS.</p>
+<p>It is a 2-dimensional system, meaning it can handle both columns and rows. You work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid Container) and to that elements children (which become Grid Items).&quot;</p>
+<p><em>- Chris House</em></p>
+</section>
+<section class="slide level1">
+
+<p>Simply put: grid layout allows us to position our semantic HTML elements (<code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, etc) in a more flexible way.</p>
+<p>Know that Grid layout is a very extensive feature of CSS.</p>
+<p>We'll cover one usage: grid template.</p>
+</section>
+<section class="slide level1">
+
+<p>With grid layout, we can transform our page to look like the example on the right:</p>
+<figure>
+<img src="img/grid-template.png" title="MODULE: HTML5/CSS3 - Grid template" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="grid-template">Grid template</h2>
+<p>One of the easiest ways of working with grid layout, is by using the grid template functionality.</p>
+<p>With grid template you have to define different grid areas, which you can then start positioning.</p>
+</section>
+<section class="slide level1">
+
+<p>If you we look at our preferred page layout, we can identify 4 different grid areas: a header, a footer, a sidebar and our main content.</p>
+<p>We can name them however we want. However, keep it logical.</p>
+<figure>
+<img src="img/grid-template-areas.png" title="MODULE: HTML5/CSS3 - Grid template areas" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>The header section in our <em>&quot;index.html&quot;</em> contains both the page title and navigation and is enclosed by the <code>&lt;header&gt;</code> element.</p>
+<p>The sidebar section contains the <em>sign in</em> form and is enclosed by the <code>&lt;aside&gt;</code> element.</p>
+<p>The footer section is enclosed by the <code>&lt;footer&gt;</code> element.</p>
+<p>The main section consists out of the &quot;about&quot;, &quot;information&quot; and &quot;half-life-games&quot; <code>&lt;section&gt;</code> elements. We will need to wrap them with a parent element such as a <code>&lt;div&gt;</code> or the semantic html element <code>&lt;main&gt;</code>.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="grid-area">Grid area</h3>
+<p>For every enclosing html element we just discussed, we need to add the corresponding grid area we defined:</p>
+<pre><code>header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="grid-container">Grid container</h3>
+<p>We now need to define our grid container. The grid container needs to enclose all of our grid-area elements.</p>
+<p>Remember, in your <em>&quot;index.html&quot;</em> file, how the <code>&lt;div&gt;</code> element with id &quot;page-container&quot; does exactly that?</p>
+</section>
+<section class="slide level1">
+
+<p>In order to enable grid layout, we have to add certain CSS properties (rows, columns, areas) to the &quot;page-container&quot;:</p>
+<pre><code>.page-container {
+    display: grid; /* enables the grid layout */
+    grid-template-columns: 12% 12% 76%; /* we define 3 columns, 2 taking up 12% of the space each, the other 76% */
+    grid-template-rows: auto; /* rows will be generated automatically based on the grid-template-areas */
+    grid-template-areas: /* we define a 3 x 3 grid */
+            &quot;header header header&quot;
+            &quot;sidebar sidebar main&quot; /* The sidebar will take up 24% of the space */
+            &quot;footer footer footer&quot;;
+}</code></pre>
+</section>
+<section class="slide level1">
+
+<h2 id="learn-more">Learn more</h2>
+<p>This is as far we cover grid layout (although we'll still do a &quot;Do it yourself&quot; on the next slides).</p>
+<p>If you want to learn more about CSS Grid Layout, check out <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">this complete guide</a>!</p>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself-2">Do it yourself</h2>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>In your <code>index.html</code> file</p>
+<ul>
+<li>Wrap the &quot;about&quot;, &quot;information&quot; and &quot;half-life-games&quot; <code>&lt;section&gt;</code> elements with the <code>&lt;main&gt;</code> semantic html element.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <code>index.html</code> file should now look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;mystyles.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;div class=&quot;page-container&quot;&gt;
+
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+                &lt;nav id=&quot;page-navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+
+            &lt;aside id=&quot;sign-in&quot;&gt;
+                &lt;h2&gt;Please sign in&lt;/h2&gt;
+
+                &lt;form&gt;
+                    &lt;label for=&quot;sign-in-email&quot;&gt;E-mail: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-email&quot; type=&quot;email&quot;&gt; &lt;br&gt;
+
+                    &lt;label for=&quot;sign-in-password&quot;&gt;Password: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-password&quot; type=&quot;password&quot;&gt; &lt;br&gt;
+
+                    &lt;label for=&quot;sign-in-countries&quot;&gt;Countries: &lt;/label&gt;
+                    &lt;input list=&quot;sign-in-countries&quot;&gt;
+                    &lt;datalist id=&quot;sign-in-countries&quot;&gt;
+                        &lt;option value=&quot;Belgium&quot;&gt;
+                        &lt;option value=&quot;France&quot;&gt;
+                        &lt;option value=&quot;Germany&quot;&gt;
+                    &lt;/datalist&gt;
+                    &lt;br&gt;
+
+                    &lt;label for=&quot;sign-in-roles&quot;&gt;Roles: &lt;/label&gt;
+                    &lt;select id=&quot;sign-in-roles&quot;&gt;
+                        &lt;option value=&quot;admin&quot;&gt;Administrator&lt;/option&gt;
+                        &lt;option value=&quot;moderator&quot; selected&gt;Moderator&lt;/option&gt;
+                        &lt;option value=&quot;user&quot;&gt;User&lt;/option&gt;
+                    &lt;/select&gt; &lt;br&gt;
+
+                    &lt;label for=&quot;sign-in-stay-logged-in&quot;&gt;Stay loggged in? &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-stay-logged-in&quot; type=&quot;checkbox&quot;&gt; &lt;br&gt;
+
+                    &lt;input type=&quot;submit&quot; value=&quot;Sign in&quot;&gt; &lt;br&gt;
+                &lt;/form&gt;
+
+            &lt;/aside&gt;
+
+            &lt;main&gt;
+                &lt;section id=&quot;about&quot;&gt;
+                    &lt;h2&gt;About:&lt;/h2&gt;
+                    &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+                    &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see
+                        the light.&lt;/p&gt;
+                &lt;/section&gt;
+
+                &lt;section id=&quot;information&quot;&gt;
+                    &lt;h2&gt;Information:&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+
+                &lt;section id=&quot;half-life-games&quot;&gt;
+                    &lt;h2&gt;Half-Life games&lt;/h2&gt;
+                    &lt;table&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;Games&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Half-Life 1&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Half-Life 2&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Half-Life 2: Episode 1 &amp;amp; 2&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/section&gt;
+            &lt;/main&gt;
+
+            &lt;footer&gt;
+                &lt;p&gt;Half-Life 2 fansite - Some rights reserved&lt;/p&gt;
+            &lt;/footer&gt;
+
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>In your <code>mystyles.css</code> file, make the following additions:</p>
+<ul>
+<li>The &quot;header&quot; selector should have property <code>grid-area</code> and value <code>header</code>.</li>
+<li>The &quot;aside&quot; selector should have property <code>grid-area</code> and value <code>sidebar</code>.</li>
+<li>The &quot;footer&quot; selector should have property <code>grid-area</code> and value <code>footer</code>.</li>
+<li>The &quot;main&quot; selector should have property <code>grid-area</code> and value <code>main</code>.</li>
+<li>The &quot;.page-container&quot; selector should have property <code>display</code> and value <code>grid</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>The &quot;.page-container&quot; selector should have the following grid-template properties:</p>
+<ul>
+<li>2 columns (25% and 75% wide)</li>
+<li>Automatic rows</li>
+<li>A 3 x 2 layout in which the header fills up the first row, the sidebar is on the left of the middle row, the main content is on the right of the middle row and the footer fills up the third row.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <code>mystyles.css</code> sheet should look something like this.</p>
+<pre><code>body {
+    background-color: #222222;
+}
+
+.page-container {
+    color: #72a71f;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    grid-template-areas:
+            &quot;header header&quot;
+            &quot;sidebar main&quot;
+            &quot;footer footer&quot;;
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+header, footer {
+    background-color: #72a71f;
+    color: #222222;
+    padding: 15px;
+    margin: 25px;
+}
+
+section {
+    background-color: black;
+    border-style: solid;
+    border-width: 1px 1px 10px 1px;
+    border-color: #72a71f;
+    padding: 15px;
+    margin: 25px;
+}
+
+#sign-in {
+    background-color: #b94f00;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+}
+
+input {
+    font-size: large;
+}</code></pre>
+<p><strong>Note:</strong> Remove the <code>width:25%</code> property from the &quot;#sign-in&quot; selector. Otherwise you're telling the &quot;#sign-in&quot; selector to fill up 25% of the available space, which is only 25% of the entire space.</p>
+</section>
+<section class="slide level1">
+
+<p>Your web page should now look like this:</p>
+<figure>
+<img src="img/grid-template-areas-complete.png" title="MODULE: HTML5/CSS3 - Grid layout" />
+</figure>
+</section>
+<section id="other-useful-topics" class="slide level1">
+<h1>4. Other useful topics</h1>
+<p>To conclude this lab, we'll provide you with some topics we won't cover, but are useful and can be looked into by yourself.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="responsive-design">Responsive design</h2>
+<p>No matter the screen-size (desktop, tablet, smartphone), a responsive website will automatically adapt its layout to present its content in a pleasant and readable way.</p>
+<p>Like to know more? Read more about it <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">here</a>.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="css-frameworks">CSS frameworks</h2>
+<p>CSS frameworks allow for faster and easier web development by providing a set of CSS styling, out-of-the-box responsive design, typography, browser incompatibility solutions, grid layout systems and more.</p>
+<p>Like to know more? Check out <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>, go to &quot;Get started&quot; and follow the &quot;Quick start&quot;.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="preprocessors-css">Preprocessors CSS</h2>
+<p>Writing CSS can become quite repetitive and little tasks such as having to look up hex color values, closing your tags, etc. can become time-consuming. And so that is where a preprocessor comes into play. A CSS preprocessor is basically a scripting language that extends CSS and then compiles it into regular CSS.</p>
+<p>Preprocessors are completely optional.</p>
+<p>Although it might look quite complex, it's good to know preprocessors such as Sass and LESS exist.</p>
+</section>
+<section id="html5css3---lab-02-css3-1" class="slide level1">
+<h1>HTML5/CSS3 - LAB 02: CSS3</h1>
+<p><strong>You've got great (CSS) style!</strong></p>
+<p>You have successfully completed this lab.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js/lib/js/head.min.js"></script>
+  <script src="js/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'js/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'js/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
