@@ -1,4 +1,6 @@
-# Switchfully Repository
+# Switchfully Repository: Shared modules
+
+Contains the shared modules for both the Java and .NET track.
 
 ## Usage
 
