@@ -1,0 +1,71 @@
+body {
+    background-color: #222222;
+}
+
+.page-container {
+    color: #72a71f;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+header, footer {
+    background-color: #72a71f;
+    color: #222222;
+    padding: 15px;
+    margin: 25px;
+}
+
+section {
+    background-color: black;
+    border-style: solid;
+    border-width: 1px 1px 10px 1px;
+    border-color: #72a71f;
+    padding: 15px;
+    margin: 25px;
+}
+
+#sign-in {
+    background-color: #b94f00;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    /*width: 25%;*/
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+}
+
+input {
+    font-size: large;
+}
+

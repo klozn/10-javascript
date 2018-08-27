@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="js/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="js/reveal.js/css/theme/switchfully.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'js/reveal.js/css/print/pdf.css' : 'js/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="js/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level1">
+
+<figure>
+<img src="img/switchfully_logo.png" title="MODULE: HTML5/CSS3 - LAB 01" alt="MODULE: HTML5/CSS3 - LAB 01" /><figcaption>MODULE: HTML5/CSS3 - LAB 01</figcaption>
+</figure>
+</section>
+<section id="html5css3---lab-01-html5" class="slide level1">
+<h1>HTML5/CSS3 - LAB 01: HTML5</h1>
+<p>In this lab we will teach you everything you need to know about HTML5.</p>
+<p>Ready, set, go!</p>
+</section>
+<section id="history-of-the-world-wide-web" class="slide level1">
+<h1>1. History of the World Wide Web</h1>
+<p>Tim Berners-Lee, an employee of CERN, created a new way of sharing and reading documents which he called ENQUIRE. It was a system made up of cards / documents which were connected by hyperlinks. In 1990 Berners-Lee wrote an improved proposal, together with Robert Cailliau, of ENQUIRE.</p>
+<p>This was the creation of the World Wide Web (WWW).</p>
+</section>
+<section class="slide level1">
+
+<p>In late 1991, Berners-Lee created the first version of HTML. It became the language to structure the documents on the World Wide Web, to structure <em>web pages</em>.</p>
+</section>
+<section id="what-is-html" class="slide level1">
+<h1>2. What is HTML?</h1>
+<p>HTML stands for Hypertext Markup Language. It is no programming language, it is a markup language which defines the structure of your web page and allows for adding static content.</p>
+</section>
+<section class="slide level1">
+
+<p>HTML has a long history of versions. The first standardisation of HTML was HTML 2.0 which was published in 1995. Since 2012, HTML5 is the widely adopted and latest standardised version of HTML.</p>
+<p>Nowadays, when speaking about HTML5, it is common to refer to it as HTML.</p>
+</section>
+<section id="html-your-web-page-language" class="slide level1">
+<h1>3. HTML: your web page language</h1>
+<p>With HTML you can take some plain text and transform into a structured web page which contains sections, navigation, titles, lists, images and more.</p>
+</section>
+<section class="slide level1">
+
+<p>A simple text file (file.txt) opened by a browser will be interpreted as plain text by the browser. If we change the extension of this text file to .html and open it with the browser, the file will be interpreted as HTML. Simply put, browsers read HTML and display it for you.</p>
+</section>
+<section id="setup-prepare-yourself" class="slide level1">
+<h1>4. Setup (Prepare yourself)</h1>
+<p>In this chapter, we'll set you up with Git and a text editor</p>
+</section>
+<section class="slide level1">
+
+<h2 id="git">Git</h2>
+<p>Create yourself a new GitHub repository, clone it into a local directory.</p>
+<p>This will become your working directory.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="text-editor">Text editor</h2>
+<p>Since HTML is written in plain text, all you need have - in order to start writing HTML - is a simple text editor. All operating systems come with a simple text editor (e.g.: Notepad on Windows).</p>
+<p>Alternatively, although recommended, you can download and install an improved text editor such as Notepad++ (Windows) or Atom (Mac/Windows).</p>
+</section>
+<section class="slide level1">
+
+<p>Also, make sure that file extensions are not hidden on your operating system.</p>
+<ul>
+<li>If the files in your file explorer only show the name of a file and not the name and its extension (e.g.: file.txt), they are hidden.</li>
+<li>Google yourself how to show them, it's not a difficult thing to do.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="initial-content">Initial content</h2>
+<p>We will create a web page showcasing the best game ever made (totally objective opinion, I swear).</p>
+<p>We'll prepare some initial content for this web page.</p>
+</section>
+<section class="slide level1">
+
+<p>Create a new plain text file, name it <em>&quot;index.txt&quot;</em></p>
+<p>Copy / paste the following content and save it:</p>
+<pre><code>Best Game Ever
+
+Half-Life 2
+
+About:
+Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.
+In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light. 
+
+Information:
+    Developer: Valve Corporation
+    Genre: First-person shooter</code></pre>
+</section>
+<section id="from-plain-text-to-html5" class="slide level1">
+<h1>5. From plain text to HTML5</h1>
+<p>Our first step in transforming our plain text to HTML, is to make sure our browser will try to interpret the text as HTML.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-.html-file-extension">The .html file extension</h2>
+<p>Change the <em>&quot;.txt&quot;</em> extension of <em>&quot;index.txt&quot;</em> to <em>&quot;.html&quot;</em>.</p>
+<p>The resulting file should name: <code>index.html</code></p>
+<p>Now, open the file with your browser. Simply double clicking it should suffice.</p>
+</section>
+<section class="slide level1">
+
+<p>Once your browser opens, inspect what you see.</p>
+<p>Still looks a lot like text, right? This is due to the fact that we didn't enrich our plain text with HTML elements.</p>
+<p>However, the <code>index.html</code> file is interpreted as HTML, which is a first step in the right direction.</p>
+</section>
+<section id="html-elements" class="slide level1">
+<h1>6. HTML elements</h1>
+<p>We'll go through some of the most common HTML elements and use them to transform our text to HTML.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="what-are-html-elements">What are HTML elements?</h2>
+<p>HTML offers a wide range of elements which you can use to wrap certain parts of your content. This will then make your content appear a certain way, due to the browser interpreting it as HTML. These elements always consist of a opening and closing tag.</p>
+</section>
+<section class="slide level1">
+
+<p>an HTML tag has the following form (although some exceptions exist):</p>
+<ul>
+<li>The opening tag is of the form <code>&lt;tag&gt;</code></li>
+<li>The closing tag is of the form <code>&lt;/tag&gt;</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>For example, the following plain text will be structured as a paragraph by enclosing it with the paragraph element tag.</p>
+<p>Plain text:</p>
+<pre><code>This is a simple paragraph</code></pre>
+<p>HTML5 paragraph:</p>
+<pre><code>&lt;p&gt;This is a simple paragraph&lt;/p&gt;</code></pre>
+<p>When interpreted by the browser as HTML, the text will stand by itself on a single line due to the enclosing paragraph tag.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-root-html-element">The root HTML element</h2>
+<p>The root HTML element is the <em>html</em> element itself:</p>
+<pre><code>&lt;html&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p>Every HTML web page requires the root element.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="doctype">Doctype</h2>
+<p>The <em>doctype</em> declaration must be the first thing in your HTML document. It instructs the browser about what version of HTML the web page is written in.</p>
+<p>For HTML5 the doctype is <code>&lt;!DOCTYPE html&gt;</code>:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h2 id="head-and-body-element">Head and Body element</h2>
+<p>Nested inside the <em>html</em> element are the <em>head</em> and <em>body</em> elements.</p>
+<p>The <em>body</em> element is the parent element for all the visible content.</p>
+<p>The <em>head</em> element is for loading in CSS, meta information and more.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        ...
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Every HTML web page requires both these elements.</p>
+<p>All the elements we will discuss next, are nested into the <em>body</em> element.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="heading-element">Heading element</h2>
+<p>Heading elements are used for titles on a web page.</p>
+<p>In total their are 6 heading elements: <code>&lt;h1&gt;</code> (more important) to <code>&lt;h6&gt;</code> (less important).</p>
+<p>Their correct usage is defined:</p>
+<pre><code>&lt;h1&gt;For web page titles, section titles&lt;/h1&gt;
+&lt;h2&gt;For web page subject, section subject&lt;/h2&gt;
+&lt;h3&gt;For sub-titles&lt;/h3&gt;
+&lt;h4&gt;For sub-titles&lt;/h4&gt;
+&lt;h5&gt;For sub-titles&lt;/h5&gt;
+&lt;h6&gt;For sub-titles&lt;/h6&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Which, interpreted by the browser as HTML, will look like this:</p>
+<figure>
+<img src="img/html5-heading.png" title="MODULE: HTML5/CSS3 - Heading elements" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself">Do it yourself</h2>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<h3 id="update-your-web-page">Update your web page</h3>
+<p>We will now update your <em>&quot;index.html&quot;</em> file with the html elements we've seen so far.</p>
+</section>
+<section class="slide level1">
+
+<p>Open up the <em>&quot;index.html&quot;</em> in your text editor and add the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Best Game Ever
+        I&#39;ll introduce you to the best game ever made: Half-Life 2
+        
+        About:
+        Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.
+        In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.
+        
+        Information:
+            Developer: Valve Corporation
+            Genre: First-person shooter
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Save your file and open it with your browser.</p>
+</section>
+<section class="slide level1">
+
+<p>It should look like this:</p>
+<figure>
+<img src="img/html-first-tags.png" title="MODULE: HTML5/CSS3 - First html elements" />
+</figure>
+<p>Which still looks just like plain text (although it is HTML).</p>
+<p>However, we're now ready to add the heading tags which will change the way things look (hype!).</p>
+</section>
+<section class="slide level1">
+
+<p>We'll now add the heading elements to our web page.</p>
+<ul>
+<li>Since <em>&quot;best game ever&quot;</em> is the title of our page, we'll enclose it with <code>&lt;h1&gt;</code></li>
+<li>Since <em>&quot;About&quot;</em> and <em>&quot;Information&quot;</em> are subjects of our page, we'll enclose them with <code>&lt;h3&gt;</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Best Game Ever&lt;/h1&gt;
+        I&#39;ll introduce you to the best game ever made: Half-Life 2
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.
+        In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+            Developer: Valve Corporation
+            Genre: First-person shooter
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Don't forget to save it.</p>
+</section>
+<section class="slide level1">
+
+<p>Fire up <em>&quot;index.html&quot;</em> in your browser.</p>
+<p>Looking better already, right?</p>
+<figure>
+<img src="img/html-first-tags-heading.png" title="MODULE: HTML5/CSS3 - Heading elements added" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="paragraph-element">Paragraph element</h2>
+<p>You're doing great, up next is the paragraph element.</p>
+</section>
+<section class="slide level1">
+
+<p>To paragraph text, use the paragraph element <code>&lt;p&gt;</code>.</p>
+<p>The enclosed content will behave as a paragraph. Some spacing before and after the paragraph is created. A paragraph will also always start on a new line.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-1">Do it yourself</h3>
+<p>It's time again, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Enclose every line of readable text with it's own paragraph.</p>
+<p>However, we're not paragraphing the text that's placed under the <em>&quot;Information&quot;</em> title (We'll do something else with it).</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Best Game Ever&lt;/h1&gt;
+        &lt;p&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+            Developer: Valve Corporation
+            Genre: First-person shooter
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Save it.</p>
+</section>
+<section class="slide level1">
+
+<p>Fire up <em>&quot;index.html&quot;</em> in your browser.</p>
+<figure>
+<img src="img/html-first-tags-paragraph.png" title="MODULE: HTML5/CSS3 - Paragraph elements added" />
+</figure>
+<p>Notice the extra spacing, this is due to the <code>&lt;p&gt;</code> element.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="list-element">List element</h2>
+<p>Up next, the list element.</p>
+</section>
+<section class="slide level1">
+
+<p>There are 2 kinds of lists:</p>
+<p>Unordered:</p>
+<ul>
+<li>Unordered (bullets)</li>
+<li>Unordered (bullets)</li>
+</ul>
+<p>and, ordered:</p>
+<ol type="1">
+<li>Ordered (numbered)</li>
+<li>Ordered (numbered)</li>
+</ol>
+</section>
+<section class="slide level1">
+
+<p>For the ordered lists we use the <code>&lt;ol&gt;</code> tag.</p>
+<p>For the unordered lists we use the <code>&lt;ul&gt;</code> tag.</p>
+<p>List items use the <code>&lt;li&gt;</code> tag and are nested inside the <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> tags.</p>
+</section>
+<section class="slide level1">
+
+<p>E.g.:</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Unordered Item 1&lt;/li&gt;
+    &lt;li&gt;Unordered &lt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li&gt;Ordered Item 1&lt;/li&gt;
+    &lt;li&gt;Ordered Item 2&lt;/li&gt;
+&lt;/ol&gt;    </code></pre>
+<p>Rendered as HTML:</p>
+<figure>
+<img src="img/html5-lists.png" title="MODULE: HTML5/CSS3 - Lists" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-2">Do it yourself</h3>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Update your <em>&quot;index.html&quot;</em> file to include an unordered list for the text that's placed under the <em>&quot;Information&quot;</em> title.</p>
+<p>The list-options are:</p>
+<ul>
+<li>Developer: Valve Corporation</li>
+<li>Genre: First-person shooter</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Best Game Ever&lt;/h1&gt;
+        &lt;p&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Developer: Valve Corporation&lt;/li&gt;
+            &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+        &lt;/ul&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Fire up the <em>&quot;index.html&quot;</em> file in your browser.</p>
+<figure>
+<img src="img/html-first-tags-lists.png" title="MODULE: HTML5/CSS3 - List elements added" />
+</figure>
+<p>Look at that list, isn't it pretty?</p>
+</section>
+<section class="slide level1">
+
+<h2 id="title-element">Title element</h2>
+<p>The title element should always be added to a web page.</p>
+<p>Opposite to the other elements we already covered, this element does not reside in the <code>&lt;body&gt;</code> element.</p>
+</section>
+<section class="slide level1">
+
+<p>The <code>&lt;title&gt;</code> tag is nested inside the <code>&lt;head&gt;</code> tag where it provides the page of a descriptive title.</p>
+<p>E.g.:</p>
+<pre><code>&lt;head&gt;
+    &lt;title&gt;Here you see the title!&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+<p>The title will be shown in the tab, of the web page, in your browser: <img src="img/html5-title.png" title="MODULE: HTML5/CSS3 - Title" /></p>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-3">Do it yourself</h3>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Update your <em>&quot;index.html&quot;</em> file to include a title.</p>
+<p>As title, use &quot;Half-Life Fansite: The best game ever is Half-Life 2&quot;.</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> should look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Best Game Ever&lt;/h1&gt;
+        &lt;p&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Developer: Valve Corporation&lt;/li&gt;
+            &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+        &lt;/ul&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Fire up <em>&quot;index.html&quot;</em> in your browser.</p>
+<figure>
+<img src="img/html-head-title.png" title="MODULE: HTML5/CSS3 - Title head" />
+</figure>
+<p>See the title in the tab window? Coolio...</p>
+</section>
+<section id="html-attributes" class="slide level1">
+<h1>6. HTML Attributes</h1>
+<p>HTML attributes enable extra features for HTML elements.</p>
+<p>They come in different flavors and sizes, we'll briefly discuss only three.</p>
+<p><strong>Note</strong>: We'll discover more HTML attributes in the following sections.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-id-attribute">The id attribute</h2>
+<p>In general, an HTML attribute has a <strong>name</strong> and a <strong>value</strong></p>
+<p>For example, the <code>id</code> attribute:</p>
+<pre><code>&lt;h1 id=&quot;main-title&quot;&gt;Half-Life&lt;/h1&gt;</code></pre>
+<p>Whereas <code>id</code> is the <strong>name</strong> of the attribute and <code>main-title</code> the <strong>value</strong> of the attribute. Always use quotes for the <strong>value</strong>.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="why-use-the-id-attribute">Why use the id attribute</h3>
+<p>The <code>id</code> attribute is used when you want to uniquely identify an HTML element.</p>
+<p>There should never be two or more HTML elements with the same id on a single web page.</p>
+<p>Id attributes are often used as a pointer by Javascript to manipulate the HTML element it points to.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-class-attribute">The class attribute</h2>
+<p>A <code>class</code> attribute can be added to an HTML element to specify one, or more, classes for that element.</p>
+<p>For example:</p>
+<pre><code>&lt;h1 id=&quot;main-title&quot; class=&quot;title primary&quot;&gt;Half-Life&lt;/h1&gt;</code></pre>
+<p>We added two different classes to the <code>&lt;h1&gt;</code> tag, namely:</p>
+<ul>
+<li>class <code>title</code></li>
+<li>class <code>primary</code></li>
+</ul>
+<p>As opposed to the <code>id</code> attribute, <code>class</code> attributes don't have to be unique.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="why-use-the-class-attribute">Why use the class attribute</h3>
+<p>Class attributes are most commonly used as pointers to classes in a CSS document (more on this later).</p>
+<p>Both the <code>id</code> and <code>class</code> attributes exist for referencing purposes.</p>
+<p>When they're not being referenced by a CSS class or Javascript, they won't have any real effect on their HTML element.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="naming-conventions-for-id-and-class-attribute-values">Naming conventions for id and class attribute values</h3>
+<p>In general, use hyphens (dashes) for id and class values:</p>
+<pre><code>id=&quot;title&quot;
+id=&quot;main-page-title&quot;
+class=&quot;contact-form&quot;</code></pre>
+<p>Some prefer camel-casing their id (and class) values (capitalize every word except the first):</p>
+<pre><code>id=&quot;title&quot;
+id=&quot;mainPageTitle&quot;
+class=&quot;contactForm&quot;</code></pre>
+<p>Whichever you chose, just make sure you use it consistent. Don't mix!</p>
+<p>Remember: a good programmer is a clean programmer.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-hidden-attribute">The hidden attribute</h2>
+<p>The <code>hidden</code> attribute, contrary to the <code>id</code> and <code>class</code> attribute does not have a <strong>value</strong> part.</p>
+<p>E.g.:</p>
+<pre><code>&lt;h1 id=&quot;main-title&quot; class=&quot;title primary&quot; hidden&gt;Half-Life&lt;/h1&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="why-use-the-hidden-attribute">Why use the hidden attribute</h3>
+<p>Whenever you want to hide a certain HTML element, attribute it with <code>hidden</code>.</p>
+<p>When rendering the HTML, browsers will make sure to not show the HTML elements attributed with <code>hidden</code></p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-order-of-attributes">The order of attributes</h2>
+<p>The order of attributes is of no importance:</p>
+<pre><code>&lt;h1 id=&quot;main-title&quot; class=&quot;title primary&quot;&gt;Half-Life&lt;/h1&gt;</code></pre>
+<p>is exactly the same as:</p>
+<pre><code>&lt;h1 class=&quot;title primary&quot; id=&quot;main-title&quot;&gt;Half-Life&lt;/h1&gt;</code></pre>
+<p>So don't worry about their order.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself-4">Do it yourself</h2>
+<p>It's time, to do it yourself! We will now update your <em>&quot;index.html&quot;</em> file with the HTML attributes we just covered.</p>
+</section>
+<section class="slide level1">
+
+<p>Open up the <em>&quot;index.html&quot;</em> in your text editor,</p>
+<ul>
+<li>Add an <em>id</em> to the <em>h1</em> tag.</li>
+<li>Add a <em>class</em> to the first <em>p</em> tag.</li>
+<li>Hide the last <em>p</em> tag.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+        &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Developer: Valve Corporation&lt;/li&gt;
+            &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+        &lt;/ul&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Save your file and open it with your browser.</p>
+<p>Fire up <em>&quot;index.html&quot;</em> in your browser.</p>
+<figure>
+<img src="img/html-attributes.png" title="MODULE: HTML5/CSS3 - Attributes" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>Besides the <code>hidden</code> attribute hiding the last paragraph, the attributes don't have any effect on the visual representation of the web page.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="vocabulary-recap">Vocabulary recap</h2>
+<p>Since we introduced quite some new vocabulary, a quick recap on what-is-named-what again:</p>
+<figure>
+<img src="img/html-element-explained.png" title="MODULE: HTML5/CSS3 - HTML elements explained" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="our-simple-web-page">Our simple web page</h2>
+<p>So far, we've created a fairly simple web page.</p>
+<p>What if we created multiple web pages and linked them together? Would that mean we've created a &quot;website&quot;?</p>
+<p>Yes, yes it would.</p>
+</section>
+<section id="creating-links" class="slide level1">
+<h1>7. Creating links</h1>
+<p>You're truly going strong, my young padawan.</p>
+<p>Let's use <del>the force</del> HTML links to create a website!</p>
+</section>
+<section class="slide level1">
+
+<h2 id="what-is-a-url">What is a url?</h2>
+<p>An HTML link contains a url which it needs for navigational purposes.</p>
+<p>A url you say?</p>
+<ul>
+<li>A url can point to a root web address: <code>http://google.com/</code></li>
+<li>A url can point to an image: <code>http://switchfully.com/img/logo.png</code></li>
+<li>A url can point to an html file: <code>http://switchfully.com/index.html</code></li>
+<li>...</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Point being: a url always consists of 3 parts:</p>
+<ul>
+<li>A protocol, e.g.: <code>http://</code></li>
+<li>A server, e.g.: <code>switchfully.com</code></li>
+<li>A path pointing to a file, e.g.: <code>/</code>, <code>/img/logo.png</code> or <code>index.html</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>When entering a url in the browser, the browser will <code>request</code> the specified file (e.g.: index.html) from the server (e.g.: switchfully.com) which will provide the file to the browser in a <code>response</code>, which the browser can then show to the user.</p>
+<figure>
+<img src="img/html5-request-response.png" title="MODULE: HTML5/CSS3 - Request - Response" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="html-links">HTML links</h2>
+<p>An HTML link is created using the HTML element <code>&lt;a&gt;</code>.</p>
+<p>When using the <code>&lt;a&gt;</code> tag for navigational purposes, we always need to add the <code>href</code> HTML attribute, which has a relative path or an absolute path as its value.</p>
+<p>By adding the <code>target</code> attribute we can specify how to navigate when clicking the link:</p>
+<ul>
+<li>Using value <code>_self</code> to reuse the current browser tab window.</li>
+<li>Using value <code>_blank</code> to open a new browser tab window.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>There are 2 &quot;types&quot; of links:</p>
+<ul>
+<li>Relative path links</li>
+<li>Absolute path links</li>
+</ul>
+<p>In general, (internal) links which reference web pages located on the same server (e.g.: switchfully.com) use relative path links.</p>
+<p>(External) links which reference web pages (or websites) located on a different server (e.g.: a link in switchfully.com/index.html which points to google.com) should always use absolute path links.</p>
+</section>
+<section class="slide level1">
+
+<p>Imagine an <code>index.html</code> file which is hosted on the server switchfully.com:</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;contact.html&quot; target=&quot;_self&quot;&gt;Contact us (internal, relative)&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;            
+        &lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot;&gt;Try to Google it... (external, absolute)&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>In HTML, both links will look the same, however they will act differently due to their target attributes (the Google link will open a new tab, the other won't):</p>
+<figure>
+<img src="img/html-links.png" title="MODULE: HTML5/CSS3 - Links" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h3 id="relative-v.s.-absolute-path-links">Relative v.s. Absolute path links</h3>
+<p>In our example, we had a relative reference path <code>href=&quot;contact.html&quot;</code> for the <em>&quot;contact.html&quot;</em> page. This means both the <em>&quot;index.html&quot;</em> file (which contains the link) and the <em>&quot;contact.html&quot;</em> file it references, need te reside in the same directory:</p>
+<pre><code>| --- switchfully.com (root directory)
+|    | --- index.html
+|    | --- contact.html</code></pre>
+</section>
+<section class="slide level1">
+
+<p>If the link in <em>&quot;index.html&quot;</em> contains <code>href=&quot;pages/contact.html&quot;</code> as its relative path to <em>&quot;contact.html&quot;</em>, the <em>&quot;contact.html&quot;</em> file should reside in the <em>&quot;pages&quot;</em> subdirectory of <em>&quot;index.html&quot;</em>:</p>
+<pre><code>| --- switchfully.com (root directory)
+|    | --- index.html
+|    | --- pages (subdirectory)
+|    |     | --- contact.html</code></pre>
+</section>
+<section class="slide level1">
+
+<p>If the link <em>&quot;index.html&quot;</em> contains <code>href=&quot;../contact.html&quot;</code> as its relative path to <em>&quot;contact.html&quot;</em>, the <em>&quot;contact.html&quot;</em> file should reside in the parent directory:</p>
+<pre><code>| --- switchfully.com (root directory)
+|    | --- contact.html
+|    | --- somedirectory (subdirectory)
+|    |     | --- index.html</code></pre>
+<p>In short,</p>
+<p>Relative paths are <em>relative</em> to the position of the file which includes them.</p>
+</section>
+<section class="slide level1">
+
+<p>An absolute path for a link, on the other hand, is <em>absolute</em> (sounds logical, we know).</p>
+<p>As opposed to relative paths, you also have to provide the <em>procotol</em> (e.g.: http://) and <em>server</em> (e.g.: google.com). Looks a lot like a url, right? That's because an absolute path for a link is a url.</p>
+<p>E.g.:</p>
+<pre><code>http://google.com/some-page.html</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="theres-something-special-about-index.html">There's something special about index.html</h3>
+<p>When you surf to <em>&quot;www.switchfully.com&quot;</em> or <em>&quot;www.switchfully.com/index.html&quot;</em>, you will get the same result.</p>
+<p>This is due to the fact that whenever you provide a url which does not specify a path pointing to a file, the server will <code>respond</code> with the <em>&quot;index.html&quot;</em> file (if there is one).</p>
+<pre><code>browser request: http://www.switchfully.com 
+    --&gt; server will respond with index.html
+    
+browser request: http://www.switchfully.com/pages
+    --&gt; server will respond with the index.html file located inside the pages directory,
+        (if there is an index.html inside the pages directory) </code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="requesting-files-which-do-not-exist">Requesting files which do not exist</h3>
+<p>When you specify a file which does not exist on the server, the server will return HTTP code <code>404 NOT FOUND</code></p>
+<p>Try it by browsing to: <code>http://www.switchfully.com/unknown.html</code></p>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself-5">Do it yourself</h2>
+<p>It's time, to do it yourself! We will now update your <em>&quot;index.html&quot;</em> file with some links!</p>
+</section>
+<section class="slide level1">
+
+<p>However, first things first:</p>
+<p>Create a new web page, in the same directory as <em>&quot;index.html&quot;</em> and name it <em>&quot;half-life-3.html&quot;</em>.</p>
+</section>
+<section class="slide level1">
+
+<p>Add the following elements (besides the required HTML elements):</p>
+<ul>
+<li>A <code>title</code> element containing:
+<ul>
+<li><em>&quot;Half-Life Fansite: The best game ever could have been Half-Life 3&quot;</em></li>
+</ul></li>
+<li>A page title
+<ul>
+<li><em>&quot;Half-Life 3&quot;</em></li>
+</ul></li>
+<li>A paragraph containing the text
+<ul>
+<li><em>&quot;I sit outside as the birds glide, With no guidance on how they fly, I wonder how and I wonder why, The birds have only one eye? This must mean Half Life 3 is a lie!&quot;</em></li>
+</ul></li>
+<li>add an internal, relative link to go back to the <em>&quot;index.html&quot;</em> page, name it <em>&quot;Go back&quot;</em></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>If you did it right, your new <em>&quot;half-life-3.html&quot;</em> page should look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever could have been Half-Life 3&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Half-Life 3&lt;/h1&gt;
+        &lt;p&gt;
+            I sit outside as the birds glide,
+            With no guidance on how they fly,
+            I wonder how and I wonder why,
+            The birds have only one eye?
+            This must mean Half Life 3 is a lie!
+        &lt;/p&gt;
+        &lt;a href=&quot;index.html&quot; target=&quot;_self&quot;&gt;Go back&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Make sure to save it.</p>
+</section>
+<section class="slide level1">
+
+<p>Open up the <em>&quot;index.html&quot;</em> in your text editor,</p>
+<ul>
+<li>Above the <em>&quot;About&quot;</em> title, add a new unordered list containing one list item.</li>
+<li>As the list item, add an internal, relative link to the <em>&quot;half-life-3.html&quot;</em> page, name it <em>&quot;Half-Life 3&quot;</em></li>
+<li>Provide this list with the following title: <em>&quot;Navigation&quot;</em></li>
+<li>Create an external, absolute link for the text <em>&quot;valve corporation&quot;</em>, it should point to <code>http://www.valvesoftware.com</code></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> page should now look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+        &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+
+        &lt;h2&gt;Navigation&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+
+        &lt;h2&gt;Information:&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+        &lt;/ul&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Save your file and open it with your browser.</p>
+<p>Fire up <em>&quot;index.html&quot;</em> in your browser and start navigating!</p>
+<figure>
+<img src="img/html-links-website.png" title="MODULE: HTML5/CSS3 - Linking up your website" />
+</figure>
+</section>
+<section id="html5---structuring-content-with-html5-semantic-elements" class="slide level1">
+<h1>8. HTML5 - Structuring content with HTML5 semantic elements</h1>
+<p>HTML5 offers a new set of semantic elements to structure the content of your web page. We'll go through some of the most common and important semantic elements HTML5 introduces.</p>
+<blockquote>
+<p>Semantic element: element which clearly defines the content it encloses.</p>
+</blockquote>
+</section>
+<section class="slide level1">
+
+<p>A good looking car which is poorly engineered and maintained is still a crappy car.</p>
+<p>Replace <em>&quot;car&quot;</em> with <em>&quot;website&quot;</em>, and you get the picture.</p>
+<p>Writing proper structured HTML5 code is something you should always strive to do! Take pride in your work.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="in-the-beginning-there-was-div">In the beginning there was DIV</h2>
+<p>Before HTML5, the <code>&lt;div&gt;</code> HTML element was used for structuring your HTML code by grouping together parts of content which belonged together.</p>
+<p>The <code>&lt;div&gt;</code> element on itself, does not change the visual presentation of your rendered HTML. It is pure for adding structure to the HTML code.</p>
+<p>A <code>&lt;div&gt;</code> tag has no semantic meaning.</p>
+<p>By adding the <code>id</code> or <code>class</code> attribute, a logical name or meaning could be given to a <code>&lt;div&gt;</code> block.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-6">Do it yourself</h3>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>We have updated the <em>&quot;index.html&quot;</em> file with some extra structure using the <code>&lt;div&gt;</code> element. Inspect the document closely, make sure you understand where which opening <code>&lt;div&gt;</code> tag is closed (by its <code>&lt;/div&gt;</code> closing tag). Make the same additions to your own <em>&quot;index.html&quot;</em> file.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+        &lt;div class=&quot;page-container&quot;&gt;
+        
+            &lt;div id=&quot;header&quot;&gt;
+            
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+                
+                &lt;div id=&quot;navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+            &lt;/div&gt;
+    
+            &lt;div id=&quot;about&quot; class=&quot;section&quot;&gt;
+                &lt;h2&gt;About:&lt;/h2&gt;
+                &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+                &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+            &lt;/div&gt;
+    
+            &lt;div id=&quot;information&quot; class=&quot;section&quot;&gt;
+                &lt;h2&gt;Information:&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+                &lt;/ul&gt;  
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Save your <em>&quot;index.html&quot;</em> file.</p>
+<p>Fire it up in your browser.</p>
+<figure>
+<img src="img/html-div.png" title="MODULE: HTML5/CSS3 - Div" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>Looks like nothing changed, right? This is as it should be.</p>
+<p>Remember that we've added structure to the code which does not impact the visual presentation of the web page.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="html5-semantic-alternatives-to-div">HTML5 semantic alternatives to DIV</h2>
+<p>HTML5 offers semantic elements which can replace the <code>&lt;div&gt;</code> element in many occasions.</p>
+</section>
+<section class="slide level1">
+
+<p>A generic, typical HTML5 website page will have a header at the top, including the site-wide navigation. On the left there is a sidebar, on the right are content blocks. At the the bottom is the footer.</p>
+<p>Instead of purely using <em>div</em>, we can now use the HTML5 semantic elements to (semantically) structure all these different 'pieces':</p>
+<figure>
+<img src="img/html-website-structure-semantic-elements.png" title="MODULE: HTML5/CSS3 - Semantic elements" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h3 id="overview">Overview</h3>
+<p>We'll discuss some of the most common HTML5 semantic elements:</p>
+<ul>
+<li>Section</li>
+<li>Header</li>
+<li>Footer</li>
+<li>Nav</li>
+<li>Aside</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h3 id="section">Section</h3>
+<p>The <code>&lt;section&gt;</code> semantic element specifies a generic web page section and is used for grouping together content which is thematically related. This as opposed to the <code>&lt;div&gt;</code> element, which is not concerned with the thematic relation of content.</p>
+</section>
+<section class="slide level1">
+
+<h4 id="do-it-yourself-7">Do it yourself</h4>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Using you <em>&quot;index.html&quot;</em> file: replace the <code>&lt;div&gt;</code>'s whose id's are <em>&quot;about&quot;</em> and <em>&quot;information&quot;</em> with a <code>&lt;section&gt;</code> element.</p>
+<p>You can even drop the class attribute whose value is <em>&quot;section&quot;</em>, since it's pretty redundant now.</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;section id=&quot;about&quot;&gt;
+        &lt;h2&gt;About:&lt;/h2&gt;
+        &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+        &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;section id=&quot;information&quot;&gt;
+        &lt;h2&gt;Information:&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+        &lt;/ul&gt;  
+    &lt;/section&gt;
+    ...
+&lt;/html&gt;</code></pre>
+<p><strong>Note:</strong> the triple-dots (...) indicate parts we truncated to improve readability.</p>
+</section>
+<section class="slide level1">
+
+<p>Since the <code>&lt;section&gt;</code> element can be seen as a <em>document inside a document</em> (it has a self contained page outline), it would be possible to replace the <code>&lt;h2&gt;</code> headings to <code>&lt;h1&gt;</code> headings if found necessary.</p>
+</section>
+<section class="slide level1">
+
+<p>With the arrival of the <code>&lt;section&gt;</code> element, does this mean we can replace all the <code>&lt;div&gt;</code> elements with <code>&lt;section&gt;</code> elements?</p>
+<p>Short answer: &quot;No&quot;.</p>
+<p>Using your <em>&quot;index.html&quot;</em> as a reference, the <code>&lt;div&gt;</code> tag whose class's value is <em>&quot;page-container&quot;</em> should not be replaced by <code>&lt;section&gt;</code>:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;body&gt;
+    
+        &lt;div class=&quot;page-container&quot;&gt;
+            ...      
+        &lt;/div&gt;   
+        
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>This <code>&lt;div&gt;</code> tag is not being used to wrap thematically related content. It could be described more as a &quot;technical&quot; wrapper.</p>
+<p>Therefore, don't replace it with a <code>&lt;section&gt;</code> tag.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="header">Header</h3>
+<p>The <code>&lt;header&gt;</code> semantic element specifies the header of a page <strong>or</strong> section <em>(1)</em>, so there can be more than one.</p>
+<p>It will contain all the introductory content of a page or section.</p>
+<p>Site-wide navigation can be made part of the <code>&lt;header&gt;</code>.</p>
+<p>Oh, and never-ever confuse <code>&lt;head&gt;</code> with <code>&lt;header&gt;</code>. That would be a pretty bad thing to do.</p>
+<p><em>(1)</em>: Remember how a section has a self contained page outline? Just as it could have its own <code>&lt;h1&gt;</code> headings, it can have its own <code>&lt;header&gt;</code>.</p>
+</section>
+<section class="slide level1">
+
+<h4 id="do-it-yourself-8">Do it yourself</h4>
+<p>It's time, to <del>get funky</del> do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Using your <em>&quot;index.html&quot;</em> file, replace the <code>&lt;div&gt;</code> tag, whose id is &quot;header&quot;, to <code>&lt;header&gt;</code>.</p>
+<p>We should alter the id itself as well. Name it &quot;page-header&quot;.</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+        
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+                
+                &lt;div id=&quot;navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/header&gt;
+            
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="footer">Footer</h3>
+<p>The <code>&lt;footer&gt;</code> semantic element specifies the footer of a page <strong>or</strong> section <em>(1)</em>, so there can be more than one.</p>
+<p>In general, a footer will contain some copyright information, the author of the content or the contact information - of that page or section.</p>
+<p>The <code>&lt;footer&gt;</code> is mostly positioned at the bottom of a page or section.</p>
+<p><em>(1)</em>: Remember how a section has a self contained page outline? Just as it could have its own <code>&lt;h1&gt;</code> headings and <code>&lt;header&gt;</code> element, it can have its own <code>&lt;footer&gt;</code>.</p>
+</section>
+<section class="slide level1">
+
+<h4 id="do-it-yourself-9">Do it yourself</h4>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Using your <em>&quot;index.html&quot;</em> file as a reference, add a footer.</p>
+<p>As the footer's content, use a paragraph containing &quot;Half-Life 2 fansite - Some rights reserved&quot;.</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+            ...
+            
+            &lt;footer&gt;
+                &lt;p&gt;Half-Life 2 fansite - Some rights reserved&lt;/p&gt;
+            &lt;/footer&gt;
+            
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="nav">Nav</h3>
+<p>The <code>&lt;nav&gt;</code> semantic element specifies a block of navigational links.</p>
+<p>This implies it should not be used for links which are not part of a navigational block.</p>
+</section>
+<section class="slide level1">
+
+<h4 id="do-it-yourself-10">Do it yourself</h4>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Using your <em>&quot;index.html&quot;</em> file, replace the <code>&lt;div&gt;</code> tag whose id is &quot;navigation&quot;, to <code>&lt;nav&gt;</code>.</p>
+<p>Since it's the page's main navigational block, we alter the id to make this more clear. Name the id &quot;page-navigation&quot;.</p>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+                
+                &lt;nav id=&quot;page-navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt; 
+                &lt;/nav&gt;
+                
+            &lt;/header&gt; 
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="aside">Aside</h3>
+<p>The <code>&lt;aside&gt;</code> semantic element specifies content that is literally <em>aside</em> from the content it's placed.</p>
+<p>The most typical correct use for <em>aside</em> is a sidebar.</p>
+<p>Enclosing content with <code>&lt;aside&gt;</code> will not actually put it aside of other content (remember, these HTML elements do not alter the visual presentation of your page). To actually pull this content aside, we need to apply some CSS (which you'll learn later on).</p>
+</section>
+<section class="slide level1">
+
+<h4 id="do-it-yourself-11">Do it yourself</h4>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Using your <em>&quot;index.html&quot;</em> file, add a <em>sign in</em> sidebar.</p>
+<p>Do this by adding an <code>&lt;aside&gt;</code> element between the <code>header</code> and &quot;about&quot; <code>section</code>.</p>
+<p>Provide the <code>&lt;aside&gt;</code> element with:</p>
+<ul>
+<li>A <code>h2</code> heading element with text &quot;Please sign in&quot;</li>
+<li>A paragraph containg the text &quot;No content so far&quot;</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>Your <em>&quot;index.html&quot;</em> file should look something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    ...
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+            ...
+            &lt;/header&gt;
+            
+            &lt;aside id=&quot;sign-in&quot;&gt;
+                &lt;h2&gt;Please sign in&lt;/h2&gt;
+                &lt;p&gt;No content so far&lt;/p&gt;
+            &lt;/aside&gt;
+            
+            &lt;section id=&quot;about&quot;&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h2 id="review-your-web-page">Review your web page</h2>
+<p>Hopefully you've correctly updated your <em>&quot;index.html&quot;</em> after each new semantic element we covered. But hey, maybe you didn't... However, your <em>&quot;index.html&quot;</em> page should look like this now:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+        
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+        
+                &lt;nav id=&quot;page-navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+        
+            &lt;aside id=&quot;sign-in&quot;&gt;
+                &lt;h2&gt;Please sign in&lt;/h2&gt;
+                &lt;p&gt;No content so far&lt;/p&gt;
+            &lt;/aside&gt;
+        
+            &lt;section id=&quot;about&quot;&gt;
+                &lt;h2&gt;About:&lt;/h2&gt;
+                &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+                &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+            &lt;/section&gt;
+        
+            &lt;section id=&quot;information&quot;&gt;
+                &lt;h2&gt;Information:&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+        
+            &lt;footer&gt;
+                &lt;p&gt;Half-Life 2 fansite - Some rights reserved&lt;/p&gt;
+            &lt;/footer&gt;
+        
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>In your browser, it should look like this:</p>
+<figure>
+<img src="img/html-website-semantic-elements-complete.png" title="MODULE: HTML5/CSS3 - Semantic elements" />
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="even-more-html5-semantic-elements">Even more HTML5 semantic elements?</h2>
+<p>We covered some of the most common HTML5 semantic elements.</p>
+<p>Do know that there are more (article, main, figure and time).</p>
+<p>Feel free to explore them on your own, they're all easy to understand.</p>
+<p>However, we'll continue with HTML5 forms now!</p>
+</section>
+<section id="html5-forms" class="slide level1">
+<h1>9. HTML5 forms</h1>
+<p>HTML5 forms are a way of enabling user input.</p>
+<p>They consist of form elements which allow for different types of input such as text fields, checkboxes, dropdown lists, submit buttons and more.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="the-form-element">The form element</h2>
+<p>Defining a form isn't hard, simply use the <code>&lt;form&gt;</code> element:</p>
+<pre><code>&lt;form&gt;
+    &lt;!-- form elements go here --&gt;
+&lt;/form&gt;</code></pre>
+<p><strong>Note:</strong> <code>&lt;!-- comment --&gt;</code> is used for writing comments in HTML. The text inside the tags, nor the tags itself will be displayed to the users of your page.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="form-elements">Form elements</h2>
+<p>A typical form has a set of form elements of which one is the <em>submit</em> button.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="submit-button">Submit button</h3>
+<p>Every form needs a submit button.</p>
+<pre><code>&lt;form&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Sign in&quot;&gt;
+&lt;/form&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><input type="submit" value="Sign in"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<p>When pressed, the submit button should trigger the processing of the inputted form data. For this however, we need some actual code (such as Javascript for example).</p>
+<p><strong>Note:</strong> An <code>&lt;input&gt;</code> element does not have a closing tag. So no <code>&lt;/input&gt;</code>!</p>
+</section>
+<section class="slide level1">
+
+<h3 id="input">Input</h3>
+<p>As you probably noticed, the submit button is a type of <code>&lt;input&gt;</code> form element, but there are more.</p>
+<p>By using a different value for the <code>type</code> attribute of the <code>&lt;input&gt;</code> form element, we create a different kind of <code>&lt;input&gt;</code> form element.</p>
+</section>
+<section class="slide level1">
+
+<p>For example, some standard and common types of <code>&lt;input&gt;</code> form elements:</p>
+<pre><code>&lt;form&gt;
+    Firstname: &lt;input type=&quot;text&quot; id=&quot;firstname&quot; name=&quot;firstname&quot;&gt; &lt;br&gt;
+    Password: &lt;input type=&quot;password&quot; id=&quot;your-password&quot; name=&quot;your-password&quot; placeholder=&quot;secret?&quot;&gt; &lt;br&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;cat-radio&quot; name=&quot;cat-or-dog&quot; value=&quot;cat&quot; checked&gt; cats rule &lt;br&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;dog-radio&quot; name=&quot;cat-or-dog&quot; value=&quot;dog&quot;&gt; dogs rule &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;human-validation&quot; name=&quot;human-validation&quot; value=&quot;human&quot;&gt; I am human
+&lt;/form&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Firstname: <input type="text" name="firstname"> <br> Password: <input type="password" name="your-password" placeholder="secret?"> <br> <input type="radio" name="cat-or-dog" value="cat" checked> cats rule <br> <input type="radio" name="cat-or-dog" value="dog"> dogs rule <br> <input type="checkbox" name="human-validation" value="human"> I am human</td>
+<td><img src="img/html-input-form-elements.png" title="MODULE: HTML5/CSS3 - Input form elements" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<p><strong>Note:</strong> <code>&lt;br&gt;</code> is a HTML tag which enforces a new line. If we didn't use it here, all of our input form elements would be on one line.</p>
+<p>The <code>name</code> and <code>value</code> attributes are optional, however they can change the behavior of the input form elements. E.g.: radio buttons with the same <code>name</code> will be grouped together.</p>
+<p>The <code>id</code> attribute can be added when we need to reference it (see the later section on labels). It can have the same value as the <code>name</code> attribute as long as it's unique (see the radio buttons on the previous slide).</p>
+</section>
+<section class="slide level1">
+
+<p>HTML5 introduced a lot more types of <code>&lt;input&gt;</code> form elements. Experiment with them yourself before continuing:</p>
+<pre><code>&lt;form&gt;
+     Color &lt;input type=&quot;color&quot; name=&quot;a-color&quot; value=&quot;#ffff00&quot;&gt; &lt;br&gt;
+     Birthday &lt;input type=&quot;date&quot; name=&quot;birthday&quot; min=&quot;1901-01-01&quot;&gt; &lt;br&gt;
+     Birthday (date-time) &lt;input type=&quot;datetime-local&quot; name=&quot;birthday-time&quot;&gt; &lt;br&gt;
+     Birthday (month-year) &lt;input type=&quot;month&quot; name=&quot;birthday-month&quot;&gt; &lt;br&gt;
+     Week &lt;input type=&quot;week&quot; name=&quot;week-year&quot;&gt; &lt;br&gt;
+     Time &lt;input type=&quot;time&quot; name=&quot;a-time&quot;&gt; &lt;br&gt;
+     Email &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt; &lt;br&gt;
+     Amount &lt;input type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;1&quot; max=&quot;10&quot;&gt; &lt;br&gt;
+     Score &lt;input type=&quot;range&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;100&quot;&gt; &lt;br&gt;
+     Telephone number &lt;input type=&quot;tel&quot; name=&quot;telephone-number&quot;&gt; &lt;br&gt;
+     Url &lt;input type=&quot;url&quot; name=&quot;my-page&quot;&gt; &lt;br&gt;
+     Search &lt;input type=&quot;search&quot; name=&quot;my-search&quot;&gt;
+&lt;/form&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Color <input type="color" name="a-color" value="#ffff00"> <br> Birthday <input type="date" name="birthday" min="1901-01-01"> <br> Birthday (date-time) <input type="datetime-local" name="birthday-time"> <br> Birthday (month-year) <input type="month" name="birthday-month"> <br> Week <input type="week" name="week-year"> <br> Time <input type="time" name="a-time"> <br> Email <input type="email" name="email"> <br> Amount <input type="number" name="quantity" min="1" max="10"> <br> Score <input type="range" name="points" min="0" max="100"> <br> Telephone number <input type="tel" name="telephone-number"> <br> Url <input type="url" name="my-page"> <br> Search <input type="search" name="my-search"></td>
+<td><img src="img/html-input-form-elements-extra.png" title="MODULE: HTML5/CSS3 - Input form elements (extra)" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<p>Noticed how the behavior of certain input fields like <code>email</code>, <code>telephone</code> and <code>url</code> doesn't seem to differ from a classic text input field?</p>
+<p>That's because their power lies in the fact that their input can be automatically validated (as being an email, telephone or url) once the form gets submitted.</p>
+<p>But, when entering input, they do behave - to the user - like simple text input fields.</p>
+</section>
+<section class="slide level1">
+
+<p>Before continuing,</p>
+<p>Are you sure you did some experimenting with all the different types of <code>&lt;input&gt;</code>?</p>
+</section>
+<section class="slide level1">
+
+<p>Absolutely sure?</p>
+</section>
+<section class="slide level1">
+
+<p>Just kidding, I know you're working hard.</p>
+<p>Let's move on!</p>
+<p><code>#NoTrustIssues</code></p>
+</section>
+<section class="slide level1">
+
+<h3 id="selection">Selection</h3>
+<p>Just like <code>&lt;input&gt;</code>, <code>&lt;selection&gt;</code> is a form element.</p>
+<p>It is used to specify a dropdown list of predefined possibilities from which the user can chose.</p>
+</section>
+<section class="slide level1">
+
+<p>We provide options to the <code>&lt;select&gt;</code> form element using the <code>&lt;option&gt;</code> element. Notice that both require a closing tag.</p>
+<pre><code>&lt;select name=&quot;cat-names&quot;&gt;
+  &lt;option value=&quot;bubbles&quot;&gt;Bubbles&lt;/option&gt;
+  &lt;option value=&quot;kittycat&quot;&gt;Kittycat&lt;/option&gt;
+  &lt;option value=&quot;mistermiauw&quot; selected&gt;Mister Miauw&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p>Adding the <code>selected</code> attribute to an option will select that option by default.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><select name="cat-names"><option value="bubbles">Bubbles</option><option value="kittycat">Kittycat</option><option value="mistermiauw" selected>Mister Miauw</option></select></td>
+<td><img src="img/html-form-select.png" title="MODULE: HTML5/CSS3 - Form select" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h3 id="textarea">Textarea</h3>
+<p>Just like <code>&lt;input&gt;</code> and <code>&lt;selection&gt;</code>, <code>&lt;textarea&gt;</code> is a form element.</p>
+<p>It is used to specify an area, larger than a text input field, in which the user can write text.</p>
+</section>
+<section class="slide level1">
+
+<p>A <code>&lt;textarea&gt;</code> has 2 unique attributes: <code>rows</code> and <code>cols</code>. They determine the height (rows) and width (cols) of the area.</p>
+<pre><code>&lt;textarea name=&quot;text-message&quot; rows=&quot;10&quot; cols=&quot;30&quot;&gt;
+I am but a simply text area
+with multiple
+lines...
+&lt;/textarea&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="img/html-form-textarea.png" title="MODULE: HTML5/CSS3 - Form textarea" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h3 id="datalist">Datalist</h3>
+<p>HTML5 introduced the <code>&lt;datalist&gt;</code> element, which comes with the new <code>list</code> input form element.</p>
+<p>It functions as a combination between a text input field and dropdown list.</p>
+<p>Only a set of pre-defined options is allowed. However, the user can type-in the option he is searching. If it's in the pre-defined list, it will be suggested to the user.</p>
+</section>
+<section class="slide level1">
+
+<p>The value of the <code>list</code> attribute must always match the value of the datalist's <code>id</code> attribute!</p>
+<p>The <code>&lt;datalist&gt;</code> element is populated with the <code>&lt;option&gt;</code> element, just like the <code>&lt;select&gt;</code> element.</p>
+<pre><code>  &lt;input list=&quot;best-games-ever-made&quot;&gt;
+  &lt;datalist id=&quot;best-games-ever-made&quot;&gt;
+    &lt;option value=&quot;Half-Life 2&quot;&gt;
+    &lt;option value=&quot;Half-Life&quot;&gt;
+    &lt;option value=&quot;Freddy Fish&quot;&gt;
+  &lt;/datalist&gt; </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><input list="best-games-ever-made"> <datalist id="best-games-ever-made"> <option value="Half-Life 2"> <option value="Half-Life"> <option value="Freddy Fish"> </datalist></td>
+<td><img src="img/html-form-datalist.png" title="MODULE: HTML5/CSS3 - Form datalist" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h3 id="even-more-form-elements">Even more form elements?</h3>
+<p>Jup, there are even more form elements (keygen, output, button, etc.).</p>
+<p>We have covered most of them. Certainly the most common, which is more than enough for now.</p>
+<p>However, you are free (willy) to explore them on your own.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="labels">Labels</h3>
+<p>Before we go and create our own form for our web page, let's quickly talk about labels.</p>
+<p>Take a simple text input field:</p>
+<pre><code>Firstname: &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;</code></pre>
+<p>&quot;Firstname&quot;, the text in front of the input field, is what we call the &quot;label&quot;.</p>
+<p>However, we didn't make the label explicit.</p>
+<p>That's pretty naughty of us and certainly not &quot;clean&quot;. Time to fix that!</p>
+</section>
+<section class="slide level1">
+
+<p>when labelling form elements, always use the <code>label</code> element to create the label .</p>
+<p>Add the <code>for</code> attribute to indicate to which form element the label belongs. The value of the <code>for</code> attribute should equal the <strong>id</strong> attribute (<strong>not</strong> the <strong>name</strong> attribute) of the form element it belongs to.</p>
+<pre><code>&lt;label for=&quot;user-firstname&quot;&gt;Firstname: &lt;/label&gt;
+&lt;input id=&quot;user-firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot;&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><label for=user-firstname>Firstname: </label> <input id="user-firstname" type="text" name="firstname"></td>
+<td><img src="img/html-text-field-label.png" title="MODULE: HTML5/CSS3 - Label" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="do-it-yourself-12">Do it yourself</h2>
+<p>It's time, to do it yourself!</p>
+<p>We're now going to create our own sign-up form for our <em>&quot;index.html&quot;</em> page.</p>
+<p>Ready, Set, Go!</p>
+</section>
+<section class="slide level1">
+
+<p>Add a form (inside your <code>&lt;aside&gt;</code> element) containing:</p>
+<ul>
+<li>An email input field for entering your email.</li>
+<li>A password input field for entering your password.</li>
+<li>A datalist containing 3 countries (Belgium, France and Germany).</li>
+<li>A select element containing 3 roles (Admin, Moderator, User). Moderator should be the default selected option.</li>
+<li>A checkbox input field, asking the user if he wants to stay logged in.</li>
+<li>A submit button</li>
+</ul>
+<p>Make sure to always provide a meaningful label for every element.</p>
+<p>Make sure to try it out yourself before inspecting the example code on the next slide.</p>
+</section>
+<section class="slide level1">
+
+<p>Hopefully your <em>&quot;index.html&quot;</em> page looks something like this now:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;page-container&quot;&gt;
+        
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+        
+                &lt;nav id=&quot;page-navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+        
+            &lt;aside id=&quot;sign-in&quot;&gt;
+                &lt;h2&gt;Please sign in&lt;/h2&gt;
+                &lt;form&gt;
+                    &lt;label for=&quot;sign-in-email&quot;&gt;E-mail: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-email&quot; type=&quot;email&quot;&gt; &lt;br&gt;
+                    
+                    &lt;label for=&quot;sign-in-password&quot;&gt;Password: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-password&quot; type=&quot;password&quot;&gt; &lt;br&gt;
+                    
+                    &lt;label for=&quot;sign-in-countries&quot;&gt;Countries: &lt;/label&gt;
+                    &lt;input list=&quot;sign-in-countries&quot;&gt;
+                    &lt;datalist id=&quot;sign-in-countries&quot;&gt;
+                        &lt;option value=&quot;Belgium&quot;&gt;
+                        &lt;option value=&quot;France&quot;&gt;
+                        &lt;option value=&quot;Germany&quot;&gt;
+                    &lt;/datalist&gt; &lt;br&gt;
+                    
+                    &lt;label for=&quot;sign-in-roles&quot;&gt;Roles: &lt;/label&gt;
+                    &lt;select id=&quot;sign-in-roles&quot;&gt;
+                        &lt;option value=&quot;admin&quot;&gt;Administrator&lt;/option&gt;
+                        &lt;option value=&quot;moderator&quot; selected&gt;Moderator&lt;/option&gt;
+                        &lt;option value=&quot;user&quot;&gt;User&lt;/option&gt;
+                    &lt;/select&gt; &lt;br&gt;
+                    
+                    &lt;label for=&quot;sign-in-stay-logged-in&quot;&gt;Stay loggged in? &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-stay-logged-in&quot; type=&quot;checkbox&quot;&gt; &lt;br&gt;
+                    
+                    &lt;input type=&quot;submit&quot; value=&quot;Sign in&quot;&gt; &lt;br&gt;
+                &lt;/form&gt;
+            &lt;/aside&gt;
+        
+            &lt;section id=&quot;about&quot;&gt;
+                &lt;h2&gt;About:&lt;/h2&gt;
+                &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+                &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see the light.&lt;/p&gt;
+            &lt;/section&gt;
+        
+            &lt;section id=&quot;information&quot;&gt;
+                &lt;h2&gt;Information:&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+        
+            &lt;footer&gt;
+                &lt;p&gt;Half-Life 2 fansite - Some rights reserved&lt;/p&gt;
+            &lt;/footer&gt;
+        
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>In your browser, you should see your sign-in form:</p>
+<figure>
+<img src="img/html-form-complete.png" title="MODULE: HTML5/CSS3 - Form complete" />
+</figure>
+</section>
+<section id="html-character-entities" class="slide level1">
+<h1>10. HTML character entities</h1>
+<p>Certain characters, such as &quot;&lt;&quot;, are reserved in HTML (because they are used by HTML itself). However, sometimes you need to use them as content.</p>
+<p>To display these characters, we use character entities.</p>
+</section>
+<section class="slide level1">
+
+<p>If you want to use &quot;&lt;&quot; as content, for example in an equation (2 &lt; 3), you type <code>&amp;lt;</code> instead of &quot;&lt;&quot;.</p>
+<p><code>&amp;lt;</code> is the character entity of &quot;&lt;&quot;.</p>
+<p>Whenever you want to use &quot;&lt;&quot; as content, use the character entity. If you don't, you risk not displaying the character &quot;&lt;&quot; correctly.</p>
+</section>
+<section class="slide level1">
+
+<p>E.g.:</p>
+<pre><code>&lt;p&gt; Math equation: 10 &amp;lt; 20 &lt;/p&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Html demo</th>
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Math equation: 10 &lt; 20</td>
+<td><img src="img/html-character-entities.png" title="MODULE: HTML5/CSS3 - Character entities" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="character-entities-overview">Character entities: overview</h2>
+<p>Here are some useful character entities, know that there are more:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Character entity</th>
+<th>Result in HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;lt;</code></td>
+<td>&lt;</td>
+</tr>
+<tr class="even">
+<td><code>&amp;gt;</code></td>
+<td>&gt;</td>
+</tr>
+<tr class="odd">
+<td><code>&amp;amp;</code></td>
+<td>&amp;</td>
+</tr>
+<tr class="even">
+<td><code>&amp;quot;</code></td>
+<td>&quot;</td>
+</tr>
+<tr class="odd">
+<td><code>&amp;apos;</code></td>
+<td>'</td>
+</tr>
+<tr class="even">
+<td><code>&amp;euro;</code></td>
+<td>€</td>
+</tr>
+<tr class="odd">
+<td><code>&amp;copy;</code></td>
+<td>©</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="html-character-encoding" class="slide level1">
+<h1>11. HTML character encoding</h1>
+<p>To correctly display symbols and characters (©, ¨, %, &amp;, ~, etc.), the browser must know how to properly encode them.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="what-is-character-encoding">What is character encoding?</h2>
+<p>Pay attention, we'll go a bit (pun intended) more technical.</p>
+<p>A computer does not &quot;understand&quot; symbols, numbers or letters (characters). It understands bits (1 or 0, yes or no). A collection of 8 bits is a byte (e.g.: 01001001).</p>
+</section>
+<section class="slide level1">
+
+<p>Character encoding specifies a translation between bits (or bytes) and characters.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Bits</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>01000001</code></td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td><code>01000010</code></td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>This above example uses the <code>ASCII</code> character set (which is a synonym for character encoding). ASCII encoding only uses the first 7 bits of a byte (x0000000 through x1111111). This allows for (only) 128 characters to be defined ( every bit has 2 possible states, 7 bits in total: 2^7 = 128).</p>
+</section>
+<section class="slide level1">
+
+<h2 id="different-character-sets-encodings">Different character sets / encodings</h2>
+<p>We just discussed ASCII and how it allows for only 128 characters.</p>
+<p>ANSI is an extension of ASCII and uses a full byte (8 bits), this allows for 256 possible characters (2^8 = 256). ANSI was the default character set for HTML4.</p>
+<p>For HTML5 the default character set is UTF-8. A character in UTF-8 can be up to 4 bytes long, allowing up to 2^32 possibilities. It covers almost all the characters and symbols in the world.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="defining-a-character-set">Defining a character set</h2>
+<p>On a web page, we need to define a character set.</p>
+<p>This character set will be used by the browser to correctly display all characters and symbols present on that page.</p>
+</section>
+<section class="slide level1">
+
+<p>To make you aware of the importance of character sets, take the following example for a website containing the word &quot;België&quot;:</p>
+<table>
+<thead>
+<tr class="header">
+<th>ANSI character set defined</th>
+<th>UTF-8 character set defined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="img/html-character-encoding-ansi.png" title="MODULE: HTML5/CSS3 - Ansi encoding" /></td>
+<td><img src="img/html-character-encoding-utf8.png" title="MODULE: HTML5/CSS3 - UTF-8 encoding" /></td>
+</tr>
+</tbody>
+</table>
+<p>The reason &quot;ë&quot; is not properly displayed when using ANSI, is because ANSI does not have an encoding for &quot;ë&quot;.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="html5-default-character-set">HTML5 default character set</h3>
+<p>For HTML5, the default character set is <code>UTF-8</code>.</p>
+<p>Defining the <code>UTF-8</code> character encoding is done using the <code>&lt;meta&gt;</code> element with attribute <code>charset</code>. This will enforce your browser to use the defined character encoding.</p>
+<p>It is nested inside the <code>&lt;head&gt;</code> element:</p>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;</code></pre>
+<p><strong>Note:</strong> The <code>&lt;meta&gt;</code> element does not have a closing tag.</p>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-13">Do it yourself</h3>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Define <code>UTF-8</code> as character encoding for your <em>&quot;index.html&quot;</em> page.</p>
+</section>
+<section class="slide level1">
+
+<p>The head-section of your <em>&quot;index.html&quot;</em> page should look like this:</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section id="html-tables" class="slide level1">
+<h1>12. HTML tables</h1>
+<p>Our final chapter of the HTML5 lab will be about tables.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="a-table">A table?</h2>
+<p>A table is used for presenting data in rows and columns, just like you would in Excel.</p>
+<p>Tables are something you'll use pretty often.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="a-complete-html-table">A complete HTML table</h2>
+<p>We'll start by providing you with a complete example of an HTML table:</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Games&lt;/th&gt;
+            &lt;th&gt;Review score&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Half-Life&lt;/td&gt;
+            &lt;td&gt;9/10&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Half-Life&lt;/td&gt;
+            &lt;td&gt;10/10&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;Average: 9,5/10&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>In your browser - with no CSS styling applied - your table will look like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Browser preview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="img/html-table.png" title="MODULE: HTML5/CSS3 - HTML table" /></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="creating-a-complete-html-table">Creating a complete HTML table</h2>
+<p>The <code>&lt;table&gt;</code> element creates a table.</p>
+<pre><code>&lt;table&gt;
+&lt;/table&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>Directly nested inside the <code>&lt;table&gt;</code> element, are the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements. One defines and groups the header content of a table, the other defines and groups the body content of a table.</p>
+<p>You could also add the <code>&lt;tfoot&gt;</code> element, if needed. It will insert its nested rows at the very bottom of the table.</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+    &lt;/thead&gt;
+    
+    &lt;tbody&gt;
+    &lt;/tbody&gt;
+    
+    &lt;tfoot&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p><code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements define - respectively - cells and header cells (header cells should be used in the <code>&lt;thead&gt;</code> element only).</p>
+<p>They should always be enclosed by <code>&lt;tr&gt;</code> elements, which define rows.</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Games&lt;/th&gt;
+            &lt;th&gt;Review score&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Half-Life&lt;/td&gt;
+            &lt;td&gt;9/10&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Half-Life&lt;/td&gt;
+            &lt;td&gt;10/10&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<h3 id="do-it-yourself-14">Do it yourself</h3>
+<p>It's time, to do it yourself!</p>
+</section>
+<section class="slide level1">
+
+<p>Open up you <em>&quot;index.html&quot;</em>, we'll add a simple table.</p>
+<p>Create a new section (id = &quot;half-life-games&quot;).</p>
+<p>Add a title to the section (&quot;Half Life games&quot;).</p>
+<p>Nested inside this section a table which consists of:</p>
+<ul>
+<li>One column named &quot;Games&quot;</li>
+<li>3 rows for this column (&quot;Half-Life 1&quot;, &quot;Half-Life 2&quot;, &quot;Half-Life 2: Episode 1 &amp; 2&quot;)</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>If you did things right, your <em>&quot;index.html&quot;</em> should like something like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Half-Life Fansite: The best game ever is Half-Life 2&lt;/title&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+        &lt;div class=&quot;page-container&quot;&gt;
+        
+            &lt;header id=&quot;page-header&quot;&gt;
+                &lt;h1 id=&quot;primary-title&quot;&gt;Best Game Ever&lt;/h1&gt;
+                &lt;p class=&quot;text-splash&quot;&gt;I&#39;ll introduce you to the best game ever made: Half-Life 2&lt;/p&gt;
+        
+                &lt;nav id=&quot;page-navigation&quot;&gt;
+                    &lt;h2&gt;Navigation&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;half-life-3.html&quot; target=&quot;_self&quot;&gt;Half-Life 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+        
+            &lt;aside id=&quot;sign-in&quot;&gt;
+                &lt;h2&gt;Please sign in&lt;/h2&gt;
+        
+                &lt;form&gt;
+                    &lt;label for=&quot;sign-in-email&quot;&gt;E-mail: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-email&quot; type=&quot;email&quot;&gt; &lt;br&gt;
+        
+                    &lt;label for=&quot;sign-in-password&quot;&gt;Password: &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-password&quot; type=&quot;password&quot;&gt; &lt;br&gt;
+        
+                    &lt;label for=&quot;sign-in-countries&quot;&gt;Countries: &lt;/label&gt;
+                    &lt;input list=&quot;sign-in-countries&quot;&gt;
+                    &lt;datalist id=&quot;sign-in-countries&quot;&gt;
+                        &lt;option value=&quot;Belgium&quot;&gt;
+                        &lt;option value=&quot;France&quot;&gt;
+                        &lt;option value=&quot;Germany&quot;&gt;
+                    &lt;/datalist&gt;
+                    &lt;br&gt;
+        
+                    &lt;label for=&quot;sign-in-roles&quot;&gt;Roles: &lt;/label&gt;
+                    &lt;select id=&quot;sign-in-roles&quot;&gt;
+                        &lt;option value=&quot;admin&quot;&gt;Administrator&lt;/option&gt;
+                        &lt;option value=&quot;moderator&quot; selected&gt;Moderator&lt;/option&gt;
+                        &lt;option value=&quot;user&quot;&gt;User&lt;/option&gt;
+                    &lt;/select&gt; &lt;br&gt;
+        
+                    &lt;label for=&quot;sign-in-stay-logged-in&quot;&gt;Stay loggged in? &lt;/label&gt;
+                    &lt;input id=&quot;sign-in-stay-logged-in&quot; type=&quot;checkbox&quot;&gt; &lt;br&gt;
+        
+                    &lt;input type=&quot;submit&quot; value=&quot;Sign in&quot;&gt; &lt;br&gt;
+                &lt;/form&gt;
+        
+            &lt;/aside&gt;
+        
+            &lt;section id=&quot;about&quot;&gt;
+                &lt;h2&gt;About:&lt;/h2&gt;
+                &lt;p&gt;Half-Life 2 was released in November 2004 following a five-year, $40 million development phase.&lt;/p&gt;
+                &lt;p hidden&gt;In 2017, the hearts of many gamers were broken when it became clear that Half-Life 3 would never see
+                    the light.&lt;/p&gt;
+            &lt;/section&gt;
+        
+            &lt;section id=&quot;information&quot;&gt;
+                &lt;h2&gt;Information:&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Developer: &lt;a href=&quot;http://www.valvesoftware.com&quot; target=&quot;_blank&quot;&gt;Valve Corporation&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Genre: First-person shooter&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+        
+            &lt;section id=&quot;half-life-games&quot;&gt;
+                &lt;h2&gt;Half-Life games&lt;/h2&gt;
+                &lt;table&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Games&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Half-Life 1&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Half-Life 2&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Half-Life 2: Episode 1 &amp;amp; 2&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/section&gt;
+        
+            &lt;footer&gt;
+                &lt;p&gt;Half-Life 2 fansite - Some rights reserved&lt;/p&gt;
+            &lt;/footer&gt;
+        
+        &lt;/div&gt;
+    
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+<section class="slide level1">
+
+<p>And in your browser, it should look like this:</p>
+<figure>
+<img src="img/html-table-complete.png" title="MODULE: HTML5/CSS3 - HTML table complete" />
+</figure>
+</section>
+<section id="html5css3---lab-01-html5-1" class="slide level1">
+<h1>HTML5/CSS3 - LAB 01: HTML5</h1>
+<p><strong>Hooray, That's My Lad(y)!</strong> (get it? H, T M L!)</p>
+<p>You have successfully completed this lab. You are now ready to take on the next lab, good luck!</p>
+</section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js/lib/js/head.min.js"></script>
+  <script src="js/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'js/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'js/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
