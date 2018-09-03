@@ -7,9 +7,9 @@ We can only clone an existing Git repository.
 So, let's find one first.
 
 ## 1. Find a repository to clone
-Let's go to GitHub. More specific, let's go to the top trending Java repositories of the day.
+Let's go to GitHub. More specific, let's go to the top trending Java or C# repositories of the day.
 
-Surf to `https://github.com/trending/java` and select yourself an interesting repository to clone.
+Surf to `https://github.com/trending/java` or `https://github.com/trending/csharp` and select yourself an interesting repository to clone.
 
 1. Click on the name of the repository you want to clone
 2. You're now on the repository main GitHub page.
