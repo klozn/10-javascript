@@ -1,7 +1,7 @@
 # Codelab02
 
 This codelab will cover how Git works internally.
-When developing, you'll (luckily) never go this deep into the internals of Git, 
+When developing, you'll (hopefully) never go this deep into the internals of Git, 
 however, we do think it's important you have a basic understanding of how Git works behind the scenes.
 
 ## Initialize
