@@ -162,8 +162,7 @@ Using the CMD or Terminal, navigate to the newly created folder:
 cd "<path>"
 ```
 Replace *\<path\>* with the path to your newly created folder.
-
-    - E.g.: *"C:\Users\nielsde\switchfully"*
+- E.g.: *"C:\Users\nielsde\switchfully"*
     
 When you have successfully navigated to the folder, 
 you should see the complete path before the cursor (in CMD / Terminal):
