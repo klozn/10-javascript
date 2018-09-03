@@ -16,6 +16,9 @@ Below you'll find a list of additional topics, exercises and resources, related 
 
 ### Additional Exercises and Resources
 
+### Top-notch resource
+* [Atlassian Git Introduction - Getting started](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+* [Atlassian Git Introduction - Collaborating](https://www.atlassian.com/git/tutorials/syncing)
 
 ### Basic:
 
