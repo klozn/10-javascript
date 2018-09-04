@@ -117,7 +117,7 @@ create and modify some files, add them to the stage (staging area) and commit th
         - `git add .` adds all changes
         - `git add *.txt` adds all changes of files ending with `.txt`
         - `git add cheap expensive` adds all changes inside directories `cheap` and `expansive`
-    - Good to know: Git itself add directories to its repository, but it does keep the parent-child **tree** relation
+    - Good to know: Git itself doesn't add directories to its repository (as in: an empty directory does not have any meaning to Git), but it does keep the parent-child **tree** relation, so whenever a directory contains at least one tracked file, it will 'remember' the directories naam and it's position in the tree.
 - Get yourself a status overview:
     ```
     On branch master
