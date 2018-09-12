@@ -21,4 +21,3 @@
 --17. Display all employees for which the name has a 'c','C' (either lower or uppercase) in their name.
 --18. Display all stockitems that contain chocolate in their name
 --19. Display all stockitems that contain chocolate in their name and have a unit price in the range 8-15
-
