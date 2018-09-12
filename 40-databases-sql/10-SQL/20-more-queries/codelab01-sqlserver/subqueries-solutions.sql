@@ -119,9 +119,3 @@ where supplierID=5)
 and ColorID = (select ColorID
 from Warehouse.StockItems
 where StockItemName like 'Developer joke mug - Oct 31 = Dec 25 (Black)');
-
-
-
-
-
-
