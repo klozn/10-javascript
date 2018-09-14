@@ -1,25 +1,30 @@
 -- Create a new database (BILLING)
 
--- BILLS
 
-CREATE TABLE BILLS ( 
+CREATE SCHEMA BIL;
+GO;
+
+BEGIN TRAN;
+
+-- BILLS
+CREATE TABLE BIL.BILLS ( 
              BILL_ID      INT NOT NULL , 
              BILLING_DATE DATE NOT NULL , 
              CONSTRAINT bills_pk PRIMARY KEY(BILL_ID)
-                   );
+                       );
 
 -- ZIPCODES
 
-CREATE TABLE ZIPCODES ( 
+CREATE TABLE BIL.ZIPCODES ( 
              ZIPCODE INT NOT NULL , 
              CITY    VARCHAR(50) NOT NULL , 
              STATE   VARCHAR(50) , 
              CONSTRAINT ZIPCODES_PK PRIMARY KEY(ZIPCODE)
-                      );
+                          );
 
 -- PATIENTS
 
-CREATE TABLE PATIENTS ( 
+CREATE TABLE BIL.PATIENTS ( 
              PATIENT_ID INT NOT NULL , 
              FIRST_NAME VARCHAR(50) NOT NULL , 
              LAST_NAME  VARCHAR(50) NOT NULL , 
@@ -28,11 +33,11 @@ CREATE TABLE PATIENTS (
              CONSTRAINT PATIENTS_PK PRIMARY KEY(PATIENT_ID) , 
              CONSTRAINT PATIENTS_ZIPCODES_FK FOREIGN KEY(ZIPCODE) REFERENCES ZIPCODES(
                                                                              ZIPCODE)
-                      );
+                          );
 
 -- STAYS + Foreign key to PATIENTS and bills
 
-CREATE TABLE STAYS ( 
+CREATE TABLE BIL.STAYS ( 
              STAY_ID         INT NOT NULL , 
              PATIENT_ID      INT NOT NULL , 
              BILL_ID         INT NULL , 
@@ -43,37 +48,37 @@ CREATE TABLE STAYS (
                                                                              PATIENT_ID) , 
              CONSTRAINT STAYS_BILLS_FK FOREIGN KEY(BILL_ID) REFERENCES BILLS(
                                                                        BILL_ID)
-                   );
+                       );
 
 -- PHONENUMBERS
 
-CREATE TABLE PHONENUMBERS ( 
+CREATE TABLE BIL.PHONENUMBERS ( 
              PATIENT_ID INT NOT NULL , 
              PHONE      VARCHAR(12) NOT NULL , 
              CONSTRAINT PHONENUMBERS_PATIENTS_FK FOREIGN KEY(PATIENT_ID) REFERENCES PATIENTS(
                                                                                     PATIENT_ID)
-                          );
+                              );
 
 -- COSTCENTERS
 
-CREATE TABLE COSTCENTERS ( 
+CREATE TABLE BIL.COSTCENTERS ( 
              COSTCENTER_CODE INT NOT NULL , 
              COSTCENTER_NAME VARCHAR(50) NOT NULL , 
              CONSTRAINT COSTCENTER_CODE_PK PRIMARY KEY(COSTCENTER_CODE)
-                         );
+                             );
 
 -- ITEMS
 
-CREATE TABLE ITEMS ( 
+CREATE TABLE BIL.ITEMS ( 
              ITEM_CODE   INT NOT NULL , 
              DESCRIPTION VARCHAR(50) NOT NULL , 
              PRICE       INT NOT NULL , 
              CONSTRAINT ITEM_CODE_PK PRIMARY KEY(ITEM_CODE)
-                   );
+                       );
 
 -- ORDERS
 
-CREATE TABLE ORDERS ( 
+CREATE TABLE BIL.ORDERS ( 
              ORDER_ID        INT NOT NULL , 
              ORDER_DATE      DATE NOT NULL , 
              COSTCENTER_CODE INT NOT NULL , 
@@ -86,25 +91,20 @@ CREATE TABLE ORDERS (
                                                                           ITEM_CODE) , 
              CONSTRAINT ITEMS_STAYS_FK FOREIGN KEY(STAY_ID) REFERENCES STAYS(
                                                                        STAY_ID)
-                    );
+                        );
+
+COMMIT;
 
 -- drop all tables
 
-DROP TABLE PHONENUMBERS;
-
-DROP TABLE ORDERS;
-
-DROP TABLE STAYS;
-
-DROP TABLE PATIENTS;
-
-DROP TABLE BILLS;
-
-DROP TABLE ITEMS;
-
-DROP TABLE COSTCENTERS;
-
-DROP TABLE ZIPCODES;
+DROP TABLE BIL.PHONENUMBERS;
+DROP TABLE BIL.ORDERS;
+DROP TABLE BIL.STAYS;
+DROP TABLE BIL.PATIENTS;
+DROP TABLE BIL.BILLS;
+DROP TABLE BIL.ITEMS;
+DROP TABLE BIL.COSTCENTERS;
+DROP TABLE BIL.ZIPCODES;
 
 -- Verify constraints
 
@@ -120,24 +120,24 @@ FROM
 
 -- adding data
 
-INSERT INTO ZIPCODES ( 
+INSERT INTO BIL.ZIPCODES ( 
        ZIPCODE , 
        CITY , 
        STATE
-                     ) 
+                         ) 
 VALUES ( 
        80638 , 
        'Boulder' , 
        'Colorado'
        );
 
-INSERT INTO PATIENTS ( 
+INSERT INTO BIL.PATIENTS ( 
        PATIENT_ID , 
        FIRST_NAME , 
        LAST_NAME , 
        ADDRESS , 
        ZIPCODE
-                     ) 
+                         ) 
 VALUES ( 
        12345 , 
        'Mary' , 
@@ -146,40 +146,40 @@ VALUES (
        80638
        );
 
-INSERT INTO PHONENUMBERS ( 
+INSERT INTO BIL.PHONENUMBERS ( 
        PATIENT_ID , 
        PHONE
-                         ) 
+                             ) 
 VALUES ( 
        12345 , 
        '123-456-789'
        );
 
-INSERT INTO PHONENUMBERS ( 
+INSERT INTO BIL.PHONENUMBERS ( 
        PATIENT_ID , 
        PHONE
-                         ) 
+                             ) 
 VALUES ( 
        12345 , 
        '002358953'
        );
 
-INSERT INTO BILLS ( 
+INSERT INTO BIL.BILLS ( 
        BILL_ID , 
        BILLING_DATE
-                  ) 
+                      ) 
 VALUES ( 
        1 , 
        CONVERT(DATE , '07/20/08')
        );
 
-INSERT INTO STAYS ( 
+INSERT INTO BIL.STAYS ( 
        STAY_ID , 
        PATIENT_ID , 
        BILL_ID , 
        ADMITTED_DATE , 
        DISCHARGED_DATE
-                  ) 
+                      ) 
 VALUES ( 
        1 , 
        12345 , 
@@ -188,33 +188,33 @@ VALUES (
        CONVERT(DATE , '07/17/08')
        );
 
-INSERT INTO COSTCENTERS ( 
+INSERT INTO BIL.COSTCENTERS ( 
        COSTCENTER_CODE , 
        COSTCENTER_NAME
-                        ) 
+                            ) 
 VALUES ( 
        100 , 
        'Room & Board'
        );
 
-INSERT INTO ITEMS ( 
+INSERT INTO BIL.ITEMS ( 
        ITEM_CODE , 
        DESCRIPTION , 
        PRICE
-                  ) 
+                      ) 
 VALUES ( 
        2000 , 
        'Semi-prv room' , 
        200
        );
 
-INSERT INTO ORDERS ( 
+INSERT INTO BIL.ORDERS ( 
        ORDER_ID , 
        ORDER_DATE , 
        COSTCENTER_CODE , 
        ITEM_CODE , 
        STAY_ID
-                   ) 
+                       ) 
 VALUES ( 
        1 , 
        CONVERT(DATE , '07/14/08') , 
