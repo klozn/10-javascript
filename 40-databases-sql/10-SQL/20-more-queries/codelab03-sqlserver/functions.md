@@ -1,6 +1,4 @@
-/*Functions
-=========
-*/
+**Exercises - functions**
 
 --1. Display the PersonID the full name in capitals and the PreferredName lowercase in upper case, for all people whose personId is in the range between 10 and 20.
 --2. Display the fullname uppercase and lowercase for all employees whose search name contains 'amy' 

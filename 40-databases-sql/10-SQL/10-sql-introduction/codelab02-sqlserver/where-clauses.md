@@ -1,6 +1,4 @@
-**Exercises**
-
--- **Exercises**
+**Exercises - where clauses**
 
 --1. Display all Orderlines (ID, OrderId, stockItemId, Description) that have an ordered quantity higher then 350
 --2. Display all Orderlines (ID, OrderId, stockItemId, Description) that have an ordered quantity different from 1

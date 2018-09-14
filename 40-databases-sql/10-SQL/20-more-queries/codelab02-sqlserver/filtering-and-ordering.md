@@ -1,3 +1,6 @@
+**Exercises - filtering and ordering**
+
+
 -- 1. Display the FullName and PreferredName of all people with preferredName 'Amy'
 -- 2. Display StockItemID, StockItemName and Size of all stockItems with size M
 -- 3. Display the CustomerID, CustomerName and CreditLimit for customer having a creditlimit higher than 3000

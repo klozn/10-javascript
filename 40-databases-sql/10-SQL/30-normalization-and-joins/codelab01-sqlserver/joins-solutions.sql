@@ -1,99 +1,168 @@
 /*
-Joins
-=====
+**Exercises solution - Joins**
 */
 
 -- 1. Display the StockItemID, StockItemName and the corresponding color name
 
-select s.StockItemID, s.StockItemName, c.ColorName
-from Warehouse.StockItems s 
-left outer join Warehouse.Colors c on s.ColorID=c.ColorID
+SELECT 
+       s.StockItemID , 
+       s.StockItemName , 
+       c.ColorName
+FROM 
+     Warehouse.StockItems AS s
+     LEFT OUTER JOIN Warehouse.Colors AS c ON s.ColorID = c.ColorID;
 
 -- 2. Display the StockItemID, StockItemName and the corresponding color name for items with a color specified
 
-select s.StockItemID, s.StockItemName, c.ColorName
-from Warehouse.StockItems s 
-left outer join Warehouse.Colors c on s.ColorID=c.ColorID
-where s.ColorID is not null; 
+SELECT 
+       s.StockItemID , 
+       s.StockItemName , 
+       c.ColorName
+FROM 
+     Warehouse.StockItems AS s
+     LEFT OUTER JOIN Warehouse.Colors AS c ON s.ColorID = c.ColorID
+WHERE s.ColorID IS NOT NULL;
 
-select s.StockItemID, s.StockItemName, c.ColorName
-from Warehouse.StockItems s 
-join Warehouse.Colors c on s.ColorID=c.ColorID; 
+SELECT 
+       s.StockItemID , 
+       s.StockItemName , 
+       c.ColorName
+FROM 
+     Warehouse.StockItems AS s
+     JOIN Warehouse.Colors AS c ON s.ColorID = c.ColorID;
 
 -- 3. Display CustomerId, CustomerName, CategoryName and buying group name 
 
-select cust.CustomerID, cust.CustomerName, cat.CustomerCategoryName, buy.BuyingGroupName
-from Sales.Customers cust
-left outer join Sales.CustomerCategories cat on cust.CustomerCategoryID=cat.CustomerCategoryID
-left outer join Sales.BuyingGroups buy on cust.BuyingGroupID=buy.BuyingGroupID;
+SELECT 
+       cust.CustomerID , 
+       cust.CustomerName , 
+       cat.CustomerCategoryName , 
+       buy.BuyingGroupName
+FROM 
+     Sales.Customers AS cust
+     LEFT OUTER JOIN Sales.CustomerCategories AS cat ON cust.CustomerCategoryID = cat.CustomerCategoryID
+     LEFT OUTER JOIN Sales.BuyingGroups AS buy ON cust.BuyingGroupID = buy.BuyingGroupID;
 
 -- 4. Display CustomerId, CustomerName, CategoryName, buying group name and delivery method
 
-select cust.CustomerID, cust.CustomerName, cat.CustomerCategoryName, buy.BuyingGroupName, del.DeliveryMethodName
-from Sales.Customers cust
-left outer join Sales.CustomerCategories cat on cust.CustomerCategoryID=cat.CustomerCategoryID
-left outer join Sales.BuyingGroups buy on cust.BuyingGroupID=buy.BuyingGroupID
-left outer join Application.DeliveryMethods del on cust.DeliveryMethodID=del.DeliveryMethodID;
+SELECT 
+       cust.CustomerID , 
+       cust.CustomerName , 
+       cat.CustomerCategoryName , 
+       buy.BuyingGroupName , 
+       del.DeliveryMethodName
+FROM 
+     Sales.Customers AS cust
+     LEFT OUTER JOIN Sales.CustomerCategories AS cat ON cust.CustomerCategoryID = cat.CustomerCategoryID
+     LEFT OUTER JOIN Sales.BuyingGroups AS buy ON cust.BuyingGroupID = buy.BuyingGroupID
+     LEFT OUTER JOIN Application.DeliveryMethods AS del ON cust.DeliveryMethodID = del.DeliveryMethodID;
 
 -- 5. Display the invoiceID, the customer name and the corresponding invoicelines together with their description and extended price for invoice 18832
 
-select i.InvoiceID, cust.CustomerName, il.InvoiceLineID, il.Description, il.ExtendedPrice
-from Sales.Invoices i
-left outer join Sales.InvoiceLines il on i.InvoiceID=il.InvoiceID
-left outer join sales.Customers cust on cust.CustomerID=i.CustomerID
-where i.InvoiceID=18832;
+SELECT 
+       i.InvoiceID , 
+       cust.CustomerName , 
+       il.InvoiceLineID , 
+       il.Description , 
+       il.ExtendedPrice
+FROM 
+     Sales.Invoices AS i
+     LEFT OUTER JOIN Sales.InvoiceLines AS il ON i.InvoiceID = il.InvoiceID
+     LEFT OUTER JOIN sales.Customers AS cust ON cust.CustomerID = i.CustomerID
+WHERE i.InvoiceID = 18832;
 
 -- 6. create an overview of all invoices together with their customer name and the sum of extended price of all invoicelines (highest invoice comes first) 
 
-select i.InvoiceID, cust.CustomerName, FORMAT(sum(il.ExtendedPrice), 'C')
-from Sales.Invoices i
-left outer join Sales.InvoiceLines il on i.InvoiceID=il.InvoiceID
-left outer join sales.Customers cust on cust.CustomerID=i.CustomerID
-group by i.InvoiceID, cust.CustomerName
-order by sum(il.ExtendedPrice) desc;
-
+SELECT 
+       i.InvoiceID , 
+       cust.CustomerName , 
+       FORMAT(SUM(il.ExtendedPrice) , 'C')
+FROM 
+     Sales.Invoices AS i
+     LEFT OUTER JOIN Sales.InvoiceLines AS il ON i.InvoiceID = il.InvoiceID
+     LEFT OUTER JOIN sales.Customers AS cust ON cust.CustomerID = i.CustomerID
+GROUP BY 
+         i.InvoiceID , 
+         cust.CustomerName
+ORDER BY 
+         SUM(il.ExtendedPrice) DESC;
 
 -- 7. Display the DeliveryMethodName and the amount of customers using this method
 
-select DeliveryMethodName, count(cust.customerId)
-from Application.DeliveryMethods del
-join sales.Customers cust on del.DeliveryMethodID=cust.DeliveryMethodID
-group by DeliveryMethodName;
+SELECT 
+       DeliveryMethodName , 
+       COUNT(cust.customerId)
+FROM 
+     Application.DeliveryMethods AS del
+     JOIN sales.Customers AS cust ON del.DeliveryMethodID = cust.DeliveryMethodID
+GROUP BY 
+         DeliveryMethodName;
 
 -- 8. Modify your query to display DeliveryMethods including those not used by any client
 
-select DeliveryMethodName, count(cust.customerId)
-from Application.DeliveryMethods del
-left outer join sales.Customers cust on del.DeliveryMethodID=cust.DeliveryMethodID
-group by DeliveryMethodName;
+SELECT 
+       DeliveryMethodName , 
+       COUNT(cust.customerId)
+FROM 
+     Application.DeliveryMethods AS del
+     LEFT OUTER JOIN sales.Customers AS cust ON del.DeliveryMethodID = cust.DeliveryMethodID
+GROUP BY 
+         DeliveryMethodName;
 
 -- 9. For each stockitem, display the Id, name, supplier name, color name, name of the inner package and name of the outer package
 
-select stock.StockItemID, stock.StockItemName, sup.SupplierName, col.ColorName, Upack.PackageTypeName, Opack.PackageTypeName
-from Warehouse.StockItems stock
-left outer join Purchasing.Suppliers sup on sup.SupplierID=stock.SupplierID
-left outer join Warehouse.Colors col on col.ColorId=stock.ColorID
-left outer join Warehouse.PackageTypes Upack on Upack.PackageTypeID=stock.UnitPackageID
-left outer join Warehouse.PackageTypes Opack on Opack.PackageTypeID=stock.OuterPackageID;
+SELECT 
+       stock.StockItemID , 
+       stock.StockItemName , 
+       sup.SupplierName , 
+       col.ColorName , 
+       Upack.PackageTypeName , 
+       Opack.PackageTypeName
+FROM 
+     Warehouse.StockItems AS stock
+     LEFT OUTER JOIN Purchasing.Suppliers AS sup ON sup.SupplierID = stock.SupplierID
+     LEFT OUTER JOIN Warehouse.Colors AS col ON col.ColorId = stock.ColorID
+     LEFT OUTER JOIN Warehouse.PackageTypes AS Upack ON Upack.PackageTypeID = stock.UnitPackageID
+     LEFT OUTER JOIN Warehouse.PackageTypes AS Opack ON Opack.PackageTypeID = stock.OuterPackageID;
 
 -- 10. Modify your query to display only those items that have a color defined
 
-select stock.StockItemID, stock.StockItemName, sup.SupplierName, col.ColorName, Upack.PackageTypeName, Opack.PackageTypeName
-from Warehouse.StockItems stock
-left outer join Purchasing.Suppliers sup on sup.SupplierID=stock.SupplierID
-join Warehouse.Colors col on col.ColorId=stock.ColorID
-left outer join Warehouse.PackageTypes Upack on Upack.PackageTypeID=stock.UnitPackageID
-left outer join Warehouse.PackageTypes Opack on Opack.PackageTypeID=stock.OuterPackageID;
+SELECT 
+       stock.StockItemID , 
+       stock.StockItemName , 
+       sup.SupplierName , 
+       col.ColorName , 
+       Upack.PackageTypeName , 
+       Opack.PackageTypeName
+FROM 
+     Warehouse.StockItems AS stock
+     LEFT OUTER JOIN Purchasing.Suppliers AS sup ON sup.SupplierID = stock.SupplierID
+     JOIN Warehouse.Colors AS col ON col.ColorId = stock.ColorID
+     LEFT OUTER JOIN Warehouse.PackageTypes AS Upack ON Upack.PackageTypeID = stock.UnitPackageID
+     LEFT OUTER JOIN Warehouse.PackageTypes AS Opack ON Opack.PackageTypeID = stock.OuterPackageID;
 
 -- 11. Provide an overview of all cities, their state, country, subregion and region
 
-select cit.CityID, cit.CityName, stat.StateProvinceName, c.CountryName, c.Subregion, c.Region
-from Application.Cities cit
-left outer join Application.StateProvinces stat on cit.StateProvinceID=stat.StateProvinceID
-left outer join Application.Countries c on c.CountryID=stat.CountryID;
+SELECT 
+       cit.CityID , 
+       cit.CityName , 
+       stat.StateProvinceName , 
+       c.CountryName , 
+       c.Subregion , 
+       c.Region
+FROM 
+     Application.Cities AS cit
+     LEFT OUTER JOIN Application.StateProvinces AS stat ON cit.StateProvinceID = stat.StateProvinceID
+     LEFT OUTER JOIN Application.Countries AS c ON c.CountryID = stat.CountryID;
 
 -- 12. Display stock items with a unitPrice cheaper than stockitem 187 (using JOIN)
 
-select stock.StockItemID, stock.StockItemName, stock.UnitPrice
-from Warehouse.StockItems stock
-join Warehouse.StockItems specific_stock on stock.UnitPrice < specific_stock.UnitPrice and specific_stock.StockItemID=187;
+SELECT 
+       stock.StockItemID , 
+       stock.StockItemName , 
+       stock.UnitPrice
+FROM 
+     Warehouse.StockItems AS stock
+     JOIN Warehouse.StockItems AS specific_stock ON stock.UnitPrice < specific_stock.UnitPrice
+                                                    AND 
+                                                    specific_stock.StockItemID = 187;

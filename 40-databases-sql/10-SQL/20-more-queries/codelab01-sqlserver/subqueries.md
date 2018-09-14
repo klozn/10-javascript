@@ -1,6 +1,6 @@
-#SQL
-
-**Exercises**
+/*
+**Exercises - subqueries**
+*/
 
 -- 1. Display the StockItem ID, Name and unit price of all stock items with a unit price higher than item 73.
 -- 2. Display the city ID, Name and State of cities in the same State as 'Abie'

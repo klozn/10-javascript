@@ -1,8 +1,5 @@
-# SQL
+**Exercises - simple select**
 
-**Exercises**
-
---**Exercises solution**
 
 --1. For each order, display all information
 --2. For each order, display OrderID, CustomerID, SalesPersonID and Order Date

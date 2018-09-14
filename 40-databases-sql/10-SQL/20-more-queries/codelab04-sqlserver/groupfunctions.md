@@ -1,7 +1,4 @@
-/*
-Group functions
-===============
-*/
+**Exercises - Group functions**
 
 -- 1. Display the CustomerName of the first Customer if sorted alphabetically by CustomerName.
 -- 2. Display the CustomerName of the last Customer if sorted alphabetically by CustomerName.

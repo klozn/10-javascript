@@ -1,7 +1,4 @@
-/*
-Joins
-=====
-*/
+**Exercises - Joins**
 
 -- 1. Display the StockItemID, StockItemName and the corresponding color name
 -- 2. Display the StockItemID, StockItemName and the corresponding color name for items with a color specified
