@@ -1,4 +1,5 @@
 -- Create a new database (Billing)
+-- create a new schema BIL
 -- Create the database model we created before for the patient billing system.
 -- Populate the model with the sample data from the exercise.
 -- Remove the newly created  data and tables.
