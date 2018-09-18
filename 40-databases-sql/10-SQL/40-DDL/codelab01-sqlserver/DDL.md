@@ -1,5 +1,8 @@
--- Create a new database (Billing)
--- create a new schema BIL
+-- Create a new database (BILLING)
+-- Create a new login (billing_owner)
+-- Create a user for BILLING database coupled to login billing_owner
+-- Add user billing-owner to db_owner role
+-- Create a new schema BIL
 -- Create the database model we created before for the patient billing system.
 -- Populate the model with the sample data from the exercise.
 -- Remove the newly created  data and tables.
