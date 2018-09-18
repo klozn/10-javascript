@@ -16,10 +16,14 @@ Microsoft provides a sample database of a fictitious company Wide World Importer
 
 - Download Microsoft® SQL Server® 2017 Express
 - Install Microsoft® SQL Server® 2017 Express
+-- enable mixed authentication mode (SQL server authentication and Windows authentication)
+-- add Current user as SQL server administrator
 - Download and install SSMS
-- Open SSMS and Connect to your local Express database (Computer_name\SQLEXPRESS)
-- Download the WideWorldImporters example database
+- Open SSMS and Connect to your local Express database (Computer_name\SQLEXPRESS, windows authentication)
+- Download the WideWorldImporters example database (WideWorldImporters-Full.bak )
 - Restore the WideWorldImporters from the backup file
+- Create a new Login (wwi_owner), and grant role membership db_owner to this login
+- Create a new connection to the WideWorldImporter database using wwi_owner
 
 https://docs.microsoft.com/nl-nl/sql/samples/wide-world-importers-what-is?view=sql-server-2017
 https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
