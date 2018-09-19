@@ -11,6 +11,7 @@ Mark keeps track of his project and freelancers in an excel sheet sample_data.xl
 
 - Create a datamodel (3NF) on paper
 - Create a new database WEB
+- create a new login WEB_owner
 - CREATE a new Schema APP
 - Create the datamodel (tables + constraints) 
 - populate the newly created datamodel with the data from the excel sheet
