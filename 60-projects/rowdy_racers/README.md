@@ -14,7 +14,10 @@ You're about to create a turn-based game called **Rowdy Racers**
     - The following code example should make it more clear: [MVC explained](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
     
 ## Technical tips for .NET
-- TODO
+- Use WPF (Windows specific)
+- Separate the Domain (and Services) from the GUI
+    - Create multiple projects in one solution to properly achieve this
+    - Look into MVC
 
 ## Description of Rowdy Racers
 
