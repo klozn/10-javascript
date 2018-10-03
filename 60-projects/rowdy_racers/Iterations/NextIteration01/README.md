@@ -112,6 +112,16 @@ if the light grenade is on a square without power.**
 5. An exploded light grenade is not active.
 6. Active and exploded light grenades cannot be picked up.
 
+:warning: **At the start of the game a number of inactive light grenades is placed on the grid.**
+1. :warning: The placement of light grenades is random.
+2. :warning: At the start of the game, 5% of the squares contains a light grenade, rounded up to an
+integer value.
+3. :warning: A light grenade cannot be placed on a wall.
+4. :warning: There can be at most a single light grenade on each square.
+5. :warning: The starting position of a player cannot contain a light grenade.
+6. :warning: For each player, at least one light grenade is placed in the area of 3x3 squares that covers
+the starting position of that player.
+
 ## Specific Use-Cases
 
 ### 1. Start new game :warning:
