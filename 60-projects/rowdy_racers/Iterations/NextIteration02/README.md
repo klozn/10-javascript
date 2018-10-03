@@ -203,7 +203,7 @@ to 3%.
 4. A teleporter cannot be placed on a wall.
 5. There can be at most a single teleporter on each square.
 6. The starting position of a player cannot contain a teleporter.
-12. 
+
 ## Specific Use-Cases
 
 ### 1. Start new game 
