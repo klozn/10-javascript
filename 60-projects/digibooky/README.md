@@ -196,7 +196,7 @@ As a librarian I want to be able to get a report on the lending history of a boo
 - Prioritization: Nice-To-Have
 
 ## DigibookyFin (Nice-To-Have)
-DigibookyFin is a stand-alone Spring boot application that runs on a different port and has its own GitHub repository.
+DigibookyFin is a stand-alone application that runs on a different port and has its own GitHub repository.
 It handles the financial administration of Digibooky, in essence it allows for the generation and sending of invoices.
 
 This is an optional application, make sure Digibooky is working properly before starting with DigibookyFin.
