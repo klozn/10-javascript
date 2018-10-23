@@ -38,10 +38,10 @@ should only be usable by - for example - an administrator.
 - Perform logging (use logging provided by .NET Core)
     - Certainly log all interactions with the application that can be defined as "errors"
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
-- Use Swagger to provide a "menu" of your WebApi
+- Use Swagger to provide a readable document of your WebApi
 - Use Lists (or HashMaps) to store your data (fake database).
     - You can also try to store it in files.
-    - DO NOT USE ENTITY FRAMEWORK
+    - (do not use entity framework)
 - You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
 should only be usable by - for example - an administrator.
 
