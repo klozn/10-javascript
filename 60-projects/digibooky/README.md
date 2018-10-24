@@ -94,8 +94,14 @@ This member should have a unique INSS (social security number), last name, first
 ### Story 6B: external mail validation upon registration
 
 Instead of doing the email validation yourself, rely on external mail validation service described below.
+
+*SOAP*
 - https://cdyne.com/downloads/SPECS_Email-Verification.pdf
 - http://ws.cdyne.com/emailverify/Emailvernotestemail.asmx?wsdl
+
+*REST*
+- https://trumail.io/documentation
+
 - Prioritization: Nice-To-Have
 
 ### Story 7: View members as Admin
