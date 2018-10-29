@@ -45,7 +45,16 @@ should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
-- TODO
+- Create a new GitHub repository (one per team)
+- Use REST (with JSON as the message / body format)
+- Use ASP.NET Core Web Api
+- Use AzureDevops for continuous integration
+- Perform logging (use logging provided by .NET Core)
+    - Certainly log all interactions with the application that can be defined as "errors"
+            - E.g.: unauthorized access, illegal arguments, exceptions in general,...
+- Use Swagger to provide a readable document of your WebApi
+- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
+
 
 ## Functional stories
 
