@@ -45,7 +45,7 @@ should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
-- Create a new GitHub repository (one per team)
+- Create a new GitHub repository 
 - Use REST (with JSON as the message / body format)
 - Use ASP.NET Core Web Api
 - Use AzureDevops for continuous integration
