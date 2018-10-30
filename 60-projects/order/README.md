@@ -142,3 +142,7 @@ As an admin user I want to have an overview of items and their stock resupply ur
 - The list of items should be ordered based on stock resupply urgency. Starting from most urgent to less urgent.
 - I should be able to provide a filter, selecting only the items that have a certain level.
     - E.g.: Give me the list of items with urgency indicator STOCK_LOW 
+    
+## Story map
+
+![Story map](Story_map_order.png)
