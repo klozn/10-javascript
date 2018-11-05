@@ -45,7 +45,16 @@ should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
-- TODO
+- Create a new GitHub repository 
+- Use REST (with JSON as the message / body format)
+- Use ASP.NET Core Web Api
+- Use AzureDevops for continuous integration
+- Perform logging (use logging provided by .NET Core)
+    - Certainly log all interactions with the application that can be defined as "errors"
+            - E.g.: unauthorized access, illegal arguments, exceptions in general,...
+- Use Swagger to provide a readable document of your WebApi
+- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
+
 
 ## Functional stories
 
@@ -133,3 +142,7 @@ As an admin user I want to have an overview of items and their stock resupply ur
 - The list of items should be ordered based on stock resupply urgency. Starting from most urgent to less urgent.
 - I should be able to provide a filter, selecting only the items that have a certain level.
     - E.g.: Give me the list of items with urgency indicator STOCK_LOW 
+    
+## Story map
+
+![Story map](Story_map_order.png)

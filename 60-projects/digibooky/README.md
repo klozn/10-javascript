@@ -30,7 +30,20 @@ should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
-- TODO
+- Create a new GitHub repository (one per team)
+- Use REST (with JSON as the message / body format)
+- Use ASP.NET Core Web Api
+- Use AzureDevops for continuous integration
+    - We'll help you with this
+- Perform logging (use logging provided by .NET Core)
+    - Certainly log all interactions with the application that can be defined as "errors"
+        - E.g.: unauthorized access, illegal arguments, exceptions in general,...
+- Use Swagger to provide a readable document of your WebApi
+- Use Lists (or HashMaps) to store your data (fake database).
+    - You can also try to store it in files.
+    - (do not use entity framework)
+- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
+should only be usable by - for example - an administrator.
 
 ## Functional Stories
 
@@ -81,8 +94,14 @@ This member should have a unique INSS (social security number), last name, first
 ### Story 6B: external mail validation upon registration
 
 Instead of doing the email validation yourself, rely on external mail validation service described below.
+
+*SOAP*
 - https://cdyne.com/downloads/SPECS_Email-Verification.pdf
 - http://ws.cdyne.com/emailverify/Emailvernotestemail.asmx?wsdl
+
+*REST*
+- https://trumail.io/documentation
+
 - Prioritization: Nice-To-Have
 
 ### Story 7: View members as Admin
@@ -196,7 +215,7 @@ As a librarian I want to be able to get a report on the lending history of a boo
 - Prioritization: Nice-To-Have
 
 ## DigibookyFin (Nice-To-Have)
-DigibookyFin is a stand-alone Spring boot application that runs on a different port and has its own GitHub repository.
+DigibookyFin is a stand-alone application that runs on a different port and has its own GitHub repository.
 It handles the financial administration of Digibooky, in essence it allows for the generation and sending of invoices.
 
 This is an optional application, make sure Digibooky is working properly before starting with DigibookyFin.
