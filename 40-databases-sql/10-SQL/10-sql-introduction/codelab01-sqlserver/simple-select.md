@@ -1,5 +1,3 @@
-# Setup
-
 **Exercises - simple select**
 
 
