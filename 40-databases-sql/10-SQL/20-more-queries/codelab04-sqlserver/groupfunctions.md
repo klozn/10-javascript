@@ -4,10 +4,10 @@
 2. Display the CustomerName of the last Customer if sorted alphabetically by CustomerName.
 3. Display the number of rows in Customers table.
 4. Display the number of values (exclude NULLs) in CreditLimit column.
-5. Display the number of NULL values in commission_pct column.
+5. Display the number of NULL values in CreditLimit column.
 6. Display the highest, lowest, and average UnitPrice of StockItems
 7. Display the SupplierID and the average unitprice of the items delivered by the supplier
-8. Modify your query to display the results only for departments 50 or 80.
+8. Modify your query to display the results only for Suppliers 10 or 12.
 9. Display the InvoiceID and the number of Invoice lines for each InvoiceID.
 10. Modify your query to display the results only for Invoice lines with an ExtendedPrice higher than 1000
 11. Modify your query again, this time display the results only for invoices with more than 4 invoicelines.
