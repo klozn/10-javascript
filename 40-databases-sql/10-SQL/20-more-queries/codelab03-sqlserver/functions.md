@@ -9,6 +9,11 @@
 7. Display the preferred name for all persons where it's length is greater than 10 characters ordered by the length descending
 8. For all customers with (203) in their phoneNumber display phone number and a new phone number using the REPLACE function. in the new phone number replace all occurrences of (203) with (204).
 9. For each stockitem, display:
+- stockItemID,
+- UnitPrice
+- UnitPricea after a raise of 12,34%
+- UnitPrice after a raise of 12,34%,  rounded to the nearest whole number.
+- UnitPrice after a raise of 12,34%, round down to a whole number.
 10. For each customer display customerId, Name, AccountOpenedDate, AccountOpenedDate minus 10 days, AccountOpenedDate plus one month, and the day difference between today and AccountOpenedDate.
 11. For each customer display ID, Name, AccountOpenedDate, number of months he is customer of the company, and number of years he is customer of the company.
 12. For each Customer display CustomerID, CustomerName, AccountOpenedDate and AccountOpenedDate plus one year.

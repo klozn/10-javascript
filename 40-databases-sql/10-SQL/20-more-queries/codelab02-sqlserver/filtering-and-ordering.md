@@ -11,16 +11,16 @@
 8. Display the CustomerID, CustomerName, CreditLimit of all customers whose name ends with an e.
 9. Display the CityID and CityName where the third letter in their name is Y.
 10. Display CountryID, CountryName for all countries who have the letters : L, J, or H in their name. Sort the query in descending order by country name.
-11. Display the CustomerID, CustomerName for all customers whose name doesn’t have the letter a. Sort the query in ascending order by name.
+11. Display the CustomerID, CustomerName for all customers whose name doesnâ€™t have the letter a. Sort the query in ascending order by name.
 12. Display all data from stock items with marketing comments
 13. Display the stock item name concatenated with the brand name, separated by hyphen and unitprice , for all stockitems with a brand whose unitprice  is in the range between 1 and 50. Sort the query in ascending order by the brand name.
 14. Display 
 Supplier name and supplier reference in the following format 'A Datum Corporation (AA20384)' named "Supllier"
 Bank account name, bank account branch and International code as follows "A Datum Corporation-Woodgrove Bank Zionsville (25986)" named "Bank"
-15. Display all suppliers where 
-no delivery method is provided and their bank account branch is 'Woodgrove Bank San Francisco'
-the bank account branch is 'Woodgrove Bank Karlstad' independent of the delivery method 
-16. Display CustomerID, CustomerName and AccountOpenedDate of customer accounts opened during October 10th, 2013 and January 1, 2014.
+15. Display all suppliers where
+- no delivery method is provided and their bank account branch is 'Woodgrove Bank San Francisco'
+- the bank account branch is 'Woodgrove Bank Karlstad' independent of the delivery method 
+16. Display CustomerID, CustomerName and AccountOpenedDate of customer accounts opened between October 10th, 2013 and January 1, 2014.
 17. Display the StockItemName, StockItemID, TaxRate , UnitPrice and calculcate the "Extended prcice" (Unitprice augmented with it's tax). Sort the query in a descending order by the extended pri e.
 18. Display the InvoiceLineID, Description and ExtendedPrice of all invoice lines with an extended price higher of equal than 5152 ordered by extended price ascencding
 19. Display the StockItemID, StockItemName and ColorID for all  stockitems whose colorId is equal to 12, 3 or 35
