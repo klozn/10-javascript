@@ -32,7 +32,22 @@ should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
-- TODO
+- Create a new GitHub repository (one per team)
+- Use REST (with JSON as the message / body format)
+- Use ASP.NET Core WebApi
+- Use Entity Framework Core
+- Use Azure DevOps Build pipeline for continuous integration
+    - We'll help you with this
+- Perform logging (use logging provided by .NET Core) 
+    - Certainly log all interactions with the application that can be defined as "errors" - E.g.: unauthorized access, illegal arguments, exceptions in general,...
+    - Also log all database queries done via EF Core
+- Use Swagger to provide a readable document of your WebApi
+- Use MS Sql Server for a database
+- Don't bother writing EF Core migrations, you can compose you database schema migrations in T-SQL
+    - Do make sure to include your T-SQL changes in a Scripts folder in the GitHub Repo, so that we can inspect the migrations done to the DB
+- Setup a transaction per HTTP call (we can help you with this)
+- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
+should only be usable by - for example - an administrator.
 
 ## Timing
 
