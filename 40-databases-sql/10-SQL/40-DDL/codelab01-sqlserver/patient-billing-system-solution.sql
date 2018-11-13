@@ -6,11 +6,12 @@ GO;
 
 BEGIN TRAN;
 
+
 -- BILLS
 CREATE TABLE BIL.BILLS ( 
              BILL_ID      INT NOT NULL , 
              BILLING_DATE DATE NOT NULL , 
-             CONSTRAINT bills_pk PRIMARY KEY(BILL_ID)
+             CONSTRAINT BILLS_PK PRIMARY KEY(BILL_ID)
                        );
 
 -- ZIPCODES
@@ -31,7 +32,7 @@ CREATE TABLE BIL.PATIENTS (
              ADDRESS    VARCHAR(200) NOT NULL , 
              ZIPCODE    INT NOT NULL , 
              CONSTRAINT PATIENTS_PK PRIMARY KEY(PATIENT_ID) , 
-             CONSTRAINT PATIENTS_ZIPCODES_FK FOREIGN KEY(ZIPCODE) REFERENCES ZIPCODES(
+             CONSTRAINT PATIENTS_ZIPCODES_FK FOREIGN KEY(ZIPCODE) REFERENCES BIL.ZIPCODES(
                                                                              ZIPCODE)
                           );
 
@@ -44,9 +45,9 @@ CREATE TABLE BIL.STAYS (
              ADMITTED_DATE   DATE NOT NULL , 
              DISCHARGED_DATE DATE NOT NULL , 
              CONSTRAINT STAYS_PK PRIMARY KEY(STAY_ID) , 
-             CONSTRAINT STAYS_PATIENTS_FK FOREIGN KEY(PATIENT_ID) REFERENCES PATIENTS(
+             CONSTRAINT STAYS_PATIENTS_FK FOREIGN KEY(PATIENT_ID) REFERENCES BIL.PATIENTS(
                                                                              PATIENT_ID) , 
-             CONSTRAINT STAYS_BILLS_FK FOREIGN KEY(BILL_ID) REFERENCES BILLS(
+             CONSTRAINT STAYS_BILLS_FK FOREIGN KEY(BILL_ID) REFERENCES BIL.BILLS(
                                                                        BILL_ID)
                        );
 
@@ -55,7 +56,7 @@ CREATE TABLE BIL.STAYS (
 CREATE TABLE BIL.PHONENUMBERS ( 
              PATIENT_ID INT NOT NULL , 
              PHONE      VARCHAR(12) NOT NULL , 
-             CONSTRAINT PHONENUMBERS_PATIENTS_FK FOREIGN KEY(PATIENT_ID) REFERENCES PATIENTS(
+             CONSTRAINT PHONENUMBERS_PATIENTS_FK FOREIGN KEY(PATIENT_ID) REFERENCES BIL.PATIENTS(
                                                                                     PATIENT_ID)
                               );
 
@@ -85,11 +86,11 @@ CREATE TABLE BIL.ORDERS (
              ITEM_CODE       INT NOT NULL , 
              STAY_ID         INT NOT NULL , 
              CONSTRAINT ORDERS_PK PRIMARY KEY(ORDER_ID) , 
-             CONSTRAINT ORDERS_COSTCENTER_FK FOREIGN KEY(COSTCENTER_CODE) REFERENCES COSTCENTERS(
+             CONSTRAINT ORDERS_COSTCENTER_FK FOREIGN KEY(COSTCENTER_CODE) REFERENCES BIL.COSTCENTERS(
                                                                                      COSTCENTER_CODE) , 
-             CONSTRAINT ORDERS_ITEMS_FK FOREIGN KEY(ITEM_CODE) REFERENCES ITEMS(
+             CONSTRAINT ORDERS_ITEMS_FK FOREIGN KEY(ITEM_CODE) REFERENCES BIL.ITEMS(
                                                                           ITEM_CODE) , 
-             CONSTRAINT ITEMS_STAYS_FK FOREIGN KEY(STAY_ID) REFERENCES STAYS(
+             CONSTRAINT ITEMS_STAYS_FK FOREIGN KEY(STAY_ID) REFERENCES BIL.STAYS(
                                                                        STAY_ID)
                         );
 
@@ -120,9 +121,10 @@ FROM
 
 -- adding data
 
-INSERT INTO BIL.ZIPCODES ( 
-       ZIPCODE , 
-       CITY , 
+
+INSERT INTO  BIL.ZIPCODES ( 
+       ZIPCODE, 
+       CITY, 
        STATE
                          ) 
 VALUES ( 
