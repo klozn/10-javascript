@@ -13,8 +13,8 @@ The JavaScript (/ ES / TS) course will be given without Code Labs but with an in
 ### **interactive**
 This folder will be used during class to demonstrate examples in the shared session. It's the most basic setup for a browser JS project.
 
-### **silly-story-generator**
-A small exercise for the students, to be given at the end of the JavaScript / EcmaScript chapter to get them familiar with writing JavaScript code. Instructions will be in the slides.
+### **codelabXX**
+The codelabs.
 
 ## Debug
 A nice way to step trough code on screen is to add VS Code launch configurations that open the html file for a project and attach the VS Code Debugger for Chrome. A launch config example for this is below.
