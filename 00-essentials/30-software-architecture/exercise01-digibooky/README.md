@@ -1,0 +1,1 @@
+Use the Digibooky project (the stories) as a reference for creating a Context, Container and (some) Component diagrams.
