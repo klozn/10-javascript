@@ -352,3 +352,4 @@ const name = person && person.getName();
 
 const name = cachedName || (cachedName = getName());
 // only gets a new cached name when cachedName is falsy
+
