@@ -7,7 +7,6 @@ however, we do think it's important you have a basic understanding of how Git wo
 ## Initialize
 
 - Create a directory named `universe`
-    - Tip: create it on a easy accessible place. E.g. in your home folder, or in c:\ (short path)
 - Initialize an empty git repository in this directory
     - Use the terminal / command line (CMD), make sure you navigate (command: `cd <PATH>`) to your working directory before initializing.
     - After successfully executing the correct command, you should receive the following message
