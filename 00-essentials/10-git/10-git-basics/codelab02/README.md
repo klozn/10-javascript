@@ -76,6 +76,24 @@ however, we do think it's important you have a basic understanding of how Git wo
         - Using the key, we can extract the original value from the blob object
             - Use command `git cat-file -p <THE_SHA1_KEY>` where you use the correct key.
                 - You should see the original contents of the `football.txt` file.
+- As said, the `.git/index` represents the staging area.
+    - The index file is binary. You cannot read it directly. But the following command shows its contents: `git ls-files --stage`
+    ```
+    100644 f5e0b64be61f3192446711edbff48f4570d2b156 0	sports/football.txt
+    ```
+    The first number are the file permissions. The second string is a hash. The last string is the path of the file.
+    - Try to remove this file, then do a `git status`. 
+    - What happened? Is the file still staged?
+    - If not, add the file again to the staging area using `git add .`
+    
+    ```
+    NOTICE
+    You could successfully remove the file from the staging area by removing the .git/index file.
+    In practise, you should never modify any file in the .git folder. Although this might work,
+    you should always use equivalent git commands. The git command will verify your action and
+    prevent you from making mistakes. Interacting with the .git dir directly will not, and you might 
+    end up breaking your git repository!
+    ```
 - Get yourself a status overview of your files. It should still return the following:
     ```
       On branch master
