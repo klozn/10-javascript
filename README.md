@@ -12,10 +12,10 @@ Feel like contributing? Great!
 
 **To contribute, use the following approach:**
 
-1. Create a **fork** of this repository.
+1. Create a [(GitHub) Fork](https://help.github.com/articles/fork-a-repo/) of this repository.
 2. Make your contribution (extra codelabs, extra slides, correcting typo's,...)
 3. Commit and Push your work to your own fork.
-4. Submit a Pull Request, using GitHub, to merge your contributions (changes) into the original repository.
+4. Submit a [(GitHub) Pull Request](https://help.github.com/articles/about-pull-requests/), using GitHub, to merge your contributions (changes) into the original repository.
 5. We'll review and accept your request, integration your contribution.
 
 For every new contribution, repeat steps 2 to 4.
