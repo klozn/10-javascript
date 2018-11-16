@@ -6,6 +6,22 @@ Contains the shared modules for both the Java and .NET track.
 
 Proper instructions on how to use this repository will be given by your Switchfully trainer-developer.
 
+## Contributing
+
+Feel like contributing? Great!
+
+**To contribute, use the following approach:**
+
+1. Create a **fork** of this repository.
+2. Make your contribution (extra codelabs, extra slides, correcting typo's,...)
+3. Commit and Push your work to your own fork.
+4. Submit a Pull Request, using GitHub, to merge your contributions (changes) into the original repository.
+5. We'll review and accept your request, integration your contribution.
+
+For every new contribution, repeat steps 2 to 4.
+
+**Note:** The `.pptx` files are password protected. Thus, only available in readonly mode by default. If you'd like to make contributions to the actual presentations, please contact us (hello@switchfully.com) to receive the master password. 
+
 ## Copyright Notice
 
 All copyright and intellectual property rights, without limitation, are retained by Switchfully (Cegeka). By using this repository - and any file included within - you agree to this statement.
