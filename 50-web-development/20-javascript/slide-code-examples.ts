@@ -117,6 +117,20 @@ function createPoint(x,y) {
 	};
 }
 
+const person = {
+	name: 'Stan',
+	address: {
+		street: 'Route 66',
+		number: 666,
+		city: 'Chicago'
+	}
+}
+
+const address = {
+	...person.address
+	number: 745
+}
+
 function aFunction(name) {
 	console.log('Hello, ' + name);
 }
@@ -353,3 +367,113 @@ const name = person && person.getName();
 const name = cachedName || (cachedName = getName());
 // only gets a new cached name when cachedName is falsy
 
+class Person {
+
+	private firstName: string;
+	private lastName: string;
+
+	constructor(firstName: string, lastName?: string) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	talk(prefix: string): string {
+		return `${prefix} My name is ${this.firstName} ${this.lastName}`;
+	}
+}
+
+interface Human {
+	name: string;
+	gender: Gender;
+	readonly birthDate: Date;
+	religion?: string;
+	talk();
+}
+
+enum Gender {
+	male = 'M',
+	female = 'F',
+	neutral = 'N'
+}
+
+function identity<T>(arg: T): T {
+	return arg;
+}
+
+interface GenericIdentityFn {
+	<T>(arg: T): T;
+}
+
+class GenericNumber<T> {
+	zeroValue: T;
+	add(x: T, y: T): T {
+		// ...
+	};
+}
+
+function buildName(firstName: string, lastName?: string) {
+	if (lastName) {
+		return firstName + " " + lastName;
+	} else {
+		return firstName;
+	}
+}
+
+function buildName(firstName: string, lastName = "Smith") {
+	// ...
+}
+
+function buildName(firstName: string, ...restOfName: string[]) {
+	return firstName + " " + restOfName.join(" ");
+}
+
+const employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+
+interface Named {
+	name: string;
+}
+
+class Person {
+	name: string;
+}
+
+let p: Named;
+// OK, because of structural typing
+p = new Person();
+
+export class Primate {
+	constructor(hasTail) {
+			this.hasTail = hasTail;
+	}
+}
+
+import { Primate } from './primate';
+
+class Person extends Primate {
+	constructor(firstName, lastName) {
+			super(false);
+			this.firstName = firstName;
+			this.lastName = lastName; 
+	}
+	...
+}
+
+
+export default class Primate {
+	constructor(hasTail) {
+			this.hasTail = hasTail;
+	}
+}
+
+import Whatever from './primate';
+
+class Person extends Whatever {
+	constructor(firstName, lastName) {
+			super(false);
+			this.firstName = firstName;
+			this.lastName = lastName; 
+	}
+	...
+}
+
+import * as Math from 'math';
