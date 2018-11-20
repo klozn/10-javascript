@@ -7,7 +7,6 @@ however, we do think it's important you have a basic understanding of how Git wo
 ## Initialize
 
 - Create a directory named `universe`
-    - Tip: create it on a easy accessible place. E.g. in your home folder, or in c:\ (short path)
 - Initialize an empty git repository in this directory
     - Use the terminal / command line (CMD), make sure you navigate (command: `cd <PATH>`) to your working directory before initializing.
     - After successfully executing the correct command, you should receive the following message
@@ -91,13 +90,23 @@ Let's now find out what happens if a file is changed and committed.
         ```
 - Open the snapshot of the latest commit
     - `git cat-file -p <KEY>`
-- Traverse the (parent) tree
-    - `git cat-file -p <KEY_OF_TREE>`
+- Traverse the tree
+    - Look at the tree of the commit: `git cat-file -p <KEY_OF_TREE>`
     - This should result in something like:
         ```
         100644 blob d573c8d5685fd17fbb287959e88dbbae78d65bee    earth.txt
         040000 tree f45cbf0cc0c5399e993080fc3ed157684f5162a1    stars
         ```
+    - Look at the parent of the commit: `git cat-file -p <KEY_OF_PARENT>`
+        ```
+        tree ac9e4d8b1ed00d9859c355606fa9b95f801cd8c3
+        author nielsdelestinne <nielsdelestinne@hotmail.com> 1515586507 +0100
+        committer nielsdelestinne <nielsdelestinne@hotmail.com> 1515586507 +0100
+        
+        creation of the universe        
+        ```
+    - And look at the tree again (this time, of the parent): `git cat-file -p <KEY_OF_TREE>`
+    
     - Compare these keys with the keys of the previous snapshot (the one you copy/pasted into a temporary file). 
         - You'll see our blob object (of earth.txt) has a different key now. Meaning, Git has created a different blob object.
         There now exist two different (blob object) versions of earth.txt in our Git repository. One containing the changes we made in the last commit, 

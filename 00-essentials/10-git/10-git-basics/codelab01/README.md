@@ -32,9 +32,6 @@ create and modify some files, add them to the stage (staging area) and commit th
         - In Windows: `Control panel > File / Folder Explorer Options > View (tab)`. 
         In the Advanced setting box, enable the `Show hidden files, folders, and drives` 
         and disable the `Hide extensions for known file types`
-- Go inside the `.git` directory
-    - There shouldn't yet be an index file (staging area)
-    - The `objects` directory should still be empty (it does contain 2 subdirectories, which should be empty as well)
 - We're all set to start creating some files!
 
 ## Creating some new files, add to stage and commit
