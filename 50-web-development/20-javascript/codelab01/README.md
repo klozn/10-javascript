@@ -19,3 +19,5 @@ To finish the exercise you don't have to change anything in the HTML and CSS, ho
 - ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
 - ### Get the UK checkbox to work
 > Write a function that converts pounds to kg and one that converts fahrenheit to celsius. Use these functions to change the weight and temperature in the story depending on if the checkbox is checked. Don't forget to add the unit of measure in the story!
+- ### Use ES6 classes
+> Now write a StoryGenerator class that you can initialise with the template, names, places and actions that contains all the logic to generate a story. You can use getters with logic to get a random name, action, place. In the end you just want to call storyGenerator.generate(...) to get a random story.
