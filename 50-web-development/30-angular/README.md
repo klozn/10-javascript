@@ -21,6 +21,7 @@
 - Check the [Reactive Forms documentation](https://angular.io/guide/reactive-forms)
 - Replace the input field from the hero-search component with a Reactive Form Control that you declare in the search component
 - Since a Reactive Form Control value can be fetched as an Observable stream of values, we don't need the search terms Subject anymore and we don't need to manually push values on it anymore. We can now use the `.valueChanges` property on the form control to get an Observable for this input field.
+- **Extra** (but useful): check the [Reactive Form Validation docs](https://angular.io/guide/form-validation#built-in-validators) and show an error message when the name is not filled in and shorter than 3 characters
 
 ### Refactor Top Heroes to a reusable component
 > The **Top Heroes** component is an ideal candidate to refactor to a reusable component.
@@ -38,6 +39,7 @@
 - Use this new component on the hero detail component
 
 ### Http interceptor
+- {duplication}
 - Check the [HttpInterceptor documentation](https://angular.io/guide/http#write-an-interceptor)
 - Write a HttpInterceptor to prefix the url of each request with the backend base url (the `http://{ip_address}:3001/api` part)
 > You'll have to clone the request, and set a new url, made from the base url and the request url. Don't forget to change the heroesUrl to just `/heroes`.
