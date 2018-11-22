@@ -20,7 +20,7 @@ document.getElementById('content').innerText = generateGreeting(user);
 ## Compiling our code
 Although we used a `.ts` extension, this code does not use anything specific to TypeScript. It's plain old Javascript.
 
-Now, inspect the `part.html` file. We're executing the following script `<script src="greetingService.js"></script>`.
+Now, inspect the `codelab01.html` file. We're executing the following script `<script src="greetingService.js"></script>`.
 
 We could try to replace `<script src="greetingService.js"></script>` with `<script src="greetingService.ts"></script>`, but that won't work. 
 
@@ -172,7 +172,7 @@ Notice that classes and interfaces play well together, letting the programmer de
 
 Now, change variable `user` so that it now holds a `Student` object: `const user = new Student('Roger', 'R.', 'Rogerson');
 
-Your final code should look like this:
+Your code should now look like this:
 ```typescript
 class Student {
 
@@ -205,3 +205,67 @@ recompile your file, then re-run the `codelab01.html` page. You should see the f
 ```
 Hello there, Roger Rogerson
 ```
+
+There's still one little problem. Update your code to change the student's `firstName` and then show their `fullName` on the page. Think about what you'd expect to be shown on the screen before you recompile and run it!
+```typescript
+class Student {
+
+    public fullName: string;
+
+    constructor(public firstName: string, public middleInitial: string, public lastName: string) {
+        this.fullName = firstName + ' ' + middleInitial + ' ' + lastName;
+    }
+
+}
+
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function generateGreeting(person: Person) {
+    return 'Hello there, ' + person.firstName + ' ' + person.lastName;
+}
+
+const user = new Student('Roger', 'R.', 'Rogerson');
+user.firstName = 'Bob';
+
+document.getElementById('content').innerText = user.fullName;
+```
+
+Did you expect this result?
+
+The reason why this happens is that `fullName` is only set in the `constructor`, when the object is created. It's actually `metadata` and should be generated based on the other properties instead of having its own state.
+
+Update `fullName` to be a `getter` instead of a field, make sure it still returns the `fullName` in the form it does right now.
+
+> This exercise you'll have to compile with the `tsc` option `--target es5`. What this means will be explained a bit more in `codelab02`.
+
+In the end, your code should look like this:
+```typescript
+class Student {
+
+  constructor(public firstName: string, public middleInitial: string, public lastName: string) {}
+
+  get fullName() {
+      return this.firstName + ' ' + this.middleInitial + ' ' + this.lastName;
+  }
+
+}
+
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function generateGreeting(person: Person) {
+    return 'Hello there, ' + person.firstName + ' ' + person.lastName;
+}
+
+const user = new Student('Roger', 'R.', 'Rogerson');
+user.firstName = 'Bob';
+
+document.getElementById('content').innerText = user.fullName;
+```
+
+Now, `fullName` returns what we expected it to return!
