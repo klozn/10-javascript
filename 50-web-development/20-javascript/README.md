@@ -9,7 +9,7 @@
 - TypeScript &rarr; `npm install -g typescript`
 
 ## Course
-The JavaScript (/ ES / TS) course will be given without Code Labs but with an interactive session with the students. With Visual Studio Code Live Share it's possible to attach the debugger to Chrome and have a shared debug session with all the students. This way the teacher can ask students to enter commands or write code in the shared session and everyone can join / take over and see the ouput on the big screen.
+The JavaScript (/ ES / TS) course will be given with an interactive session with the students. With Visual Studio Code Live Share it's possible to attach the debugger to Chrome and have a shared debug session with all the students. This way the teacher can ask students to enter commands or write code in the shared session and everyone can join / take over and see the ouput on the big screen.
 
 ## Folders
 ### **interactive**
