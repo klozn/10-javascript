@@ -41,19 +41,19 @@ A FruitTree is a Tree that has FruitItems
     - Bula (yellow)
     - Yaka (red)
 - A FruitTree has the following behavior
-    - `HarvestFruit` which will empty the array of FruitItems
+    - `harvestFruit` which will empty the array of FruitItems
     
 A Forest contains Trees
 - A Forest has the following behavior
-    - `DisplayTrees` which returns a String containing the total amount of trees in the forest and the
+    - `displayTrees` which returns a String containing the total amount of trees in the forest and the
     textual representation of every tree
-    - `ForestFire` which removes all the FruitTrees from the Forest
+    - `forestFire` which removes all the FruitTrees from the Forest
     
 Create a class that:
 - Creates a forest with 10 or more trees.
     - Some trees should be FruitTrees, give them some FruitItems!
-- Uses the DisplayTrees method
-- Uses the ForestFire method
-- Uses the DisplayTrees method again
+- Uses the displayTrees method
+- Uses the forestFire method
+- Uses the displayTrees method again
 
 
