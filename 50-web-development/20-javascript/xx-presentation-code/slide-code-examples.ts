@@ -279,6 +279,54 @@ function createIncrementer(start) {
 	return increment;
 }
 
+function delayedAction(callback) {
+	// Do some stuff that takes a while
+	callback(result);
+}
+
+function somethingAfterDelayedActionThatAlsoTakesAWhile(result, callback) {
+	// ...
+	callback(result2);
+}
+
+function theLastFunction(result2) { /* ... */ }
+
+delayedAction(function(result) {
+	somethingAfterDelayedActionThatAlsoTakesAWhile(result, function(result2) {
+		theLastFunction(result2);
+	});
+});
+
+function delayedAction() {
+	return new Promise(/* Do some stuff that takes a while */);
+}
+
+function somethingAfterDelayedActionThatAlsoTakesAWhile(result) {
+	return new Promise(/* Do some stuff that takes a while */);
+}
+
+function theLastFunction(result2) { /* ... */ }
+
+delayedAction()
+	.then(result => somethingAfterDelayedActionThatAlsoTakesAWhile(result))
+	.then(result2 => theLastFunction(result2));
+
+async function delayedAction() {
+	return await /* Some stuff that takes a while */;
+}
+
+async function somethingAfterDelayedActionThatAlsoTakesAWhile(result) {
+	return await /* Some stuff that takes a while */;
+}
+
+function theLastFunction(result2) { /* ... */ }
+
+async function execute() {
+	const result = await delayedAction();
+	const result2 = await somethingAfterDelayedActionThatAlsoTakesAWhile(result);
+	return theLastFunction(result2);
+}
+
 
 function Person(name) {​
   this.name = name;​
