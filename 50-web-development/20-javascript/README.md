@@ -26,6 +26,6 @@ A nice way to step trough code on screen is to add VS Code launch configurations
   "type": "chrome",
   "request": "launch",
   "name": "Launch interactive.html",
-  "url": "file://${workspaceFolder}/switchfully-track-shared/50-web-development/20-javascript/interactive/interactive.html"
+  "url": "file://${workspaceFolder}/switchfully-track-shared/50-web-development/20-javascript/xx-presentation-code/interactive/interactive.html"
 }
 ````
