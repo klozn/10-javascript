@@ -4,8 +4,11 @@
 
 Good news! We're hired to develop the frontend of the Örder application!
 
-As the backend, use an already existing implementation! We can provide you with one.
-- Run the backend locally, you'll frontend (GUI) will have to call its REST endpoints.
+As the backend, use an already existing implementation:
+- Your own implementation 
+- The provided implementation
+
+Run the backend locally, your frontend (GUI) will have to call its REST endpoints.
 
 **Remark 1**:
 We have provided mock-ups to give you some inspiration. However, you are free to deviate from them. 
