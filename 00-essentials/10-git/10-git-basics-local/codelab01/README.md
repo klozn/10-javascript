@@ -179,5 +179,4 @@ create and modify some files, add them to the stage (staging area) and commit th
     nothing to commit, working tree clean
     ```
 - Check the commit history
-    - You should have 3 entries: meaning we have 3 different snapshots ("picture of a certain state") to which we could revert if we wanted to 
-    (reverting is something we will cover in a later module on Git)
+    - You should have 3 entries: meaning we have 3 different snapshots ("picture of a certain state").
