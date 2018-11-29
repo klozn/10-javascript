@@ -1,4 +1,4 @@
-# CODELAB 09: RESET, CHECKOUT AND REVERT
+# CODELAB 01: RESET, CHECKOUT AND REVERT
 
 From time to time, you will want to undo certain changes you have made. 
 For this, Git provides us with the reset, checkout and revert commands (and actually even more options...).
