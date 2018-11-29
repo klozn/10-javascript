@@ -118,6 +118,7 @@ It is possible on mac or unix based systems that you have to use quotes for the 
 mac-pc:switchfully nielsd$ echo "hello world" > myfile.txt
 ```
 
+The `>` command overwrites the already existing content. The `>>` command adds the new content to the already present content.
 
 ### Conclusion to navigating your working directory using the command line (CMD) or Terminal
 
