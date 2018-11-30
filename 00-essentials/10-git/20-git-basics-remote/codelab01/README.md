@@ -1,5 +1,4 @@
-# CODELAB 01
-Init, Pushing and Pulling
+# CODELAB: Init, Pushing and Pulling
 
 # CREATE A GITHUB ACCOUNT
 
@@ -7,19 +6,20 @@ GitHub is currently the most popular online service for hosting public and priva
 While GitHub's main purpose is to host repositories, it has allowed coding to become a more social and fun experience.
 
 ## 1. Create an account on GitHub
+
+> If you already have an account on a alternative of GitHub such as Bitbucket or GitLab, you can use that service instead of GitHub.
+
 Go to [GitHub](https://github.com/) and create yourself a free account. 
 Make sure to remember your account information since you will it during the complete remainder of the course.
 
-## 2. Create a new repository on GitHub
+## 2. Create a remote repository
 Repositories are a core concept of version control (and thus Git). 
 Simply put, it is a place where the history of your work is stored.
 
-1. Login on GitHub with your newly created account and create a new repository.
+1. Login on GitHub/GitLab/... with your account and create a new repository.
 2. Name it `switchfully-version-control-git`.
 3. Keep the default options.
-4. Finalize the creation, you will receive a new screen.
-5. Keep this screen open, since you will need the information in the *'Quick setup'* section for the next lab.
-
+4. Finalize the creation
 
 # INITIALIZE YOUR LOCAL GIT REPOSITORY
 
@@ -42,7 +42,7 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-It tells us that we are on the master branch (so we are working on the main/live code), 
+It tells us that we are on the master branch (the default branch created), 
 that no previous commit has been made and that Git has nothing to commit. Let us give Git something to commit.
 
 ## 3. Create a new directory
@@ -238,10 +238,8 @@ Mostly right after you initialized the local repository.
 We can now *push*. By specifying the name of the remote (origin) and the branch name (master) 
 we will push our changes from master branch on the local repository to the master branch on the remote repository. 
 ```
-git push –u origin master
+git push origin master
 ```
-
-Don't forget the `–u` option, since it's the first time we push the (master) branch to the origin remote.
     
 When your push is complete, go on GitHub and refresh your repository page. 
 In the 'Code' tab, you should see your *readme.txt* file.
@@ -258,7 +256,7 @@ With *pull* we do the opposite, retrieving changes from the remote repository to
 Before *pushing*, your local repository should be up to date with the latest changes from the remote repository.
  
 Imagine, after some time, another developer from its own computer *clones* the remote repository, edits the *readme.txt* file 
-and *pushes* it back to the remote repository. From then on, the *readme.txt* file that is located on your computer is outdated. 
+and *pushes* it back to the remote repository. From then on, the *readme.txt* file that is located on your computer is "outdated". 
 It will remain outdated until you *pull* (update) changes from the remote repository.
 
 ## 2. Pull command
@@ -274,7 +272,7 @@ Your local repository has the exact same changes as the remote repository.
 ## 3. Pull changes
 
 To mimic a situation where someone else did make changes to the *readme.txt* file on your remote repository:
-    - Go to the repository page on GitHub
+    - Go to the repository page on GitHub (GitLab,... will have a similar feature)
     - Click on the *readme.txt* file
     - When on the *readme.txt* page, click on the pencil icon (right side) to edit the file
     - Change the text to *goodbye world* (yes, we're intentionally leaving out the *cruel* part. #NoDrama)
@@ -305,8 +303,8 @@ Fast-forward
 
 **NOTE**: Since the local *readme.txt* was unmodified, Git had no problem with merging the local *readme.txt* with the new data 
 from the remote *readme.txt* file. However, if both the local and the remote *readme.txt* would have been changed, 
-Git can potentially be unable to automatically *merge* the changes of both versions of the file. This could potentially lead to merge conflicts.
-Merging and merge-conflicts will be discussed in the Git follow-up module.
+this could have potentially led to merge conflicts.
+We'll discuss merging later on.
 
 ## 4. You're done!
 
