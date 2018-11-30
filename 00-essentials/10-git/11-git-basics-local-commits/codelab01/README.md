@@ -1,8 +1,7 @@
-# Codelab02
+# Codelab Commit
 
-This codelab will cover how Git works internally.
-When developing, you'll (hopefully) never go this deep into the internals of Git, 
-however, we do think it's important you have a basic understanding of how Git works behind the scenes.
+This codelab will cover how Git internally stores data (upon tracking and committing changes).
+In order to tackle more complex situations in Git, it's important to a basic understanding of how Git works behind the scenes.
 
 ## Initialize
 
@@ -85,14 +84,13 @@ however, we do think it's important you have a basic understanding of how Git wo
     - What happened? Is the file still staged?
     - If not, add the file again to the staging area using `git add .`
     
-    ```
-    NOTICE
-    You could successfully remove the file from the staging area by removing the .git/index file.
-    In practise, you should never modify any file in the .git folder. Although this might work,
-    you should always use equivalent git commands. The git command will verify your action and
-    prevent you from making mistakes. Interacting with the .git dir directly will not, and you might 
-    end up breaking your git repository!
-    ```
+> NOTICE:
+You could successfully remove the file from the staging area by removing the .git/index file.
+In practise, you should never modify any file in the .git folder. Although this might work,
+you should always use equivalent git commands. The git command will verify your action and
+prevent you from making mistakes. Interacting with the .git dir directly will not, and you might 
+end up breaking your git repository!
+
 - Get yourself a status overview of your files. It should still return the following:
     ```
       On branch master
@@ -120,7 +118,8 @@ however, we do think it's important you have a basic understanding of how Git wo
         author nielsdelestinne <nielsdelestinne@my-hidden-email.com> 1515574944 +0100
         committer nielsdelestinne <nielsdelestinne@my-hidden-email.com> 1515574944 +0100
         ```
-    - The other file contains the parent tree (which is referenced in the snapshot (label: 'tree')). All content is either stored as a tree or as a blob object. 
+    - The other file contains the parent tree (which is referenced in the snapshot (label: 'tree')). 
+    All data under version control is either stored as a tree or as a blob object. 
     In essence it allows for a simple directory structure for Git between all our blob objects. It will look something like this:
         ```
         100644 blob b9b612e02a6c86afc6ffe5200fde3ea832f28edd    football.txt

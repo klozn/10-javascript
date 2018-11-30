@@ -1,8 +1,4 @@
-# Codelab03
-
-Another codelab that will cover how Git works internally.
-When developing, you'll (hopefully) never go this deep into the internals of Git, 
-however, we do think it's important you have a basic understanding of how Git works behind the scenes.
+# Codelab Commit 2
 
 ## Initialize
 
@@ -15,7 +11,7 @@ however, we do think it's important you have a basic understanding of how Git wo
         ```
 - We're all set to start creating some files!
 
-## Navigating the Git internals using commands
+## Navigating the Git object using commands
 
 - Create the following directory structure, put some text in each file:
     ```
@@ -44,15 +40,17 @@ however, we do think it's important you have a basic understanding of how Git wo
         
         creation of the universe
         ```
-        - Remember how objects in Git are either:
+        - Remember how the Git objects representing our files in Git are either:
             - Blob objects (Git's way of representing files)
             - Tree objects (Git's way of representing directories / grouping files together )
+            - (The commits itself are also Git objects)
 - We're about to traverse the (parent) tree. To make things a bit easier to understand. 
 Compare this (parent) tree with the `universe` folder. 
 The `universe` folder contains 2 tracked files of which one is located in a subdirectory called `stars`.
 We'll see that this same structure is created inside our snapshot (using blob objects and tree objects).
 - Traverse the tree, use the correct key:
     - `git cat-file -p <KEY>`
+        - You should be fine by just using the first 6 (or even 4) characters of the key instead of the full key.
     - This will result in something like this:
         ```
         100644 blob 33c8f8b55425c2085bbdfcae3871d0cdf59c009a    earth.txt
@@ -106,7 +104,6 @@ Let's now find out what happens if a file is changed and committed.
         creation of the universe        
         ```
     - And look at the tree again (this time, of the parent): `git cat-file -p <KEY_OF_TREE>`
-    
     - Compare these keys with the keys of the previous snapshot (the one you copy/pasted into a temporary file). 
         - You'll see our blob object (of earth.txt) has a different key now. Meaning, Git has created a different blob object.
         There now exist two different (blob object) versions of earth.txt in our Git repository. One containing the changes we made in the last commit, 
