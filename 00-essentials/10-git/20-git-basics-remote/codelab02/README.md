@@ -1,15 +1,78 @@
-# CODELAB 02
+# CODELAB: Cloning
 
-Let's clone!
+Let's clone a remote repository. Thus, create a local repository out of an already existing remote repository!
 
-# CLONE
-We can only clone an existing Git repository.
-So, let's find one first.
+# CLONE YOUR OWN REMOTE REPOSITORY
+
+## 1. Setup
+In the previous codelab, you created your own remote repository. Let's reuse that one.
+
+Start by creating a new empty folder for this codelab in your working directory (don't reuse the one from the previous codelab. 
+However, don't throw away the folder from the previous codelab either).
+
+In it, clone your existing remote repository from the previous codelab:
+```
+git clone https://github.com/<username>/switchfully-version-control-git.git
+```
+
+After executing the clone command, inspect the output
+```
+Cloning into 'switchfully-version-control-git'...
+remote: Enumerating objects: 26, done.
+remote: Counting objects: 100% (26/26), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 26 (delta 0), reused 12 (delta 0), pack-reused 0
+Unpacking objects: 100% (26/26), done.
+```
+
+## 2. Inspect your repository
+
+Inspect the directory, it should contain all of your files + the `.git` directory.
+
+Since we cloned an entire git repository, we download the entire project history (so not just the file we see in the explorer). 
+We downloaded all objects git stores: the different versions of our files, commits, branches, references,...)
+
+Check the Git commit history (you know the command for this). See that all of your previous commits are there?
+
+Check your configured remotes (`git remote -v`), see that by cloning we have already a remote called origin configured.
+
+## 3. Commit a new file
+
+1. Create a new file, provide it with some content
+2. Let Git start tracking it by adding it to the stage
+3. Make a commit containing the current changes
+4. Check the status, notice how we're now 1 commit ahead of master on origin?
+
+## 4. Push your changes
+
+Push your changes to the configured remote. You should be able to just execute command `git push`, 
+but for clarity, execute command `git push origin master`.
+
+When your push is complete, go on GitHub and refresh your repository page. 
+In the 'Code' tab, you should see your new file with its changes.
+
+## 5. Pull changes
+
+Go back to the folder from the **previous codelab**. 
+It should still contain a local git repository configured with an `origin` remote that is pointing to `https://github.com/<username>/switchfully-version-control-git.git` as well.
+
+For now, the newly created file should not be present in this folder. But when we pull the changes from the `origin` remote, it will be there.
+
+Now, pull from the origin: `git pull origin master`.
+
+After successfully pulling, the newly created file should be present in the folder. 
+Check the commit history to see that your new commit is now part of it as well.
+
+# CLONE ANOTHER REMOTE REPOSITORY
+
+When we want to clone, we need an existing Git repository.
+Let's find one that contains some open-source code.
 
 ## 1. Find a repository to clone
 Let's go to GitHub. More specific, let's go to the top trending Java or C# repositories of the day.
 
 Surf to `https://github.com/trending/java` or `https://github.com/trending/csharp` and select yourself an interesting repository to clone.
+- sidenote: make sure the repository is not **huge**, as in, not more than a few MB to download. 
 
 1. Click on the name of the repository you want to clone
 2. You're now on the repository main GitHub page.
@@ -36,15 +99,14 @@ Surf to `https://github.com/trending/java` or `https://github.com/trending/cshar
     ```
 10. Inspect the directory, it should contain all the files (source code) you also saw on the GitHub page.
 11. You have successfully cloned an existing repository.
+    
+## 2. What does the commit history look like?
 
-## 2. What did we clone besides the actual source code?
-Since we cloned an entire git repository, we not only cloned the actual source code, 
-but we also cloned the entire history (Git objects: all the different versions of our source code files, snapshots, commits)
-
-1. Check the Git commit history (you know the command for this)
-    - You'll probably notice that the commit history is scrollable (press enter a few times, it'll scroll down)
-    - Examine some of the most recent commits
-    - To close the Git commit history, press `q`
+Check the Git commit history
+- You'll probably notice that the commit history is long and scrollable (press enter a few times, it'll scroll down)
+- Examine some of the most recent commits
+- To close the Git commit history, press `q`
+- You can add the `-n` option to specify how many commits you want to show in the history, e.g. `git log -5`
     
 ## 3. Let's try and Push some changes
 
