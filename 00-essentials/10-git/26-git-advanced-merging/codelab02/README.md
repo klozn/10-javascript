@@ -1,12 +1,12 @@
 # Codelab: evident merge
 
-We follow a similar setup from the branches codelab. Basically, we start a new branch (experimental) from the master (with commit A)
+We follow a similar setup from the branches codelab. Basically, we start a new branch (feature) from the master (with commit A)
 and make a change to it (commit B). Then, we will merge this change into the master branch.
 
 As there are only changes in the experimental branch, git has not much to do: it only needs to move the pointer
 of the branch.
 
-![image](git-simple-merge.png "image")
+![simple merge](git-simple-merge.png "Simple merge with fast forward")
 
 
 ## 1. Setup
@@ -83,4 +83,14 @@ $ git log --all --decorate --oneline --graph
 * f5c37a1 (HEAD -> master, experimental) B
 * e9dcd07 A
 
+```
+
+## 3. Remove branch
+
+The `experimental` branch has been merged into the `master` branch. All changes it contained are also 
+in the `master`. Therefore, it is no longer necessary. Delete it.
+
+```
+$ git branch -d feature
+Deleted branch feature (was 62a1301).
 ```
