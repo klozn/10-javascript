@@ -93,6 +93,8 @@ $ git log --all --decorate --oneline --graph
 * 882291e commit A
 ```
 
+This can be done if you want to start over from the setup phase.
+
 ## 2. Merge
 
 Branch *feature* has diverged from *master*. Both branches have changes to the same file, at different lines.
@@ -102,7 +104,7 @@ What will happen if we merge the *feature* branch into the *master* branch?
 * Is a new commit required?
 * What will file.txt contain?
 
-As we merge the *feature* branch into the *master* branch, we must checkout the master branch first:
+As we merge the *feature* branch into the *master* branch, we must checkout the *master* branch first:
 
 ```
 git checkout master
@@ -148,7 +150,9 @@ $ git log --all --decorate --oneline --graph
 * 882291e commit A
 ```
 
-Now, in the diagram on top, the *master* branch and the *feature* branch were pointing to the same commit M.
+## 3. Extra
+
+In the diagram on top, the *master* branch and the *feature* branch were pointing to the same commit M.
 Here, the *feature* branch is still poiting to commit C. How can you have *feature* point to commit M?
 In other words, how can you merge commit M into the  *feature* branch?
 
