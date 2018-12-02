@@ -18,6 +18,7 @@ line 2
 line 3
 line 4
 line 5
+line 6
 ```
 
 Commit to the master branch using comment `commit A`
@@ -37,6 +38,7 @@ line 2 <== modified in commit B
 line 3
 line 4
 line 5
+line 6
 ```
 
 Commit the change to *master* branch using comment `commit B`
@@ -57,20 +59,41 @@ line 2
 line 3
 line 4 <== modified in commit C
 line 5
+line 6
 ```
 
 Commit the change to feature branch using comment `commit B`
 
+### Create commit D on the master branch
+
+`git checkout master`
+
+Modify the file as follows:
+
+```
+line 1
+line 2 <== modified in commit B
+line 3
+line 4
+line 5
+line 6 <== modified in commit D
+```
+
 `file.txt` is now change on both the *master* branch and the *feature* branch.
 
-This is the result (head pointing to feature branch):
+Commit the change to master branch using comment `commit D`
+
+### Result
+
+This is the result (head pointing to master branch):
 
 ```
 $ git log --all --decorate --oneline --graph
-* 62a1301 (HEAD -> feature) commit C
-| * 1b81284 (master) commit B
+* c4b0120 (HEAD -> master) commit D
+* 77a4170 commit B
+| * 9d8f024 (feature) commit C
 |/  
-* 882291e commit A
+* f6ad194 commit A
 ```
 
 This is the situation of the first drawing.
@@ -78,19 +101,21 @@ This is the situation of the first drawing.
 ## 1bis. Setup (clone from existing git repo)
 
 ```
-git clone https://github.com/stijnhaezebrouck/codelab-non-conflicting-change.git exercise
+git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
 cd exercise
-git checkout feature
+git checkout feature    <- download feature branch from origin
+git checkout master
 ```
 
-This is the result (head pointing to feature branch):
+This is the result (head pointing to master branch):
 
 ```
 $ git log --all --decorate --oneline --graph
-* 62a1301 (HEAD -> feature) commit C
-| * 1b81284 (master) commit B
+* c4b0120 (HEAD -> master) commit D
+* 77a4170 commit B
+| * 9d8f024 (feature) commit C
 |/  
-* 882291e commit A
+* f6ad194 commit A
 ```
 
 This can be done if you want to start over from the setup phase.
@@ -118,7 +143,6 @@ Auto-merging file.txt
 Merge made by the 'recursive' strategy.
  file.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
-
 ```
 
 The following happened:
@@ -137,17 +161,19 @@ line 2 <== modified in commit B
 line 3
 line 4 <== modified in commit C
 line 5
+line 6 <== modified in commit D
 ```
 
 Branch state:
 ```
 $ git log --all --decorate --oneline --graph
-*   0a6f432 (HEAD -> master) commit M
+*   dd164e7 (HEAD -> master) commit M
 |\  
-| * 62a1301 (feature) commit C
-* | 1b81284 commit B
+| * 9d8f024 (feature) commit C
+* | c4b0120 commit D
+* | 77a4170 commit B
 |/  
-* 882291e commit A
+* f6ad194 commit A
 ```
 
 ## 3. Extra
