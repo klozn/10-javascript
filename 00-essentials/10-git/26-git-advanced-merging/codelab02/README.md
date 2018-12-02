@@ -75,3 +75,12 @@ Fast-forward                                          <-- indicates this is only
  create mode 100644 killerRobot.txt
 
 ```
+
+Show branches state after merge:
+
+```
+$ git log --all --decorate --oneline --graph
+* f5c37a1 (HEAD -> master, experimental) B
+* e9dcd07 A
+
+```
