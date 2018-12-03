@@ -1,96 +1,186 @@
-# Codelab: evident merge
+# Codelab: none conflicting merge
 
-We follow a similar setup from the branches codelab. Basically, we start a new branch (feature) from the master (with commit A)
-and make a change to it (commit B). Then, we will merge this change into the master branch.
+This time, we will merge a branch (called *feature*) with the master, while both branches have committed changes.
+Using merge, we will create a new commit into the *master* branch, which incorporates the changes of feature-branch.
 
-As there are only changes in the experimental branch, git has not much to do: it only needs to move the pointer
-of the branch.
+The changes of the *feature* branch will be included on top of the changes in the *master* branch.
 
-![simple merge](git-simple-merge.png "Simple merge with fast forward")
+![non conflicting merge](git-non-conflicting-merge.png "Non conflicting merge")
 
 
-## 1. Setup
-Create back the inital structure from branching codelab:
+## 1. Setup (manually)
+Create a new directory for this exercise and start a git repo (`git init`).
 
-*master*
+### Create commit A
+Create a file.txt with following contents:
 ```
-|-- toys
-    |-- furby.txt
-    |-- .git  
-```
-
-Commit (A)
-
-The commands are:
-```
-mkdir toys
-cd toys
-git init
-touch furby.txt
-git add furby.txt
-git commit -m "A" 
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
 ```
 
-*experimental*
-Create a branch "experimental", switch to it, then add file `killerRobot.txt` again.
-The difference with the branch-lab is that we make no additional commits to the master branch.
+Commit to the master branch using comment `commit A`
+
+### Create feature branch
+*feature*
+
+Create a feature branch `git branch feature`. Keep head pointing to the master branch.
+
+### Create commit B on the master branch
+
+Modify as follows:
 
 ```
-git checkout -b experimental
-touch killerRobot.txt
-git add killerRobot.txt
-git commit -m "B" 
+line 1
+line 2 <== modified in commit B
+line 3
+line 4
+line 5
+line 6
 ```
 
-Show the setup:
+Commit the change to *master* branch using comment `commit B`
+
+### Create commit C on the feature branch
+
+The *head* is currently pointing to the *master* branch. Have it point to the *feature* branch.
+
+`git checkout feature`
+
+Wat would be the contents of `file.txt`?
+
+Modify the file as follows:
 
 ```
-$ git log --all --decorate --oneline --graph
-* f5c37a1 (HEAD -> experimental) B
-* e9dcd07 (master) A
-
+line 1
+line 2
+line 3
+line 4 <== modified in commit C
+line 5
+line 6
 ```
 
-## 2. Merge
+Commit the change to feature branch using comment `commit B`
 
-Branch experimental has diverged from master. Take all additional changes from experimental into master:
-
-git merge wil ALWAYS merge into the HEAD (= current) branch. So the first step is switching to the branch you
-want to merge into. That is the master.
+### Create commit D on the master branch
 
 `git checkout master`
 
-Now HEAD refers to `master`
-
-then do the merge
-
-`git merge experimental`
+Modify the file as follows:
 
 ```
-$ git merge experimental
-Updating e9dcd07..f5c37a1
-Fast-forward                                          <-- indicates this is only a pointer move
- killerRobot.txt | 0
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 killerRobot.txt
-
+line 1
+line 2 <== modified in commit B
+line 3
+line 4
+line 5
+line 6 <== modified in commit D
 ```
 
-Show branches state after merge:
+`file.txt` is now change on both the *master* branch and the *feature* branch.
+
+Commit the change to master branch using comment `commit D`
+
+### Result
+
+This is the result (head pointing to master branch):
 
 ```
 $ git log --all --decorate --oneline --graph
-* f5c37a1 (HEAD -> master, experimental) B
-* e9dcd07 A
-
+* c4b0120 (HEAD -> master) commit D
+* 77a4170 commit B
+| * 9d8f024 (feature) commit C
+|/  
+* f6ad194 commit A
 ```
 
-## 3. Remove branch
+This is the situation of the first drawing.
 
-The `experimental` branch has been merged into the `master` branch. All changes it contained are also 
-in the `master`. Therefore, it is no longer necessary. Delete it.
+## 1bis. Setup (clone from existing git repo)
 
 ```
-$ git branch -d feature
-Deleted branch feature (was 62a1301).
+git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
+cd exercise
+git checkout feature    <- download feature branch from origin
+git checkout master
 ```
+
+This is the result (head pointing to master branch):
+
+```
+$ git log --all --decorate --oneline --graph
+* c4b0120 (HEAD -> master) commit D
+* 77a4170 commit B
+| * 9d8f024 (feature) commit C
+|/  
+* f6ad194 commit A
+```
+
+This can be done if you want to start over from the setup phase.
+
+## 2. Merge
+
+Branch *feature* has diverged from *master*. Both branches have changes to the same file, at different lines.
+What will happen if we merge the *feature* branch into the *master* branch? 
+* Is it possible?
+* Will the file cause a conflict?
+* Is a new commit required?
+* What will file.txt contain?
+
+As we merge the *feature* branch into the *master* branch, we must checkout the *master* branch first:
+
+```
+git checkout master
+```
+
+Now merge:
+
+```
+$ git merge feature -m "commit M"
+Auto-merging file.txt
+Merge made by the 'recursive' strategy.
+ file.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+The following happened:
+* git noticed that file.txt was modified in both branched. It automatically merged the file.
+* comparing both versions of the file, one line was changed (one insertion + 1 deletion)
+* a new commit was made using commit message "commit M". If you would have omitted the -m option, git would have prompted
+you for a commit message using the default editor.
+* master pointer was updated to commit M.
+
+What happened to file.txt?
+
+```
+$ cat file.txt
+line 1
+line 2 <== modified in commit B
+line 3
+line 4 <== modified in commit C
+line 5
+line 6 <== modified in commit D
+```
+
+Branch state:
+```
+$ git log --all --decorate --oneline --graph
+*   dd164e7 (HEAD -> master) commit M
+|\  
+| * 9d8f024 (feature) commit C
+* | c4b0120 commit D
+* | 77a4170 commit B
+|/  
+* f6ad194 commit A
+```
+
+## 3. Extra
+
+In the diagram on top, the *master* branch and the *feature* branch were pointing to the same commit M.
+Here, the *feature* branch is still poiting to commit C. How can you have *feature* point to commit M?
+In other words, how can you merge commit M into the  *feature* branch?
+
+Try now merging the *master* branch into the *feature* branch. Will that create again a new commit?
