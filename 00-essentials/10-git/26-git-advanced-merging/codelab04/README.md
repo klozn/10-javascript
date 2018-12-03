@@ -13,8 +13,8 @@ of the *feature* branch were places on top of the changes of the *master* branch
 The setup is identical to codelab 02.
 
 ```
-git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
-cd exercise
+git clone https://github.com/switchfully/git-starter-01 starter01
+cd starter01
 git checkout feature
 git checkout master
 ```

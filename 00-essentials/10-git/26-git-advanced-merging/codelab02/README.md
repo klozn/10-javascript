@@ -102,9 +102,9 @@ This is the situation of the first drawing.
 ## 1bis. Setup (clone from existing git repo)
 
 ```
-git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
-cd exercise
-git checkout feature    <- download feature branch from origin
+git clone https://github.com/switchfully/git-starter-01 starter01
+cd starter01
+git checkout feature
 git checkout master
 ```
 

@@ -14,8 +14,8 @@ will be made. Only this time, git will not be able to create the merge automatic
 The setup is identical to codelab 02.
 
 ```
-git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
-cd exercise
+git clone https://github.com/switchfully/git-starter-01 starter01
+cd starter01
 git checkout feature
 git checkout master
 ```
