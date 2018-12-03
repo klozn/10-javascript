@@ -5,7 +5,7 @@ Using merge, we will create a new commit into the *master* branch, which incorpo
 
 The changes of the *feature* branch will be included on top of the changes in the *master* branch.
 
-![non conflicting merge](git-non-conflicting-merge.png "Non conflicting merge")
+![non conflicting merge](git-merge-with-commit.png "Non conflicting merge")
 
 
 ## 1. Setup (manually)
