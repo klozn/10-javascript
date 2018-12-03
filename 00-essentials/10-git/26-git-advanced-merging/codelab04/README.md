@@ -9,7 +9,7 @@ of the *feature* branch were places on top of the changes of the *master* branch
 
 ![non conflicting rebase](git-rebase.png "Non conflicting rebase")
 
-## Setup
+## Setup (clone)
 The setup is identical to codelab 02.
 
 ```
