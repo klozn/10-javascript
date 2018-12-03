@@ -20,7 +20,30 @@ git checkout feature
 git checkout master
 ```
 
-This is the result (head pointing to feature branch):
+Make a conflicting change on the feature branch:
+
+```
+git checkout feature
+```
+
+Edit `file.txt`:
+```
+line 1
+line 2
+line 3
+line 4 <== modified in commit C
+line 5
+line 6 <== modified in commit E
+```
+
+```
+git add file.txt
+git commit -m "commit E"
+git checkout master
+```
+
+
+This is the result (head pointing to master branch):
 
 ```
 $ git log --all --decorate --oneline --graph
