@@ -1,6 +1,6 @@
 # Codelab: none conflicting rebase
 
-As with codelab 3, we start from the same situation where file.txt was modified on 2 branched.
+As with codelab 02, we start from the same situation where file.txt was modified on 2 branches (non-conflicting).
 This time, we will use a different merge strategy, called a *rebase*.
 
 With a rebase, the merges of the *feature* branch will be put between commit A and our changes. So our changes will
@@ -10,7 +10,7 @@ of the *feature* branch were places on top of the changes of the *master* branch
 ![non conflicting rebase](git-non-conflicting-rebase.png "Non conflicting rebase")
 
 ## Setup
-The setup is identical to codelab 3.
+The setup is identical to codelab 02.
 
 ```
 git clone https://github.com/stijnhaezebrouck/codelab-changed-on-branches.git exercise
