@@ -7,7 +7,7 @@ With a rebase, the merges of the *feature* branch will be put between commit A a
 be on top of the *feature* branch changes. This is different compared to the merge operation, where the changes
 of the *feature* branch were places on top of the changes of the *master* branch.
 
-![non conflicting rebase](git-non-conflicting-rebase.png "Non conflicting rebase")
+![non conflicting rebase](git-rebase.png "Non conflicting rebase")
 
 ## Setup
 The setup is identical to codelab 02.
