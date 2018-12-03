@@ -74,6 +74,8 @@ the *feature* branch).
 Commit B and commit B' are different because B' now has commit C as a parent, while commit B had commit A as a parent.
 Commits in git are immutable, so to change this a new commit B' had to be made.
 
+Look at the contents of the file `file.txt`. Is it the same as in the merge codelab?
+
 ## 3. Rebase or merge?
 
 The advantage of a rebase is that you get a flat history. With a merge, you got a history where C and B D where
