@@ -3,6 +3,7 @@
 This time, we will merge a branch (called *feature*) with the master, while both branches have committed changes.
 Using merge, we will create a new commit into the *master* branch, which incorporates the changes of feature-branch.
 
+The changes of the *feature* branch will be included on top of the changes in the *master* branch.
 
 ![non conflicting merge](git-non-conflicting-merge.png "Non conflicting merge")
 
