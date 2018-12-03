@@ -30,7 +30,7 @@ Use `reset` to unstage (and untrack) the file:
 git reset codelab03.txt
 ```
 
-**Note**: git reset defaults to HEAD. HEAD is the pointer to our last commit.
+**Note**: git reset defaults to HEAD. HEAD is the pointer to our last commit (of our current checked-out branch).
 What we're asking Git - more or less - is to reset *codelab03.txt* to the state it has on HEAD.
 Since *codelab03.txt* is new and uncommitted - meaning it doesn't exist on HEAD - the file will be unstaged.
 
@@ -89,7 +89,7 @@ To do so, execute:
 git checkout HEAD codelab03.txt
 ```
 
-**Note**: HEAD is the pointer to the last commit.
+**Note**: HEAD is the pointer to the last commit (of the current checked-out branch).
 
 *codelab03.txt* is now restored to its version of the last commit.
 
@@ -125,12 +125,12 @@ When we verify - with `git status` - if any changes are reverted by using `check
 
 If we inspect the content of *codelab03.txt* in our working directory we see it still has *"I am codelab03, updated again"* as its content.
 
-This behavior is normal. Remember that *HEAD* is a pointer to our last commit. 
+This behavior is normal. Remember that *HEAD* is a pointer to our last commit (of our current checked-out commit). 
 In our last commit *codelab03.txt* contained *"I am codelab03, updated again"*.
 
 It is in our second last commit where *codelab03.txt* contains *"I am codelab03"*.
 
-We can specify a commit using `HEAD~n`, where *n* is the n-th commit after the last one (HEAD is the pointer to the last commit).
+We can specify a commit using `HEAD~n`, where *n* is the n-th commit after the last one.
 
 E.g.:
 
@@ -224,7 +224,7 @@ Use `reset` and specify the correct commit to which we want to reset:
 git reset HEAD~2
 ```
 
-**Note**: Remember that HEAD points to our last commit ("Commit 3"), HEAD~1 to the second last commit ("Commit 2") and HEAD~2 to our third last commit ("Commit 1").
+**Note**: Remember that HEAD points to our last commit (of our current checked-out branch)("Commit 3"), HEAD~1 to the second last commit ("Commit 2") and HEAD~2 to our third last commit ("Commit 1").
 
 This should provide the following output:
 ```
@@ -293,7 +293,7 @@ Pretty neat, right?
 
 We now want to revert our last commit, which we pushed.
 
-Since HEAD is the pointer to the last commit, use it to indicate the commit to be reverted:
+Since HEAD is the pointer to the last commit (of our current checked-out branch), use it to indicate the commit to be reverted:
 ```
 git revert HEAD
 ```
