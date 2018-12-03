@@ -34,6 +34,7 @@ On your computer, open the `readme.txt` file and add a new line, below the *Hell
 Make sure to save your file
 
 1. Check the status of your local repository: 
+1. Check the status of your local repository: 
     ```
     git status
     ```
@@ -85,7 +86,7 @@ It is telling us to fix the conflicts and then commit our manual merging result
 
 So, we have merge conflicts. Oh ow...
 
-To view all the merge-conflicts, use the `diff` command on your last commit (HEAD is a pointer to the last commit made): 
+To view all the merge-conflicts, use the `diff` command on your last commit (HEAD is a pointer to the last commit made of the currently checked-out branch): 
 ```
 git diff HEAD
 ```
