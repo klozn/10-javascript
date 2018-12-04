@@ -23,7 +23,7 @@ In order to tackle more complex situations in Git, it's important to a basic und
 - Create a new file inside your `sports` working directory called `football.txt`
     - Put some text into it, make it so that it has a file size of around 25kb.
 - Again, go inside the `.git` directory
-    - There still shouldn't be an index file (staging area)
+    - There still shouldn't be an index file (used to track staging area)
     - The `objects` directory should still be empty (it does contain 2 subdirectories, which should be empty as well)
 - In other words: `football.txt` is untracked, Git is keeping no data on this file whatsoever.
 - Get yourself an overview of which files are untracked, unstaged or staged
