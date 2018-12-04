@@ -89,5 +89,5 @@ What happens if commit B and commit C were already in a remote repository and so
 > NOTICE:
 NEVER DO A REBASE IF THE CHANGES ON YOUR BRANCH ARE ALREADY ON A REMOTE BRANCH
 
-We suggest that you only do a rebase if you know exactly what your are doing. As history is rewritten, there
-is always a risk that the rewritten history was already on a remote branch.
+We suggest that you only do a rebase if you know exactly what your are doing. Rewriting history is destructive, and causes
+problems when that history is already on a remote server.
