@@ -1,5 +1,8 @@
 # Codelab: none conflicting rebase
 
+A rebase is a different kind of merge, keeping a more linear git commit history. This is an optional codelab
+which was not covered in the presentation, but mentioned in the additional topics later on.
+
 As with codelab 02, we start from the same situation where file.txt was modified on 2 branches (non-conflicting).
 This time, we will use a different merge strategy, called a *rebase*.
 
@@ -8,6 +11,9 @@ be on top of the *feature* branch changes. This is different compared to the mer
 of the *feature* branch were places on top of the changes of the *master* branch.
 
 ![non conflicting rebase](git-rebase.png "Non conflicting rebase")
+
+As you can see, there are no 'parallel' branches, every commit has only one parent. This was not the case with
+a merge, where the 'commit M' had two parent commits.
 
 ## Setup (clone)
 The setup is identical to codelab 02.
@@ -89,5 +95,5 @@ What happens if commit B and commit C were already in a remote repository and so
 > NOTICE:
 NEVER DO A REBASE IF THE CHANGES ON YOUR BRANCH ARE ALREADY ON A REMOTE BRANCH
 
-We suggest that you only do a rebase if you know exactly what your are doing. As history is rewritten, there
-is always a risk that the rewritten history was already on a remote branch.
+We suggest that you only do a rebase if you know exactly what your are doing. Rewriting history is destructive, and causes
+problems when that history is already on a remote server.
