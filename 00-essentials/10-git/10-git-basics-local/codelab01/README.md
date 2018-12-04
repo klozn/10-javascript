@@ -67,7 +67,7 @@ create and modify some files, add them to the stage (staging area) and commit th
         
         nothing added to commit but untracked files present (use "git add" to track)
         ```
-- Start tracking the `lightningmcqueen.txt` file. By doing so, it will be added to the staging area / index
+- Start tracking the `lightningmcqueen.txt` file. By doing so, it will be added to the staging area
     - `git add lightningmcqueen.txt` 
 - Get yourself a status overview of your files
     - You should now get the following result:

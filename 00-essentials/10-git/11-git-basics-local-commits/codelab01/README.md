@@ -14,7 +14,7 @@ In order to tackle more complex situations in Git, it's important to a basic und
         ```
 - Go inside your working directory, you should see the `.git` directory.
 - Go inside the `.git` directory
-    - There shouldn't yet be an index file (staging area)
+    - There shouldn't yet be an index file
     - The `objects` directory should still be empty (it does contain 2 subdirectories, which should be empty as well)
 - We're all set to start creating some files!
 
@@ -40,7 +40,8 @@ In order to tackle more complex situations in Git, it's important to a basic und
         
         nothing added to commit but untracked files present (use "git add" to track)
         ```
-- Start tracking the `football.txt` file. By doing so, it will be added to the staging area / index
+- Start tracking the `football.txt` file. By doing so, it will be added to the staging area. As git needs the `index` file to track
+what is in the staging area, git now creates the `index`.
 - Again, get yourself a status overview of your files
     - You should now get the following result:
         ```
@@ -54,7 +55,7 @@ In order to tackle more complex situations in Git, it's important to a basic und
                 new file:   football.txt
         ```
 - Go inside the `.git` directory
-    - Now, there should be an index file (staging area)! This file (and thus the staging area) will never disappear once created.
+    - Now, there should be an index file (used to track staging area)! This file will never disappear once created.
     - The `objects` directory should no longer be empty. It should contain a new directory, which should contain a file.
         - This file is actually the (heavily compressed, blob) Git object of our `football.txt` file.
             - Open it, you'll see it's unreadable (compressed, blob)
@@ -74,7 +75,7 @@ In order to tackle more complex situations in Git, it's important to a basic und
         - Using the key, we can extract the original value from the blob object
             - Use command `git cat-file -p <THE_SHA1_KEY>` where you use the correct key.
                 - You should see the original contents of the `football.txt` file.
-- As said, the `.git/index` represents the staging area.
+- As said, the `.git/index` is used by git to track staging area.
     - The index file is binary. You cannot read it directly. But the following command shows its contents: `git ls-files --stage`
     ```
     100644 f5e0b64be61f3192446711edbff48f4570d2b156 0	sports/football.txt
@@ -90,6 +91,10 @@ In practise, you should never modify any file in the .git folder. Although this 
 you should always use equivalent git commands. The git command will verify your action and
 prevent you from making mistakes. Interacting with the .git dir directly will not, and you might 
 end up breaking your git repository!
+
+> NOTICE:
+The staging area is not the only information kept by git in the index file. The index file contains also the
+file hashes from the last commit (HEAD), modification times from the working area, and hashes from the working area.
 
 - Get yourself a status overview of your files. It should still return the following:
     ```
