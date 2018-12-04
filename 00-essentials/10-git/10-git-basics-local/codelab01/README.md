@@ -49,8 +49,8 @@ create and modify some files, add them to the stage (staging area) and commit th
     ```
     - Provide each `.txt` with some (dummy) content.
 - Get yourself an overview of which files are untracked, unstaged or staged
-    - Tip 1: There's a git command for this
-    - Tip 2: Every git command should be executed from the path of your working directory (and not deeper)
+    - There's a git command for this: `git status`. It shows the working directory status. 
+    - Tip: Every git command should be executed from the path of your working directory (and not deeper)
         - E.g. `c:\switchfully\cars> git <command>`
     - You should get the following result:
         ```
