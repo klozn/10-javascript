@@ -4,7 +4,7 @@ Things do not always go the way we want. Suppose a file has been changed in anot
 We will have to decide which line is correct. The other branch, my branch, or a combination of both. Clearly,
 git cannot merge this automatically, and we will have to tell git how to deal with it.
 
-The situation actually is not different from codelab 02. File is changed on both branches, and on merge, a new commit
+The situation actually is not different from codelab 02 (we just add another commit on the feature branch). File is changed on both branches, and on merge, a new commit
 will be made. Only this time, git will not be able to create the merge automatically.
 
 ![conflicting merge](git-merge-two-commits-on-feature-drawio.png "Conflicting merge")
