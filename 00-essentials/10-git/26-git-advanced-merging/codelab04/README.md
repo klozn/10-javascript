@@ -19,7 +19,7 @@ git checkout feature
 git checkout master
 ```
 
-This is the result (head pointing to feature branch):
+This is the result (head pointing to master branch):
 
 ```
 $ git log --all --decorate --oneline --graph
