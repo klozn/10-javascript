@@ -81,7 +81,7 @@ C:\folders\switchfully> cd ..\..
 C:\> _
 ```
 
-### show the content of the current directory
+### Show the content of the current directory
 
 To show what files and other directories the current directory (which is a synonym for folder) contains use `dir` on Windows 
 and `ls` on Mac/Unix:
