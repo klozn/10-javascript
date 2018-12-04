@@ -1,7 +1,7 @@
 # Codelab: none conflicting rebase
 
 A rebase is a different kind of merge, keeping a more linear git commit history. This is an optional codelab
-which was not covered in the presentation (but mentioned in the additional topics later on).
+which was not covered in the presentation, but mentioned in the additional topics later on.
 
 As with codelab 02, we start from the same situation where file.txt was modified on 2 branches (non-conflicting).
 This time, we will use a different merge strategy, called a *rebase*.
