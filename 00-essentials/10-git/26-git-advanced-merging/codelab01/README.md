@@ -10,7 +10,7 @@ of the branch.
 
 
 ## 1. Setup
-Create back the inital structure from branching codelab:
+Create back the initial structure from branching codelab:
 
 *master*
 ```
