@@ -1,5 +1,7 @@
 # CODELAB 08: BRANCHING
 
+> Deprecated codelab. To be removed in the near future. **Do not solve...**
+
 When implementing new requirements, fixing bugs or experimenting with the code, 
 developers tend to create a copy of the whole source code (on which they can work freely).
  

@@ -1,5 +1,7 @@
 # CODELAB 01: MERGING
 
+> Deprecated codelab. To be removed in the near future. **Do not solve...**
+
 Let's get you accustomed with merging.
 
 # 1. About Merging

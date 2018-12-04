@@ -1,5 +1,7 @@
 # CODELAB 04: The purple revolt (exercise)
 
+> Deprecated codelab. To be removed in the near future. **Do not solve...**
+
 Note: make sure to regularly check the status of your local repository (with `git status`)
 and your remote repository (on GitHub). Make sure you always understand the state your repositories are in.
 
