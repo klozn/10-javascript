@@ -2,15 +2,16 @@
 
 Let's clone a remote repository. Thus, create a local repository out of an already existing remote repository!
 
-# CLONE YOUR OWN REMOTE REPOSITORY
+# Clone your own remote repository
 
 ## 1. Setup
 In the previous codelab, you created your own remote repository. Let's reuse that one.
 
-Start by creating a new empty folder for this codelab in your working directory (don't reuse the one from the previous codelab. 
-However, don't throw away the folder from the previous codelab either).
+Start by creating a new empty folder for this codelab. (don't reuse the directory from the previous codelab. 
+However, don't throw the directory from the previous codelab either).
+- So make sure your new directory is not a subdirectory of your previous codelab.
 
-In it, clone your existing remote repository from the previous codelab:
+In your new directory, clone your existing remote repository from the previous codelab:
 ```
 git clone https://github.com/<username>/switchfully-version-control-git.git
 ```
@@ -63,7 +64,7 @@ Now, pull from the origin: `git pull origin master`.
 After successfully pulling, the newly created file should be present in the folder. 
 Check the commit history to see that your new commit is now part of it as well.
 
-# CLONE ANOTHER REMOTE REPOSITORY
+# Clone another remote repository
 
 When we want to clone, we need an existing Git repository.
 Let's find one that contains some open-source code.
