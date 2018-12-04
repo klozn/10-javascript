@@ -7,8 +7,7 @@ git cannot merge this automatically, and we will have to tell git how to deal wi
 The situation actually is not different from codelab 02. File is changed on both branches, and on merge, a new commit
 will be made. Only this time, git will not be able to create the merge automatically.
 
-![conflicting merge](../codelab02/git-merge-with-commit.png "Conflicting merge")
-
+![conflicting merge](git-merge-two-commits-on-feature-drawio.png "Conflicting merge")
 
 ## 1. Setup (clone)
 The setup is identical to codelab 02.
