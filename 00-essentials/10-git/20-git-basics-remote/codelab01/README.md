@@ -1,9 +1,9 @@
 # CODELAB: Init, Pushing and Pulling
 
-# CREATE A GITHUB ACCOUNT
+# Create a GitHub account
 
 GitHub is currently the most popular online service for hosting public and private Git repositories. Public repositories are completely free of charge.
-While GitHub's main purpose is to host repositories, it has allowed coding to become a more social and fun experience.
+While GitHub's main purpose is to host repositories, it has allowed coding to become a more social and fun experience. There are other (very great) alternatives such as GitLab and BitBucket.
 
 ## 1. Create an account on GitHub
 
@@ -19,18 +19,20 @@ Simply put, it is a place where the history of your work is stored.
 1. Login on GitHub/GitLab/... with your account and create a new repository.
 2. Name it `switchfully-version-control-git`.
 3. Keep the default options.
-4. Finalize the creation
+4. Finalize the creation.
+    - By creating a 'repository' on a service like GitHub, you create a placeholder location on which a git repository can be stored.
 
-# INITIALIZE YOUR LOCAL GIT REPOSITORY
+# Initialize your local git repository
 
 Create a new folder for this codelab in your working directory.
 
-Initialize a local Git repository inside the newly created *codelab* folder:
+Initialize a local Git repository inside the newly created *codelab* folder.
+- Check the slides for the command if you don't remember.
 
-# CHECK STATUS AND COMMIT YOUR FIRST FILE
+# Check the status and commit your first file
 
 ## 1. Git status
-To see the current state of our project, type the following command into the CMD or Terminal:
+To see the current state of your working tree, type the following command into the CMD or Terminal:
 ```
 git status
 ```
@@ -56,8 +58,6 @@ Navigate to this directory
 cd version-control
 ```
 
-From this moment on, this will be the directory in which you work for the remainder of the Version Control labs.
-
 ## 3. Create a file
 Inside your *version-control* folder, create a new file using the CMD, Terminal:
 ```
@@ -66,7 +66,7 @@ echo hello world > readme.txt
 
 This will create a file *readme.txt* in your *version-control* folder. 
 
-Again, check the status of your project:
+Again, check the status of your working tree:
 ```
 git status
 ```
@@ -103,7 +103,7 @@ So, it's detecting there are untracked files present, however it's not showing t
     ```
 
 Git will ignore the context of a directory if the directory doesn't already contain tracked files. 
-However, you know by the presence of version-control/ in `git status` that there are files in there! 
+However, you know by the presence of `version-control/` in `git status` that there are files in there! 
 
 We can however aks Git to also show us the files that are included in the directories using the following command:
 ```
@@ -129,16 +129,14 @@ nothing added to commit but untracked files present (use "git add" to track)
 Git automatically detects newly created files, however it does not automatically track newly created files.
 Git expects us to tell which files to track (and which not).
 
-To make Git track our *readme.txt* file, insert the following command, if you're still inside the *switchfully* directory: 
+To make Git track our *readme.txt* file, insert the following command, when inside the *switchfully* directory: 
 `git add */readme.txt` or `git add *readme.txt` or `git add *` or `git add .`
 
 You can also use the following command if you're inside the *version-control* directory: `git add readme.txt`
 
-**Note:** all these commands will add our file to the stage:
-
----
+**Note:** all these commands will add our file to the stage (in this case: the file will be tracked).
     
-This should provide the following output:
+After tracking the file, check the working tree status. This should provide the following output:
 ```
  On branch master
  No commits yet
@@ -149,12 +147,11 @@ This should provide the following output:
 
 (or `new file:   version-control/readme.txt` if you're not inside the *version-control* directory, but one level up)
 
-Git is now tracking our *readme.txt* file, meaning that from now on Git will keep a complete history of all modifications 
+Git is now tracking our *readme.txt* file, meaning that from now on Git will be able to keep a complete history of all modifications 
 made to this file.
     
 ## 5. Commit files
 
-A commit is a snapshot of our repository, taken on the moment we entered the commit command. It allows us to look back at all the changes made over time.
 Commit your changes, use option *–m* to provide a custom message describing what it is we’re committing:
 ```
 git commit -m "Adding a simple readme file"
@@ -169,13 +166,13 @@ This should provide the following output:
 
 The last line of the output shows our file, which was created and now inserted into the local repository. 
 The number from the first line, *6858465*, is the SHA-1 key (the shorter version): the unique identifier key for our commit 
-that references the snapshot object.
+that references the commit (object).
 
-# PUSHING
+# Pushing
 
 We have committed our changes to the local repository. 
 However, we're still working completely locally. 
-In order to send our changes to the repository we created on GitHub, 
+In order to send our changes to the repository we have created on GitHub, 
 we have to *push* our changes to that remote repository. 
 
 ## 1. Inspect your (local) commits
@@ -207,7 +204,7 @@ For every commit we receive:
 ## 2. Push your commits
 We are now ready to push to our remote GitHub repository. 
 
-By doing so, we’ll have stored our complete project on a remote server (so if our computer crashes, we will still have an online back-up).
+By doing so, we’ll have stored our complete project (and its entire history) on a remote server (so if our computer crashes, we will still have an online back-up).
 Other developers will also be able to clone our work and contribute!
 
 ### Add the remote repository
@@ -217,7 +214,7 @@ Before adding the remote, check which remotes have already been configured using
 git remote -v
 ```
  
-Now, le's add the remote GitHub repository, we will name it origin, which is the default name for your main remote.
+Now, le's add the remote GitHub repository, we will name it `origin`, which is the default name for your main remote.
 As the remote address, use the url that is shown on the 'Quick Setup' page of your remote repository on GitHub:
 ```
 git remote add origin https://github.com/<username>/switchfully-version-control-git.git
@@ -231,8 +228,7 @@ git remote -v
 Try the same command, leaving out the `-v` option. See how it's less informative.
 
 
-**Note**: Adding your remote repository address is something you normally do only once for every local repository. 
-Mostly right after you initialized the local repository.
+**Note**: Adding your remote repository address is something you normally do only once for every local repository.
 
 ### Push (it real good)  
 We can now *push*. By specifying the name of the remote (origin) and the branch name (master) 
@@ -246,7 +242,7 @@ In the 'Code' tab, you should see your *readme.txt* file.
 
 **Note**: Multiple local commits can be made before doing a single push to the remote repository.
 
-# PULLING
+# Pulling
 
 With the *push* command we send our local changes to the remote repository. 
 With *pull* we do the opposite, retrieving changes from the remote repository to our local repository.
