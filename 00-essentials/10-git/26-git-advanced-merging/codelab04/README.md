@@ -86,8 +86,8 @@ by commit B' and commit C'.
 What happens if commit B and commit C were already in a remote repository and some other developer has changes on top of it?
 *It becomes a mess!*
 
-```
+> NOTICE:
 NEVER DO A REBASE IF THE CHANGES ON YOUR BRANCH ARE ALREADY ON A REMOTE BRANCH
-```
 
-To avoid this situation altogether, our recommendation is: *never ever rebase, do always a merge*.
+We suggest that you only do a rebase if you know exactly what your are doing. As history is rewritten, there
+is always a risk that the rewritten history was already on a remote branch.
