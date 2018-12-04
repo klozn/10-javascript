@@ -115,6 +115,8 @@ to stage and commit it.
 Now, this seems quite simple, as we made the changes, and we know exactly what we did. Things are much
 more complex if a another developer made many changes, and we do not know exactly what he did.
 
+## 3. Resolve conflict with IntelliJ
+
 For resolving more complex merges, you need some tooling. Intellij as really nice tools to deal with merge conflct.
 
 * Start IntelliJ (community or ultimate: both have complete git support)
@@ -133,6 +135,8 @@ For resolving more complex merges, you need some tooling. Intellij as really nic
 * For line 6: hit on one of the arrows on either side ( x >>) or (<< x) to copy the line over to the middle.
 Change line 6 in the middle to '<== modified in commit D and E'. Press the x on the other side. Now IntelliJ knows that this was the latest conflict you resolved.
 * Press button "Apply"
+
+![screenshot_merge_intelliJ](intellij-git-merge.png "Resolve conflict with IntelliJ")
 
 The conflict in `file.txt` has been resolved, but Git does not now that yet.
 IntelliJ has automatically staged `file.txt` (blue), so the only thing you need to do is telling git that it is resolved by committing it.
