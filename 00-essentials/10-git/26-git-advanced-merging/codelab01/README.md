@@ -91,6 +91,6 @@ The `experimental` branch has been merged into the `master` branch. All changes 
 in the `master`. Therefore, it is no longer necessary. Delete it.
 
 ```
-$ git branch -d feature
-Deleted branch feature (was 62a1301).
+$ git branch -d experimental
+Deleted branch experimental (was 62a1301).
 ```
