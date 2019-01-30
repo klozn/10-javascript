@@ -18,12 +18,6 @@ Create a variable `foo` with value `5`. Check the type with `typeof foo`. Assign
 Try to find out which values for each type are falsy and which are truthy. For example `'' == false`. How many can you find (without Google)?
 
 ---
-## String & Array
-Using the `string` and `array`'s prototype functions, write a function that accepts a string, converts it to an array, removes the vowels and counts how many characters are left (no, you can't just count the consonants or we'll throw an `An-Sophie` at your implementation).
-
-You can do this with one method chain thanks to the built-in `string` and `array` methods.
-
----
 ## Objects
 Write a function that accepts an `object` and prints a summary of its properties.
 
@@ -39,7 +33,48 @@ const obj = {
 
 ---
 ## Functions
-Write two `'Hello world!'` functions `helloOne()` and `helloTwo()`. Leave one Assign one of them to a variable. Try to call both functions at the top of your file / before declaring them.
+Write two `'Hello world!'` functions `helloOne()` and `helloTwo()`. Assign one of them to a variable while just declaring the other one. Try to call both functions at the top of your file / before declarion. 
+
+Do you see what happens with functions not assigned to a variable?
+
+---
+## Prototypes
+Use the following code to create an object with prototype `Person`
+
+````javascript
+function Person(name) {
+  this.name = name;
+}
+
+const slim = new Person('Slim Shady');
+````
+
+After initializing the `slim` person, add a `talk()` function to the `Person` prototype.
+
+````javascript
+  Person.prototype.talk = ...
+````
+
+Now try calling this method on the `slim` object. Does this work? What does this tell you about prototypes?
+
+---
+Now, create a second object with `slim` as prototype. The  method creates an object with its parameter as prototype.
+
+````javascript
+  const person = Object.create(slim);
+````
+
+What is the value of `person.name`? Set another value for `person.name` and check that it has changed.
+
+Now delete the value for `person.name` (you can use the `delete` keyword for this). What is the value now?
+
+What does this tell you about prototypical inheritance?
+
+---
+## String & Array
+Using the `string` and `array`'s prototype functions, write a function that accepts a string, converts it to an array, removes the vowels and counts how many characters are left (no, you can't just count the consonants or we'll throw an `An-Sophie` at your implementation).
+
+You can do this with one method chain thanks to the built-in `string` and `array` methods.
 
 ---
 ## Callbacks, Promises and Async Await
@@ -74,39 +109,6 @@ Then, refactor it to use `promises` by making the `fetchRandomDog` function retu
   </body>
 </html>
 ````
----
-## Prototypes
-Use the following code to create an object with prototype `Person`
-
-````javascript
-function Person(name) {
-  this.name = name;
-}
-
-const slim = new Person('Slim Shady');
-````
-
-After initializing the `slim` person, add a `talk()` function to the `Person` prototype.
-
-````javascript
-  Person.prototype.talk = ...
-````
-
-Now try calling this method on the `slim` object. Does this work? What does this tell you about prototypes?
-
----
-
-Now, create a second object with `slim` as prototype. The  method creates an object with its parameter as prototype.
-
-````javascript
-  const person = Object.create(slim);
-````
-
-What is the value of `person.name`? Set another value for `person.name` and check that it has changed.
-
-Now delete the value for `person.name` (you can use the `delete` keyword for this). What is the value now?
-
-What does this tell you about prototypical inheritance?
 
 ---
 ## `this`
