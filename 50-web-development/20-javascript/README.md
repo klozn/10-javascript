@@ -4,19 +4,21 @@
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Extensions (install in VS Code)
   - Debugger for Chrome
-  - VS Live Share
 - [Node / NPM](https://nodejs.org/en/download/)
 - TypeScript &rarr; `npm install -g typescript`
 
 ## Course
-The JavaScript (/ ES / TS) course will be given with an interactive session with the students. With Visual Studio Code Live Share it's possible to attach the debugger to Chrome and have a shared debug session with all the students. This way the teacher can ask students to enter commands or write code in the shared session and everyone can join / take over and see the ouput on the big screen.
+The JavaScript part of the course will be given with some small exercises in between the chapters. For the TypeScript part there are some Codelab exercises at the end of the chapter.
 
 ## Folders
 ### **interactive**
-This folder will be used during class to demonstrate examples in the shared session. It's the most basic setup for a browser JS project.
+This folder can be used during class to demonstrate code examples. It's the most basic setup for a browser JS project.
 
 ### **codelabXX**
 The codelabs.
+
+### **xx-presentation**
+Contains the presentation and accompanying exercises.
 
 ## Debug
 A nice way to step trough code on screen is to add VS Code launch configurations that open the html file for a project and attach the VS Code Debugger for Chrome. A launch config example for this is below.
