@@ -33,7 +33,7 @@ const obj = {
 
 ---
 ## Functions
-Write two `'Hello world!'` functions `helloOne()` and `helloTwo()`. Assign one of them to a variable while just declaring the other one. Try to call both functions at the top of your file / before declarion. 
+Write two `'Hello world!'` functions `helloOne()` and `helloTwo()`. Assign one of them to a variable while just declaring the other one. Try to call both functions at the top of your file / before declaration. 
 
 Do you see what happens with functions not assigned to a variable?
 
