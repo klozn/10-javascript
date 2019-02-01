@@ -14,7 +14,7 @@ To finish the exercise you don't have to change anything in the HTML and CSS, ho
 ## Stories
 - ### Replace the story text with the story template
 - ### Replace one of the placeholders with a random word (you can choose which word)
-- ### Replace the :name:, :place: and :place: placeholders with a random name, place and action from the lists
+- ### Replace the :name:, :place: and :action: placeholders with a random name, place and action from the lists
 > The random values should change every time you click the randomize button. Make sure all values get replaced!
 - ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
 - ### Get the UK checkbox to work
