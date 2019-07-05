@@ -20,6 +20,6 @@
 16. Display the department number and department name for departments located in the United Kingdom
 17. Display the ID, first name, last name for all employees working for a department in the United Kingdom
 
-![HR tables](https://github.com/cegeka/switchfully/blob/master/03-databases/01-SQL/01-sql-introduction/codelab01/hrtables.gif)
+![HR tables](https://github.com/cegeka/switchfully-track-shared/blob/master/40-databases-sql/10-introduction/oracle/setup-files-oracle/hrtables.gif)
 
 
