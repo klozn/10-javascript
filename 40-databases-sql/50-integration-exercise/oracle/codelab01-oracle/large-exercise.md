@@ -30,7 +30,7 @@ GRANT UNLIMITED TABLESPACE TO WEB;
 4. Provide an overview of all projects, their estimation and the amount of days actually spent
 5. Provide an overview of all projects, their estimation, the amount of days spent and the over/underspent in percentage
 6. Provide an overview of all projects, and their actual cost (payed to freelancers)
-7. calculate the average freelance price
+7. Calculate the average freelance price
 8. Provide an overview of all projects, their estimation, and income based on: estimation * (average hourly freelance price + 10% margin) *8
 9. Provide an overview of all freelancers and their total time spent on all projects in days
 10. Provide an overview of all freelancers, their price (day), days worked and total earnings
@@ -39,7 +39,7 @@ GRANT UNLIMITED TABLESPACE TO WEB;
 13. Provide an overview of all days spent per month
 14. Provide an overview of al zipcodes of: freelancers with a hourly rate higher than 50 and zipcodes of projects with an "u" in their name
 15. Provide an overview of states for which we have both freelancers and customers
-16. provide an overview of all days spent, per freelancer per project
+16. Provide an overview of all days spent, per freelancer per project
 
 
 

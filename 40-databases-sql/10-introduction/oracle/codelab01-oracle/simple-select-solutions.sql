@@ -47,14 +47,14 @@ order by last_name;
 --9. Display the ID, first name, last name and department number for employees working for the shipping department ordered by last name (z-a)
 
 select employee_id, first_name, last_name, department_id
-from hr.HR.EMPLOYEES
+from hr.EMPLOYEES
 where department_id=50
 order by last_name desc;
 
 --10. Display the ID, first name, last name and department number for employees working for the shipping department ordered by first name and last name(a-z)
 
 select employee_id, first_name, last_name, department_id
-from hr.HR.EMPLOYEES
+from hr.EMPLOYEES
 where department_id=50
 order by first_name, last_name;
 
@@ -66,7 +66,7 @@ where department_name like 'Shipping';
 
 
 select employee_id, first_name, last_name
-from hr.HR.EMPLOYEES
+from hr.EMPLOYEES
 where employee_id=121;
 
 --12. For each user table you have access to display all information  (tip: user_tables)
@@ -87,8 +87,8 @@ FYI: Describe is Oracle specific and is not part of the SQL standard.
 Describe REGIONS;
 Describe LOCATIONS;
 Describe DEPARTMENTS;
-Describe HR.JOBS;
-Describe HR.EMPLOYEES;
+Describe JOBS;
+Describe EMPLOYEES;
 Describe JOB_HISTORY;
 Describe COUNTRIES;
 */
@@ -143,5 +143,5 @@ where LOCATION_ID in (2400,2500,2600);
 
 
 select employee_id, first_name, last_name
-from hr.HR.EMPLOYEES
+from hr.EMPLOYEES
 where department_id in (40,80);
