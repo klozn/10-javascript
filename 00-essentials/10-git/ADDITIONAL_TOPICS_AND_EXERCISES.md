@@ -37,6 +37,7 @@ Below you'll find a list of additional topics, exercises and resources, related 
 * [Pro Git, a free online book (also available as physical edition)](https://git-scm.com/book/en/v2)
 * [Gitref, a concise reference](http://gitref.org/)
 * [Official Git documentation](https://git-scm.com/doc)
+* [A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/)
 
 ### Other: 
 - https://www.freecodecamp.org/challenges/save-your-code-revisions-forever-with-git
