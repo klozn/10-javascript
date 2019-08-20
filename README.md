@@ -18,9 +18,7 @@ Feel like contributing? Great!
 4. Submit a [(GitHub) Pull Request](https://help.github.com/articles/about-pull-requests/), to request a merge of your contributions (changes) into the original repository.
 5. We'll review and (most likely) accept your request. By doing so your contribution will become part of the original repository.
 
-For every new contribution, repeat steps 2 to 4.
-
-**Note:** The `.pptx` files are password protected. Thus, only available in readonly mode by default. If you'd like to make contributions to the actual presentations, please contact us (hello@switchfully.com) to receive the master password. 
+For every new contribution, repeat steps 2 to 4. 
 
 ## Copyright Notice
 
@@ -32,7 +30,7 @@ whenever you want.
 - **Do not** sell or (re)distribute this repository or any of its included files.
 - **Do not** make this repository or any of its included files available on websites, internal or external networks, 
 social- or other media.
-- **Do not** edit or modify any of the presentations included in this repository.
+- **Do not** edit or modify any of the presentations (included in this repository).
 - **Do not** claim / pass off this repository or any of its included files as your own.
 
 Please contact us if you have any questions about usage: hello@switchfully.com
