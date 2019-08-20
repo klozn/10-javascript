@@ -29,6 +29,7 @@ Below you'll find a list of additional topics, exercises and resources, related 
 * [Another tutorial, this time using Bitbucket, a competing service like GitHub](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 * [Collection of Git tutorials by GitHub](https://guides.github.com/)
 * [Collection of Git tutorials by Atlassian](https://www.atlassian.com/git/tutorials/)
+* [Visualizing Git](http://git-school.github.io/visualizing-git/)
 
 
 ### Advanced:
