@@ -1,5 +1,4 @@
  # Databases - SQL -  Learning Objectives
- ## SWBAT Students Will Be Able To.../I can...:
 
 - I can see the bigger picture
   - I understand that what a database is
