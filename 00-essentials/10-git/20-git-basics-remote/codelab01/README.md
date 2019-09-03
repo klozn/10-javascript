@@ -268,12 +268,12 @@ Your local repository has the exact same changes as the remote repository.
 ## 3. Pull changes
 
 To mimic a situation where someone else did make changes to the *readme.txt* file on your remote repository:
-    - Go to the repository page on GitHub (GitLab,... will have a similar feature)
-    - Click on the *readme.txt* file
-    - When on the *readme.txt* page, click on the pencil icon (right side) to edit the file
-    - Change the text to *goodbye world* (yes, we're intentionally leaving out the *cruel* part. #NoDrama)
-    - Scroll down to the *commit changes* button and click it. 
-    - We now have an updated version of the *readme.txt* file on the remote repository
+- Go to the repository page on GitHub (GitLab,... will have a similar feature)
+- Click on the *readme.txt* file
+- When on the *readme.txt* page, click on the pencil icon (right side) to edit the file
+- Change the text to *goodbye world* (yes, we're intentionally leaving out the *cruel* part. #NoDrama)
+- Scroll down to the *commit changes* button and click it. 
+- We now have an updated version of the *readme.txt* file on the remote repository
 
 Open the *readme.txt* on your computer, validate that it still has the text *hello world*
 
