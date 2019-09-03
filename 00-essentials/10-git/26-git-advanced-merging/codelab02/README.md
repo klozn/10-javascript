@@ -80,7 +80,7 @@ line 5
 line 6 <== modified in commit D
 ```
 
-`file.txt` is now change on both the *master* branch and the *feature* branch.
+`file.txt` is now changed on both the *master* branch and the *feature* branch.
 
 Commit the change to master branch using comment `commit D`
 
