@@ -26,7 +26,7 @@ The commands are:
 mkdir toys
 cd toys
 git init
-touch furby.txt
+COPY NUL "furby.txt"
 git add furby.txt
 git commit -m "A" 
 ```
@@ -37,7 +37,7 @@ The difference with the branch-lab is that we make no additional commits to the 
 
 ```
 git checkout -b experimental
-touch killerRobot.txt
+COPY NUL "killerRobot.txt"
 git add killerRobot.txt
 git commit -m "B" 
 ```
