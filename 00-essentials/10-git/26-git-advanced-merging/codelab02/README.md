@@ -63,7 +63,7 @@ line 5
 line 6
 ```
 
-Commit the change to feature branch using comment `commit B`
+Commit the change to feature branch using comment `commit C`
 
 ### Create commit D on the master branch
 
