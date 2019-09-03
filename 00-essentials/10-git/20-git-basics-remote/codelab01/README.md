@@ -214,7 +214,7 @@ Before adding the remote, check which remotes have already been configured using
 git remote -v
 ```
  
-Now, le's add the remote GitHub repository, we will name it `origin`, which is the default name for your main remote.
+Now, let's add the remote GitHub repository, we will name it `origin`, which is the default name for your main remote.
 As the remote address, use the url that is shown on the 'Quick Setup' page of your remote repository on GitHub:
 ```
 git remote add origin https://github.com/<username>/switchfully-version-control-git.git
