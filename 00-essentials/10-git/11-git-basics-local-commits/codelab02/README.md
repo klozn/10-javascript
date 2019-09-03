@@ -19,7 +19,7 @@
             |-- earth.txt
             |-- stars
                 |-- sun.txt
-        |-- .git  
+            |-- .git  
     ```
 - Start tracking both files by adding them to the stage
 - Commit the changes, use message `"creation of the universe"`
