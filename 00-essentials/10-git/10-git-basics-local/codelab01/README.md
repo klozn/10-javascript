@@ -45,7 +45,7 @@ create and modify some files, add them to the stage (staging area) and commit th
                 |-- lamborghini.txt
             | -- cheap
                 |-- lada.txt
-        |-- .git  
+            |-- .git  
     ```
     - Provide each `.txt` with some (dummy) content.
 - Get yourself an overview of which files are untracked, unstaged or staged
