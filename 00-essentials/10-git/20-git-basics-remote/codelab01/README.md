@@ -48,7 +48,7 @@ It tells us that we are on the master branch (the default branch created),
 that no previous commit has been made and that Git has nothing to commit. Let us give Git something to commit.
 
 ## 3. Create a new directory
-Still inside your *switchfully* folder, create a new folder / directory using the CMD, Terminal:
+Still inside your *codelab* folder, create a new folder / directory using the CMD, Terminal:
 ```
 mkdir version-control
 ```
@@ -88,7 +88,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 So, it's detecting there are untracked files present, however it's not showing the name...
 
 1. Let's go one level up in the directory hierarchy.
-2. Now, inside the *switchfully* folder, again, get the status:
+2. Now, inside the *codelab* folder, again, get the status:
     ```
     On branch master
     
@@ -129,7 +129,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 Git automatically detects newly created files, however it does not automatically track newly created files.
 Git expects us to tell which files to track (and which not).
 
-To make Git track our *readme.txt* file, insert the following command, when inside the *switchfully* directory: 
+To make Git track our *readme.txt* file, insert the following command, when inside the *codelab* directory: 
 `git add */readme.txt` or `git add *readme.txt` or `git add *` or `git add .`
 
 You can also use the following command if you're inside the *version-control* directory: `git add readme.txt`
