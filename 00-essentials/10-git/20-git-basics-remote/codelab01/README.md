@@ -48,7 +48,7 @@ It tells us that we are on the master branch (the default branch created),
 that no previous commit has been made and that Git has nothing to commit. Let us give Git something to commit.
 
 ## 3. Create a new directory
-Still inside your *switchfully* folder, create a new folder / directory using the CMD, Terminal:
+Still inside your *codelab* folder, create a new folder / directory using the CMD, Terminal:
 ```
 mkdir version-control
 ```
@@ -88,7 +88,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 So, it's detecting there are untracked files present, however it's not showing the name...
 
 1. Let's go one level up in the directory hierarchy.
-2. Now, inside the *switchfully* folder, again, get the status:
+2. Now, inside the *codelab* folder, again, get the status:
     ```
     On branch master
     
@@ -129,7 +129,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 Git automatically detects newly created files, however it does not automatically track newly created files.
 Git expects us to tell which files to track (and which not).
 
-To make Git track our *readme.txt* file, insert the following command, when inside the *switchfully* directory: 
+To make Git track our *readme.txt* file, insert the following command, when inside the *codelab* directory: 
 `git add */readme.txt` or `git add *readme.txt` or `git add *` or `git add .`
 
 You can also use the following command if you're inside the *version-control* directory: `git add readme.txt`
@@ -214,7 +214,7 @@ Before adding the remote, check which remotes have already been configured using
 git remote -v
 ```
  
-Now, le's add the remote GitHub repository, we will name it `origin`, which is the default name for your main remote.
+Now, let's add the remote GitHub repository, we will name it `origin`, which is the default name for your main remote.
 As the remote address, use the url that is shown on the 'Quick Setup' page of your remote repository on GitHub:
 ```
 git remote add origin https://github.com/<username>/switchfully-version-control-git.git
@@ -268,12 +268,12 @@ Your local repository has the exact same changes as the remote repository.
 ## 3. Pull changes
 
 To mimic a situation where someone else did make changes to the *readme.txt* file on your remote repository:
-    - Go to the repository page on GitHub (GitLab,... will have a similar feature)
-    - Click on the *readme.txt* file
-    - When on the *readme.txt* page, click on the pencil icon (right side) to edit the file
-    - Change the text to *goodbye world* (yes, we're intentionally leaving out the *cruel* part. #NoDrama)
-    - Scroll down to the *commit changes* button and click it. 
-    - We now have an updated version of the *readme.txt* file on the remote repository
+- Go to the repository page on GitHub (GitLab,... will have a similar feature)
+- Click on the *readme.txt* file
+- When on the *readme.txt* page, click on the pencil icon (right side) to edit the file
+- Change the text to *goodbye world* (yes, we're intentionally leaving out the *cruel* part. #NoDrama)
+- Scroll down to the *commit changes* button and click it. 
+- We now have an updated version of the *readme.txt* file on the remote repository
 
 Open the *readme.txt* on your computer, validate that it still has the text *hello world*
 
