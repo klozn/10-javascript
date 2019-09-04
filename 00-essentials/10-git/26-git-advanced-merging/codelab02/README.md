@@ -155,8 +155,11 @@ you for a commit message using the default editor.
 
 What happened to file.txt?
 
+(To display the contents of a file in the CMD / Terminal / ..., use command `type` in Windows 
+or `cat` in Unix-based systems.) 
+
 ```
-$ cat file.txt
+$ type file.txt
 line 1
 line 2 <== modified in commit B
 line 3
