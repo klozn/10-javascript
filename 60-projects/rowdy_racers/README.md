@@ -6,22 +6,36 @@ You're about to create a turn-based game called **Rowdy Racers**
 
 ## Technical tips for JAVA
 - Use Java's 2D API to draw shapes and images
-- Use Java Swing to create the GUI
-    - You can use Java AWT directly, but it will be easier to use 2D API and Swing
+    - Use Java Swing to create the GUI
+        - You can use Java AWT directly (native 2D used by Java Swing), but it will be easier to use 2D API and Swing
+        - Alternatively, you can use JavaFX, it's the big/better brother, successor of Java Swing (but also a bit more complicated).
 - (Optionally) Apply the MVC (Model-View-Controller) design pattern
     - It will make sure your domain model (POJO's, e.g. `Player`, `Item`,...) is separated 
     from the GUI (view) by introducing controllers.
     - The following code example should make it more clear: [MVC explained](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
+    - Or, check the Head-First Design Pattern book that is (hopefully) located near you.
     
 ## Technical tips for .NET
 - Use WPF (Windows specific)
 - Separate the Domain (and Services) from the GUI
     - Create multiple projects in one solution to properly achieve this
-    - Look into MVC
+    - Look into MVVM
+        - https://intellitect.com/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/
 
 ## Description of Rowdy Racers
 
-**Disclaimer**: This is a difficult exercise, it will definitely take you more than 1 day to solve!
+**Disclaimer**: This is a difficult exercise, it will definitely take you more than 1 day to make it 'work'! 
+It will take you more than a week to solve it properly... :)
+
+There are multiple iterations of Rowdy Racers, meaning that in a new iteration additional features might be requested, 
+or existing behavior / features needs to be modified.
+
+Start with the first iteration, the first iteration is written down below, in the remainder of this file.
+
+Only when you're finished with this iteration, take a look at the next iteration. 
+It's in `/Iterations/NextIterations01/Readme.md`
+
+Good luck, have fun.
 
 ### Rowdy Racers
 Rowdy Racers is game that is played on a grid. Each of two players try to
