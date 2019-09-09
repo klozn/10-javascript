@@ -5,9 +5,8 @@
 You're about to create a turn-based game called **Rowdy Racers**
 
 ## Technical tips for JAVA
-- Use Java's 2D API to draw shapes and images
-    - Use Java Swing or JavaFX to create the GUI
-        - JavaFX, it's the big/better brother, successor of Java Swing.
+- Use Java Swing or JavaFX to create the GUI
+    - JavaFX, it's the big/better brother, successor of Java Swing.
 - Seperate the domain from the GUI: the domain should not contain any GUI code. The GUI should not contain any of the Rowdy Racer rules (the GUI just needs to draw visual things to the screen)
     - (Optionally: You can look into the MVC (Model-View-Controller) design pattern to help you with this)
         - (The following code example should make it a bit more clear: [MVC explained](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm))
