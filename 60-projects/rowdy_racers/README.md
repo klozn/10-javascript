@@ -6,18 +6,16 @@ You're about to create a turn-based game called **Rowdy Racers**
 
 ## Technical tips for JAVA
 - Use Java's 2D API to draw shapes and images
-    - Use Java Swing to create the GUI
-        - You can use Java AWT directly (native 2D used by Java Swing), but it will be easier to use 2D API and Swing
-        - Alternatively, you can use JavaFX, it's the big/better brother, successor of Java Swing (but also a bit more complicated).
-- (Optionally) Apply the MVC (Model-View-Controller) design pattern
-    - It will make sure your domain model (POJO's, e.g. `Player`, `Item`,...) is separated 
-    from the GUI (view) by introducing controllers.
-    - The following code example should make it more clear: [MVC explained](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
-    - Or, check the Head-First Design Pattern book that is (hopefully) located near you.
+    - Use Java Swing or JavaFX to create the GUI
+        - JavaFX, it's the big/better brother, successor of Java Swing.
+- Seperate the domain from the GUI: the domain should not contain any GUI code. The GUI should not contain any of the Rowdy Racer rules (the GUI just needs to draw visual things to the screen)
+    - (Optionally: You can look into the MVC (Model-View-Controller) design pattern to help you with this)
+        - (The following code example should make it a bit more clear: [MVC explained](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm))
+        - (Or, check the Head-First Design Pattern book that is (hopefully) located near you.)
     
 ## Technical tips for .NET
 - Use WPF (Windows specific)
-- Separate the Domain (and Services) from the GUI
+- Seperate the domain from the GUI: the domain should not contain any GUI code. The GUI should not contain any of the Rowdy Racer rules (the GUI just needs to draw visual things to the screen)
     - Create multiple projects in one solution to properly achieve this
     - Look into MVVM
         - https://intellitect.com/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/
