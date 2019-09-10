@@ -2,7 +2,9 @@
 
 ![Rowdy Racers](rowdy_racers.png)
 
-You're about to create a turn-based game called **Rowdy Racers**
+You're about to create a turn-based game called **Rowdy Racers**.
+
+Please read this entire `README.md` file (diagonally) before getting started.
 
 ## Technical tips for JAVA
 - Use Java Swing or JavaFX to create the GUI
@@ -21,8 +23,8 @@ You're about to create a turn-based game called **Rowdy Racers**
 
 ## Description of Rowdy Racers
 
-**Disclaimer**: This is a difficult exercise, it will definitely take you more than 1 day to make it 'work'! 
-It will take you more than a week to solve it properly... :)
+**Disclaimer**: This is a difficult exercise, it will definitely take you more than a day to make it 'work'! 
+It will take you more than a week to make it work properly (with a flexible design, maintainable,...).
 
 There are multiple iterations of Rowdy Racers, meaning that in a new iteration additional features might be requested, 
 or existing behavior / features needs to be modified.
@@ -118,3 +120,36 @@ moved on the light grenade is blinded and loses his next 3 actions
 ## Use Case diagram
 
 ![Use Case Diagram](rowdy_racers_use_case_diagram.jpg)
+
+## Separate the Domain from the GUI
+
+Your project should be divided into 2 distinct parts:
+
+1. The **domain**
+    - Which resides in a specific package, e.g.: the `com.switchfully.project.rowdyracers.domain` package.
+2. The **GUI**
+    - Which resides in a specific package, e.g.: the `com.switchfully.project.rowdyracers.gui` package.
+    
+### Domain
+
+The domain is the representation (model) of the actual business domain of Rowdy Racers:
+
+- The domain (model) contains all the domain objects such as `Game`, `Grid`, `Square`, `Player`,...
+- The domain should contain all the business rules and functional requirements of Rowdy Racers. This means that all 
+the rules that make Rowdy Racers the game it is should be implemented in the domain, NOT in the GUI.
+- Never, ever, should any GUI code (e.g. any class from `java.awt` or `javax.swing` or `javafx`) be used in the domain. 
+Our domain should be pure and completely independent from any GUI library / framework used!
+    - Our domain is (G)UI framework agnostic, we can rather quickly use our domain in a different GUI than the current. 
+
+It is important you remember - and adhere to - these rules.
+- Otherwise, before you known it, your domain is tightly coupled with your GUI. Making it very difficult to keep a clear 
+overview of what is happening where, updates to the GUI might impact the domain, replacing the GUI with 
+another technology becomes difficult and a lot of work,...  
+
+### GUI
+
+The GUI should be as **dumb as possible**, meaning it should not implement any of the rules of Rowdy Racers. It should
+always delegate that responsibility to the domain objects.
+
+Because of this architecture / design and its clear separation of concerns, you should rather easily be able to use a 
+different GUI with the same domain.
