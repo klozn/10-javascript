@@ -1,0 +1,19 @@
+INSERT INTO HR.regions VALUES
+        ( 1
+        , 'Europe'
+        );
+
+INSERT INTO HR.regions VALUES
+        ( 2
+        , 'Americas'
+        );
+
+INSERT INTO HR.regions VALUES
+        ( 3
+        , 'Asia'
+        );
+
+INSERT INTO HR.regions VALUES
+        ( 4
+        , 'Middle East and Africa'
+        );
