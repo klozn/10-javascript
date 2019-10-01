@@ -6,19 +6,19 @@
 SELECT
   COUNTRY_NAME AS "Name",
   'Country'    AS "Type"
-FROM HR.COUNTRIES
+FROM COUNTRIES
 UNION
 SELECT
   REGION_NAME,
   'Region'
-FROM HR.REGIONS;
+FROM REGIONS;
 
 -- 2. Provide a singe list of first_name, last_name, and manager_id of those without manager and those that report to the ones without manager (using set operators)
 SELECT
   FIRST_NAME,
   LAST_NAME,
   MANAGER_ID
-FROM HR.EMPLOYEES
+FROM EMPLOYEES
 WHERE MANAGER_ID IS NULL
 UNION
 SELECT
@@ -34,7 +34,7 @@ SELECT
   last_name,
   manager_id,
   department_id
-FROM hr.employees e
+FROM employees e
 WHERE manager_id = 100
 MINUS
 SELECT
@@ -42,7 +42,7 @@ SELECT
   last_name,
   manager_id,
   department_id
-FROM hr.employees e
+FROM employees e
 WHERE department_id = 50;
 
 -- 4. Provide a singe list of first_name, last_name, manager_id, and department_id of those reporting to Stephen King and working for the Shipping department
@@ -52,7 +52,7 @@ SELECT
   last_name,
   manager_id,
   department_id
-FROM hr.employees e
+FROM employees e
 WHERE manager_id = 100
 INTERSECT
 SELECT
@@ -60,7 +60,7 @@ SELECT
   last_name,
   manager_id,
   department_id
-FROM hr.employees e
+FROM employees e
 WHERE department_id = 50;
 
 -- 5. Provide a report of first_name, last_name, manager_id and level (lvl 0,1,2)
@@ -76,7 +76,7 @@ FROM
       last_name,
       manager_id,
       0 AS lvl
-    FROM hr.employees
+    FROM employees
     WHERE manager_id IS NULL
     UNION
     SELECT
@@ -84,9 +84,9 @@ FROM
       last_name,
       manager_id,
       1 AS lvl
-    FROM hr.employees
+    FROM employees
     WHERE manager_id IN (SELECT employee_id
-                         FROM hr.employees
+                         FROM employees
                          WHERE manager_id IS NULL)
     UNION
     SELECT
@@ -94,10 +94,10 @@ FROM
       last_name,
       manager_id,
       2 AS lvl
-    FROM hr.employees
+    FROM employees
     WHERE manager_id IN (SELECT employee_id
-                         FROM hr.employees
+                         FROM employees
                          WHERE manager_id IN (SELECT employee_id
-                                              FROM hr.employees
+                                              FROM employees
                                               WHERE manager_id IS NULL)))
 ORDER BY lvl ASC;
