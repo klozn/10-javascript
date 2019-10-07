@@ -20,7 +20,7 @@ When announcing his dream of a new review system he made the following statement
 1. Create a Use Case Diagram for the product review system
 2. Create an  Activity diagram (or multiple) for the product review system
 3. Create a Class diagram for the product review system
-4. Implement the Class diagram and the relations
+4. Optional: Create a sequence diagram (or multiple) for the product review system
 
 ## Solutions
 We provided solutions for all the diagrams. 

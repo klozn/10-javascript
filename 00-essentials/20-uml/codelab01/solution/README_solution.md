@@ -43,6 +43,6 @@ A comment has a strong lifecycle dependency on a review. Once a review is deletd
   
 ![Class Diagram](Class_diagram_review_system.png)
 
-## 4. Implement the Class diagram and the relations
+### 4. Optional: Create a sequence diagram (or multiple) for the product review system
 
-No solution provided :)
+(no solution)
