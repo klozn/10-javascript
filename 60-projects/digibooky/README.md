@@ -8,42 +8,59 @@ Using these VR headsets, users can roam Digibooky's digital library, where they 
 The front end of Digibooky will run on the VR enabled computer. 
 It'll be developed in a later stadium by a company specialized in VR applications.
 
-The front-end of Digibooky will communicate with the back end of Digibooky using an HTTP(S) implementation of REST 
-using JSON as its message format. This back-end will contain the entire domain and all the business logic.
+The front-end of Digibooky will communicate with the back end of Digibooky through a REST(ful) web API (over HTTP(s)), 
+using JSON as its message format. This back end will contain the entire domain and all the business logic.
 It's your job to implement this back-end.
 
 ## Technical requirements for JAVA
 
 - Create a new GitHub repository (one per team)
-- Use REST (with JSON as the message / body format)
-- Use Spring Boot
+- Provide a REST(ful) web API (with JSON as the message / body format)
+- Use Spring Boot (latest release)
 - Use Maven
-- Use Jenkins for continuous integration
-    - We'll help you with this
+- Setup a Jenkins or Travis for continuous integration
+    - We'll help you with this...
 - Perform logging (use spring-boot-starter's logging dependencies: logback and slf4j)
     - Certainly log all interactions with the application that can be defined as "errors"
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
-- When used as an ORM exercise: use JPA (Hibernate / EclipseLink) in combination with PostgreSQL/Oracle to store and access the data in a persistent way
-    - Correctly setup and handle the transactions
-- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
-should only be usable by - for example - an administrator.
+- Include OpenAPI using Swagger(UI) to provide a readable documentation/manual of your REST(ful) web API
+- Use Lists or HashMaps to store your data (fake in-memory database).
+    - Store them in a specific class / classes (e.g. `AutherTable` or `DigibookyDatabase`)
+    - (You can also try to store it in files, but that's not recommended)
+- (This only applies when ORM/JPA has been seen): use JPA (Hibernate / EclipseLink) in combination with PostgreSQL or Oracle to store and access the data in a persistent way
+    - Correctly setup and handle the transactions.
 
 ## Technical requirements for .NET
 
 - Create a new GitHub repository (one per team)
-- Use REST (with JSON as the message / body format)
+- Provide a REST(ful) web API (with JSON as the message / body format)
 - Use ASP.NET Core Web Api
 - Use AzureDevops for continuous integration
     - We'll help you with this
 - Perform logging (use logging provided by .NET Core)
     - Certainly log all interactions with the application that can be defined as "errors"
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
-- Use Swagger to provide a readable document of your WebApi
-- Use Lists (or HashMaps) to store your data (fake database).
-    - You can also try to store it in files.
-    - (do not use entity framework)
-- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
-should only be usable by - for example - an administrator.
+- Include OpenAPI using Swagger(UI) to provide a readable documentation/manual of your REST(ful) web API
+- Use Lists or HashMaps to store your data (fake in-memory database).
+    - Store them in a specific class / classes (e.g. `AutherTable` or `DigibookyDatabase`)
+    - (You can also try to store it in files, but that's not recommended)
+- (This only applies when ORM has been seen): Use Entity Framework instead of in memory Lists,...  
+
+## Architectural Setup
+
+Provide a multi-module setup where each module (not package) represents a 'layer'.
+- Although a Layered architecture might no be the best architecture (for big projects), when used properly(!), it is actually 
+a nice way of separating concerns in your code. Read the following links:
+    - https://www.codingthearchitecture.com/2016/04/25/layers_hexagons_features_and_components.html
+    - http://www.codingthearchitecture.com/2015/03/08/package_by_component_and_architecturally_aligned_testing.html
+- We're proposing 5 layers: war (top-level), api, service, domain and infrastructure (lowest-level)
+    - But, at the very least provide an api, service and domain module.
+    - The war module can be used to package together the whole application (also contains the Main Class)
+    - The infrastructure can be used to contain code on which all other modules can depend.
+    
+Furthermore, use DTO's for encapsulating the payload of a request or of a response to/of your web API. 
+(and ideally a different DTO for the request and for the response of a call to your web API)
+- https://martinfowler.com/eaaCatalog/dataTransferObject.html  
 
 ## Functional Stories
 
@@ -59,6 +76,7 @@ As a user I want to get all books registered in the system so I can see what boo
 
 ### Story 2: Show details of book
 As a user I want to get the details of a single book so I can inspect a single book more closely.
+- ISBN, title, author & a small summary make up all of the details of a single book.
 - Prioritization: Must-Have
 
 ### Story 3: Search a book by ISBN
@@ -90,10 +108,9 @@ This member should have a unique INSS (social security number), last name, first
 - Out of scope: validation of the postal code and the city.
 - Prioritization: Must-Have
 
-
 ### Story 6B: external mail validation upon registration
-
 Instead of doing the email validation yourself, rely on external mail validation service described below.
+- Prioritization: Nice-To-Have
 
 *SOAP*
 - https://cdyne.com/downloads/SPECS_Email-Verification.pdf
@@ -101,8 +118,6 @@ Instead of doing the email validation yourself, rely on external mail validation
 
 *REST*
 - https://trumail.io/documentation
-
-- Prioritization: Nice-To-Have
 
 ### Story 7: View members as Admin
 As an admin user I want to view all members within the system so I can keep track of all the members.
@@ -124,14 +139,14 @@ let the server respond with 403 Forbidden and a custom message.
 ### Story 9: Register Librarian
 As an admin user I want to register a new Librarian user so I can have users with moderator access.
 - A librarian user contains the same information as an admin user.
-- If any other user tries to register an librarian user, 
+- If any other user tries to register a librarian user, 
 let the server respond with 403 Forbidden and a custom message.
 - Prioritization: Must-Have
 
 ### Story 10A: Register a new book
 As a librarian I want to register a new book so I can keep the collections of books relevant.
 - The ISBN, title and author's last name are required.
-- If any other user beside a librarian or admin tries to register a new book, 
+- If any other user besides a librarian or admin tries to register a new book, 
 let the server respond with 403 Forbidden and a custom message.
 - Prioritization: Must-Have
 
