@@ -9,12 +9,13 @@ beautiful engineered back-end application.
 It's your job to implement this back end application! Good luck and, more importantly, have Fun!
 
 - Please don't use the `Ö` in the naming of your files, directories or packages...
+    - Instead, use **eurder**.
 
 ## Timing
 
-To properly implement all the stories, in a test-first way with a proper design, an experienced developer will need around 3 days.
-Therefore, we've created two categories of stories: Must-Have's and Nice-To-Have's. We do advice to also work on the Nice-To-Have's,
-however you probably won't have the time to do this during the self-evaluation itself.
+To **properly** implement all the stories, in a **test-first way** with a **proper design** and **architecture**, 
+an experienced developer will need around 2-3 days, it might be more, it might be less. Therefore, we've created two categories 
+of stories: **Must-Have's** and **Nice-To-Have's**. Start with the Must-Have's, then do the Nice-To-Have's.
 
 **Must-Have stories:**
 - Story 0 (your project setup + other technical requirements)
@@ -34,14 +35,17 @@ however you probably won't have the time to do this during the self-evaluation i
 ## Technical requirements for JAVA
 
 - Create a new GitHub repository
-- Use REST (with JSON as the message / body format)
-- Use Spring Boot
-- Use Maven
+- Create a REST(ful) Web API (with JSON as the message / payload format)
+- Use Spring Boot (and Spring MVC, Spring Security,...)
+- Use Maven as the Build & Dependency Management project tool.
+    - Make it a multi-module project.
 - Perform logging (use spring-boot-starter's logging dependencies: logback and slf4j)
     - Certainly log all interactions with the application that can be defined as "errors"
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
-- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints
-should only be usable by - for example - an administrator.
+- Provide, through OpenAPI and Swagger(UI) an online manual / documentation for your Web API.
+- Use Travis or Jenkins to set up a Continuous Integration (CI) pipeline.
+- Think about Security: authentication and authorization. It is not a priority, but if you have the time, implement it properly.
+    - Until then, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
 
 ## Technical requirements for .NET
 
@@ -53,8 +57,8 @@ should only be usable by - for example - an administrator.
     - Certainly log all interactions with the application that can be defined as "errors"
             - E.g.: unauthorized access, illegal arguments, exceptions in general,...
 - Use Swagger to provide a readable document of your WebApi
-- You don't have to bother about securing your endpoints (unless told otherwise): in other words, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
-
+- Think about Security: authentication and authorization. It is not a priority, but if you have the time, implement it properly.
+    - Until then, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
 
 ## Functional stories
 
@@ -63,15 +67,15 @@ The functional requirements are written down as stories.
 ### Story 1: Create a customer account
 As an unregistered user I want to create a customer account so I can become recognized within the system.
 - Upon creation of a customer, the following data should be provided:
-    - Firstname
-    - Lastname
+    - First name
+    - Last name
     - Email address
     - Address
-    - Phonenumber
+    - Phone number
 
 ### Story 2: Add an item
 As an admin user I want to add an item so I can expand the list of available items.
-- When adding an Item, the following data should be provided
+- When adding an `Item`, the following data should be provided
     - Name
     - Description
     - Price
@@ -79,8 +83,8 @@ As an admin user I want to add an item so I can expand the list of available ite
 
 ### Story 3: Order items
 As a customer I want to order one or more items.
-- An order contains one or more item groups
-- An item group contains a selected item (id), an amount, and a shipping date. 
+- An `Order` contains one or more **item groups**
+- An `item group` contains a selected item (id), an amount, and a shipping date. 
     - The shipping date should be calculated automatically:
         - When we have the item in stock, the shipping date is set to the next day (of the order)
         - Otherwise the shipping date should be set to next week (day of order + 7 days)
@@ -142,6 +146,22 @@ As an admin user I want to have an overview of items and their stock resupply ur
 - The list of items should be ordered based on stock resupply urgency. Starting from most urgent to less urgent.
 - I should be able to provide a filter, selecting only the items that have a certain level.
     - E.g.: Give me the list of items with urgency indicator STOCK_LOW 
+
+## Additional extensions
+
+> Completely optional! Only for those that are really ahead and fully finished with all the previous requirements of Örder.
+
+A new feature request was made by the business of Örder.
+For every Item, they would like to be able to set a state (pristine, slightly damaged or damaged).
+- A slightly damaged item will receive a 5% discount when ordered. 
+- A damaged item will receive a 10% discount when ordered.
+
+This feature might impact many previous stories... You will have to change a lot of your code.
+- Until now, we had (for example) an Item "Fridge Coolio Z" which has Amount 5 (thus 5 fridges)
+    - You will now have to provide a different modeling. Each "Fridge Coolio Z" Item will represent a single fridge.
+    
+Analyse which stories are impacted by this change, analyse how you will redesign Item (hint: do you need an additional class?)
+- Ask questions when something is not clear. 
     
 ## Story map
 
