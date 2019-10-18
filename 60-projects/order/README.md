@@ -44,6 +44,7 @@ of stories: **Must-Have's** and **Nice-To-Have's**. Start with the Must-Have's, 
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
 - Provide, through OpenAPI and Swagger(UI) an online manual / documentation for your Web API.
 - Use Travis or Jenkins to set up a Continuous Integration (CI) pipeline.
+    - Additionally, but optional, deploy to Heroku!
 - Think about Security: authentication and authorization. It is not a priority, but if you have the time, implement it properly.
     - Until then, you can neglect the fact that certain endpoints should only be usable by - for example - an administrator.
 
