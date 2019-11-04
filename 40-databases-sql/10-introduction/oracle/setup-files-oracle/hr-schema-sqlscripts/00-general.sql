@@ -1,13 +1,11 @@
 set serveroutput on size 30000;
 ALTER SESSION
-SET NLS_DATE_FORMAT= 'DD-MON-RR'
-NLS_DATE_LANGUAGE = 'ENGLISH'
+    SET NLS_DATE_FORMAT= 'DD-MON-RR'
+    NLS_DATE_LANGUAGE = 'ENGLISH';
 
 
-drop user hr_student1 cascade;
-drop user hr_student2 cascade;
-
-
+DROP USER hr_student1 cascade;
+DROP USER hr_student2 cascade;
 
 
 DECLARE
@@ -26,6 +24,7 @@ BEGIN
     EXECUTE IMMEDIATE 'CREATE USER '||current_username||' IDENTIFIED BY '||current_password;
     EXECUTE IMMEDIATE 'GRANT CREATE SESSION TO '||current_username;
     EXECUTE IMMEDIATE 'GRANT CREATE TABLE TO '||current_username;
+    EXECUTE IMMEDIATE 'GRANT CREATE SEQUENCE TO '||current_username;
     EXECUTE IMMEDIATE 'GRANT UNLIMITED TABLESPACE  TO '||current_username;
 
 ---------------------------------------------------------------
