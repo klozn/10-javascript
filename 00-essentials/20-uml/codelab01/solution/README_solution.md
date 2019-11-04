@@ -39,7 +39,7 @@ Here we created an example activity diagram for Product specialist reviewing a c
 
 Both Customer and Product Specialist are considered as subclasses of the superclass User. They inherit all attributes and operations.
 
-A comment has a strong lifecycle dependency on a review. Once a review is deletd all related comments are deleted as well.  
+A comment has a strong lifecycle dependency on a review. Once a review is deleted all related comments are deleted as well.  
   
 ![Class Diagram](Class_diagram_review_system.png)
 

@@ -26,6 +26,7 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT CREATE TABLE TO '||current_username;
     EXECUTE IMMEDIATE 'GRANT CREATE SEQUENCE TO '||current_username;
     EXECUTE IMMEDIATE 'GRANT UNLIMITED TABLESPACE  TO '||current_username;
+    EXECUTE IMMEDIATE 'GRANT SEQUENCE TABLESPACE  TO '||current_username;
 
 ---------------------------------------------------------------
 
