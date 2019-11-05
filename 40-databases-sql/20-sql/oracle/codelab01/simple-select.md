@@ -20,6 +20,6 @@
 16. Display the department number and department name for departments located in the United Kingdom
 17. Display the ID, first name, last name for all employees working for a department in the United Kingdom
 
-![HR tables](../setup-files-oracle/hr-schema-sqlscripts/hrtables.gif)
+![HR tables](../../../10-introduction/oracle/setup-files-oracle/hr-schema-sqlscripts/hrtables.gif)
 
 
