@@ -32,6 +32,6 @@ We've created an oracle database on Amazon Web Services. For each user we've cre
     - Hostname: database.cuvv0osxzgmi.eu-west-3.rds.amazonaws.com
     - port: 1521
     - SID: admin
-    - username: HR_STUDENTX
-    - password: HR_STUDENTX
+    - username: HRSTUDENTX
+    - password: HRSTUDENTX
     

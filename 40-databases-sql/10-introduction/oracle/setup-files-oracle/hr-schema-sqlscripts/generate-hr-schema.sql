@@ -4,10 +4,6 @@ ALTER SESSION
     NLS_DATE_LANGUAGE = 'ENGLISH';
 
 
-DROP USER hr_student1 cascade;
-DROP USER hr_student2 cascade;
-
-
 DECLARE
     current_username VARCHAR2(12);
     current_password VARCHAR2(12);
