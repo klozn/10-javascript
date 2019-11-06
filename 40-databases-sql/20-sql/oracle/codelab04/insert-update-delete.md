@@ -9,3 +9,4 @@ Insert, Update, Delete
 6. add yourself to the table of employees  as the President
 7. update the employees currently reporting to the old President to report to you
 8. now try to remove the current President from the table of employees
+

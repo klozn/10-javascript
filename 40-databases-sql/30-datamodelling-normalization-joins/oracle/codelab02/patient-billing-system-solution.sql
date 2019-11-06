@@ -1,15 +1,3 @@
--- create user (connected as the SYSTEM USER)
-
-CREATE USER BILL IDENTIFIED BY SYSTEM;
-GRANT CREATE SESSION TO BILL;
-GRANT CREATE TABLE TO BILL;
-ALTER DATABASE DEFAULT TABLESPACE users;
-GRANT UNLIMITED TABLESPACE TO BILL;
-
--------------------------------------------
------ connect as BILL user ----------------
--------------------------------------------
-
 -- BILLS
 CREATE TABLE BILLS
 (
