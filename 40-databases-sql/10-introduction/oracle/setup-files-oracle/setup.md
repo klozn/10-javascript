@@ -26,7 +26,7 @@ You need to unlock this account before you can view the HR objects or build any 
 
 *OPTION 2: Amazon Relational Database Service (RDS)*
 
-We've created an oracle database on Amazon Web Services. For each user we've created a seperate user HR_STUDENTX  and HR_STUDENTX schema. 
+We've created an oracle database on Amazon Web Services. For each user we've created a seperate user HRSTUDENTX  and HRSTUDENTX schema. 
 
 - Create a new connection in SQL developer to the AWS cloud environment
     - Hostname: database.cuvv0osxzgmi.eu-west-3.rds.amazonaws.com
