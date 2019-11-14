@@ -106,7 +106,7 @@ These companies were never fully merged with ParkShark, they became divisions.
     
 ### Story PL1: Create a Parking lot
 **As a Manager I want to create a parking lot.**
-- A parking lot has a name, a division, a category, a (max) capacity, a contact person, and an address
+- A parking lot has a name, a category, a (max) capacity, a contact person, and an address
 - A parking lot also has a price per hour for car allocation (parking your car)
 - The contact person has a name, a mobile phone number, a telephone number, an e-mail, and an address
     - As a means of contact: 
@@ -119,13 +119,20 @@ These companies were never fully merged with ParkShark, they became divisions.
 
 ### Story PL2: Get all Parking lots
 **As a Manager I want to get an overview of all parking lots.**
-- The returned parking lots should include the id, name, division, capacity and the contact person's e-mail + telephone (nothing else)
+- The returned parking lots should include the id, name, capacity and the contact person's e-mail + telephone (nothing else)
 - Prioritization: Must-Have
 
 ### Story PL3: Get a Parking lot
 **As a Manager I want to get a single, specified, parking lot.**
 - The returned parking lot should include all the data we have of a single parking lot
 - Prioritization: Nice-To-Have
+
+### Story DIPL1: Parking lot belongs to a Division
+**As a Parking lot I want to have a Division so that I know to what division I belong**
+- As of now, every parking lot should have a division when being created, whenever a specific parking lot is returned, it should
+also include the information of the division.
+    - This story impacts Story PL1 and PL3 (not PL2)
+- Prioritization: Must-Have 
 
 ### Story ME1: Register as a Member
 **As a Person I want to register myself as a Member so that I can park my car in a parking lot of ParkShark.**
