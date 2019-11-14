@@ -225,7 +225,7 @@ indicate this. ParkShark calls this "stopping Parking spot allocation".
     - filter between all allocations, all active allocations and all stopped allocations
 - Prioritization: Nice-To-Have
 
-### Story PSA5: get all Allocations for a Parking lot
+### Story PSA5: get all parking allocations for a Parking lot
 **As a Manager I want to get an overview of all Allocations for a given Parking lot**
 - The following filter should be available:
     - filter between all allocations, all active allocations and all stopped allocations
