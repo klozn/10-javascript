@@ -74,7 +74,7 @@ Furthermore, use DTO's for encapsulating the payload of a request or of a respon
 ## Timing
 
 We've created two categories of stories: Must-Have's and Nice-To-Have's. 
-Focus on the Must-Have's, when they're fully implemented you can go to the Nice-To-Have's.
+Focus on the Must-Have's, when they're fully implemented (or, to not interfere with other developers) you can implement the Nice-To-Have's.
     
 ## Functional Stories
 
@@ -247,7 +247,7 @@ with status stopped should be collected and used (you don't have to check the cu
 - Each parking allocation with status **passive** needs to be transformed to an Invoice Item
     - Each of those parking allocations will then get status **invoiced**
 - An Invoice Item has
-    - A (reference to an) parking allocation
+    - A (reference to a) parking allocation
     - A calculated price
         - The price is calculated as follows:
             - `Total number of whole hours parked (rounded up) * cost per hour (defined in parking lot)`
