@@ -116,7 +116,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to see an overview of all the customers so that I can see what Customers exist.**
 
-![](img/order-Customer-Overview.png)
+![](img/order-Customer-overview.png)
 
 - For each customer, show:
     - Id
