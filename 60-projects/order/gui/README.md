@@ -4,8 +4,9 @@
 
 Good news! We're hired to develop the frontend of the Örder application!
 
-The backend is already fully finished, it can be found here:
+The backend is already fully implemented, it can be found here:
 - https://github.com/switchfully/order-solution-jpa
+- You will need this backend.
 - Clone the repository, read its `readme.md` and run the application locally.
     - Your frontend will have to use this backend's Web API (RESTful).
 
