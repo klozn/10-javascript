@@ -36,7 +36,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to filter items in the overview of all the items so that I can more efficiently find an Item.**
 
-![](img/order-Item overview filter.png)
+![](img/order-Item-overview-filter.png)
 - Filter by name only
     - Filtering is not case-sensitive
     - Filtering is based-on a starts-with strategy.
@@ -78,7 +78,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to view one specific Item so that I can see its detailed information**
 
-![](img/order-Item Detail.png)
+![](img/order-Item-Detail.png)
 
 - We should be able to navigate to an Item's detail page:
     - By directly navigating to a url that contains the id of the item.
@@ -98,7 +98,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to update (edit) one specific Item so that I can keep its information up to date.**
 
-![](img/order-Update Item.png)
+![](img/order-Update-Item.png)
 
 - The following information should be editable:
     - Name
@@ -129,7 +129,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to filter customers in the overview of all the customers so that I can more efficiently find a customer.**
 
-![](img/order-Customer overview-filter.png)
+![](img/order-Customer-overview-filter.png)
 - Filter by lastname only
     - Filtering is not case-sensitive
     - Filtering is based-on a starts-with strategy.
@@ -139,7 +139,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to create a Customer so that I can have more Customers than I have now.**
 
-![](img/order-Create Customer.png)
+![](img/order-Create-Customer.png)
 
 - The following information should be provided for creating a Customer:
     - firstName
@@ -160,7 +160,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to view one specific Customer so that I can see its detailed information**
 
-![](img/order-Customer Detail.png)
+![](img/order-Customer-Detail.png)
 
 - We should be able to navigate to a Customer's detail page:
     - By directly navigating to the url that contains the id of the customer.
@@ -180,7 +180,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to update (edit) one specific Customer so that I can keep its information up to date.**
 
-![](img/order-Update Customer.png)
+![](img/order-Update-Customer.png)
 
 - The following information should be editable:
     - firstName
@@ -200,7 +200,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to add Items to my basket so that I can keep an overview of the items I am going to order (before ordering them).**
 
-![](img/order-Order Items1.png)
+![](img/order-Order-Items1.png)
 
 - Every item should have an Add to Basket button, this will add (1 amount of) the Item to the basket
     - Out of Stock items can still be added.
@@ -212,7 +212,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to view my basket so that I can see the items I am going to order (before ordering them).**
 
-![](img/order-Order Items basket.png)
+![](img/order-Order-Items-basket.png)
 
 - For every item added to the basket, display the name and the amount to order and the price.
     - The amount to order can be changed into a higher value (by default it is value 1)
@@ -226,7 +226,7 @@ Authentication or authorization are completely optional.
 
 **As a user I want to use my basket to place an order.**
 
-![](img/order-Order Items placed.png)
+![](img/order-Order-Items-placed.png)
 
 - After clicking the Place Order button, and the order was successfully registered on the backend, provide the 
 user with a dialog to inform him/her about the fact that the placement of the order was successful.
