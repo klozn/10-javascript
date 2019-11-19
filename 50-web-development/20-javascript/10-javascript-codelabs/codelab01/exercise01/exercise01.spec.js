@@ -6,19 +6,13 @@ describe('Exercise 01', function () {
 
     describe('Method sayMyName', function () {
 
-        let sayMyNameMethod;
-
-        beforeEach(function() {
-            sayMyNameMethod = new sayMyName();
-        });
-
         it('should return a string containing name Derek if I gave it as an argument', function () {
-            let result = sayMyNameMethod.call('Derek');
+            let result = sayMyName('Derek');
             expect(result).toEqual('Hey, your name is Derek!');
         });
 
         it('should return a string containing the given name ', function () {
-            let result = sayMyNameMethod.call('Suzan');
+            let result = sayMyName('Suzan');
             expect(result).toEqual('Hey, your name is Suzan!');
         });
 
@@ -26,19 +20,13 @@ describe('Exercise 01', function () {
 
     describe('Method getFirstElementOf', function () {
 
-        let getFirstElementOfMethod;
-
-        beforeEach(function() {
-            getFirstElementOfMethod = new getFirstElementOf();
-        });
-
         it('should give the first element of an array with string elements', function () {
-            let result = getFirstElementOfMethod.call(['This', 'Is', 'JavaScript']);
+            let result = getFirstElementOf(['This', 'Is', 'JavaScript']);
             expect(result).toEqual('This');
         });
 
         it('should give the first element of an array with number elements', function () {
-            let result = getFirstElementOfMethod.call([5, 8 , 9, 2]);
+            let result = getFirstElementOf([5, 8 , 9, 2]);
             expect(result).toEqual(5);
         });
 
@@ -46,14 +34,8 @@ describe('Exercise 01', function () {
 
     describe('Method splitAndLowercase', function () {
 
-        let splitAndLowercaseMethod;
-
-        beforeEach(function() {
-            splitAndLowercaseMethod = new splitAndLowercase();
-        });
-
         it('should split the string into an array based on a single white-space and then lowercase every element', function () {
-            let result = splitAndLowercaseMethod.call('YoU GoT to LOVE JavAsCriPt');
+            let result = splitAndLowercase('YoU GoT to LOVE JavAsCriPt');
             expect(result).toEqual(['you', 'got', 'to', 'love', 'javascript']);
         });
 
@@ -61,14 +43,8 @@ describe('Exercise 01', function () {
 
     describe('Method createPerson', function () {
 
-        let createPersonMethod;
-
-        beforeEach(function() {
-            createPersonMethod = new createPerson();
-        });
-
         it('should create and return a Person object with the provided state', function () {
-            let person = createPersonMethod.call('Jimmy', 1980, 'Male');
+            let person = createPerson('Jimmy', 1980, 'Male');
             expect(person).toBeDefined();
             expect(person.name).toEqual('Jimmy');
             expect(person.birthYear).toEqual(1980);
@@ -77,7 +53,7 @@ describe('Exercise 01', function () {
 
 
         it('should create and return a Person object that has a method calculateAge() which returns the age', function () {
-            let person = createPersonMethod.call('Jimmy', 1980, 'Male');
+            let person = createPerson('Jimmy', 1980, 'Male');
             expect(person).toBeDefined();
             expect(person.calculateAge()).toEqual(new Date().getFullYear() - 1980);
         });
