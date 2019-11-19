@@ -1,6 +1,9 @@
 /*
- * Run these tests by running the SpecRunner.html file in your browser.
+ * Read the README.md
+ * Run these tests by running the 'npm run babel-spec' command.
  */
+
+import {SuperHero} from "../src/SuperHero";
 
 describe('SuperHero', function () {
 

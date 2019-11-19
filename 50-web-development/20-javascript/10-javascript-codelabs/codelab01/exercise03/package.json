@@ -1,0 +1,17 @@
+{
+  "name": "exercise03",
+  "version": "1.0.0",
+  "description": "ES6 exercise",
+  "scripts": {
+    "babel-spec": "babel-node SpecRunner.js"
+  },
+  "author": "Switchfully",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "jasmine": "^3.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
