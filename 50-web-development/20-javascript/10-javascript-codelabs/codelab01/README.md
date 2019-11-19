@@ -31,4 +31,5 @@ To finish the exercise you don't have to change anything in the HTML and CSS, ho
 5. ### Get the UK checkbox to work
     - > Write a function that converts pounds to kg and one that converts fahrenheit to celsius. Use these functions to change the weight and temperature in the story depending on whether the checkbox is checked or not. Don't forget to add the unit of measure in the story!
 6. ### Use ES6 classes
-    - > Now write a `StoryGenerator` class that has as its state the template, names, places and actions, and contains all the logic to generate a story. You can use getters with logic to get a random name, action, place. In the end you just want to call storyGenerator.generate(...) to get a random story.
+    - > Now write a `StoryGenerator` class that contains everything so that, un the end, we can just call storyGenerator.generate(...) to get a random story.
+    - > Ideally, we can create an instance of `StoryGenerator` by providing the template, names, places and actions. 
