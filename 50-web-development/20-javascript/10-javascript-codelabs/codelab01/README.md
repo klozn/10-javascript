@@ -26,8 +26,9 @@ To finish the exercise you don't have to change anything in the HTML and CSS, ho
 1. ### Replace `storyText` with `STORY_TEMPLATE`
 2. ### Replace the :name:, :place: and :action: placeholders of the template with a random name, place and action from the lists
     - > The random values should change every time you click the randomize button. Make sure all values get replaced!
-3. ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
-4. ### Get the UK checkbox to work
+3. ### Replace Bob with the custom name entered in the inputfield. Do this only if a name is present, otherwise Bob can stay.
+4. ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
+5. ### Get the UK checkbox to work
     - > Write a function that converts pounds to kg and one that converts fahrenheit to celsius. Use these functions to change the weight and temperature in the story depending on whether the checkbox is checked or not. Don't forget to add the unit of measure in the story!
-5. ### Use ES6 classes
+6. ### Use ES6 classes
     - > Now write a `StoryGenerator` class that has as its state the template, names, places and actions, and contains all the logic to generate a story. You can use getters with logic to get a random name, action, place. In the end you just want to call storyGenerator.generate(...) to get a random story.
