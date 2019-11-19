@@ -1,7 +1,7 @@
 /* CODE SAMPLES */
 
-var variable = 5;​
-var hello = 'hello';​
+var variable = 5;
+var hello = 'hello';
 
 function hoist() {
   // is hoisted: 'var h = undefined;'
@@ -13,13 +13,13 @@ function hoist() {
   // prints out 3 because h is still known here
 }
 
-var 1 = 'one';​
-var _$ = 'omg';​
+var 1 = 'one';
+var _$ = 'omg';
 
-let variable = 5;​
-const hello = 'hello';​
+let variable = 5;
+const hello = 'hello';
 
-let a;​
+let a;
 a === undefined​
 
 let a = null;​
@@ -495,7 +495,8 @@ export class Primate {
 	}
 }
 
-import { Primate } from './primate';
+import Whatever, {Primate} from './primate';
+import * as Math from 'math';
 
 class Person extends Primate {
 	constructor(firstName, lastName) {
@@ -513,8 +514,6 @@ export default class Primate {
 	}
 }
 
-import Whatever from './primate';
-
 class Person extends Whatever {
 	constructor(firstName, lastName) {
 			super(false);
@@ -524,4 +523,3 @@ class Person extends Whatever {
 	...
 }
 
-import * as Math from 'math';
