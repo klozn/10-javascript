@@ -2,22 +2,32 @@
 Hi kids, today we're going to create a random silly story generator!
 To see the finished result you can check [this page](https://mdn.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished/) (but no peeking at the source code).
 
-If you play around with it you can see that clicking the **Generate random story** button generates a story with random names, places and actions. The temperature and weight in the story changes unit based on if UK is selected or not and the whole thing is seen by 'Bob' or a custom name if one is filled in.
+If you play around with it you can see that clicking the **Generate random story** button generates a story with 
+random names, places and actions. The temperature and weight in the story have a specific unit, which changes when selecting UK or US. 
+The story is 'witnessed by' by 'Bob' or by the person whose name you provided.
 
-Some things are a bit different in the codelab, so don't look at the example too much in detail. For example, we changed the UK radio button to a checkbox since this made more sense. Also, the temperature and weight in the story will be generated at random as well.
+Some requirements will be a bit different in this codelab than they are in the example. 
+So don't look at the example too much in detail.
+- For example, we changed the UK radio button to a checkbox (not checking it will default to value US)
+- Also, the temperature and weight in the story will be generated at random, instead of having fixed values.
 
-## Present
+## Skeleton
 As you can see, a small app with HTML template, CSS styling and JavaScript boilerplate code is already present. Altough we discourage the use of comments, it can be useful while learning, so explanations of the boilerplate code are in the comments.
+- Documentation can serve its purpose, we're really talking about comments here, comments which explain snippets of code (as an alternative to writing readable code)
 
 To finish the exercise you don't have to change anything in the HTML and CSS, however, don't let that stop you from playing around.
+- Having a proper understanding of HTML of CSS is a huge bonus, if not a vital skill when doing front end development, even if a UI/UX designer is present in your team.
+
+## Run the code
+- Open up the `silly-story-generator.html` file in your browser
+    - In Intellij: right-click `silly-story-generator.html`, and press `Run ...` 
 
 ## Stories
-- ### Replace the story text with the story template
-- ### Replace one of the placeholders with a random word (you can choose which word)
-- ### Replace the :name:, :place: and :action: placeholders with a random name, place and action from the lists
-> The random values should change every time you click the randomize button. Make sure all values get replaced!
-- ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
-- ### Get the UK checkbox to work
-> Write a function that converts pounds to kg and one that converts fahrenheit to celsius. Use these functions to change the weight and temperature in the story depending on if the checkbox is checked. Don't forget to add the unit of measure in the story!
-- ### Use ES6 classes
-> Now write a StoryGenerator class that you can initialise with the template, names, places and actions that contains all the logic to generate a story. You can use getters with logic to get a random name, action, place. In the end you just want to call storyGenerator.generate(...) to get a random story.
+1. ### Replace `storyText` with `STORY_TEMPLATE`
+2. ### Replace the :name:, :place: and :action: placeholders of the template with a random name, place and action from the lists
+    - > The random values should change every time you click the randomize button. Make sure all values get replaced!
+3. ### Replace the :temp: and :weight: placeholders with randomly generated temperatures and weights
+4. ### Get the UK checkbox to work
+    - > Write a function that converts pounds to kg and one that converts fahrenheit to celsius. Use these functions to change the weight and temperature in the story depending on whether the checkbox is checked or not. Don't forget to add the unit of measure in the story!
+5. ### Use ES6 classes
+    - > Now write a `StoryGenerator` class that has as its state the template, names, places and actions, and contains all the logic to generate a story. You can use getters with logic to get a random name, action, place. In the end you just want to call storyGenerator.generate(...) to get a random story.
