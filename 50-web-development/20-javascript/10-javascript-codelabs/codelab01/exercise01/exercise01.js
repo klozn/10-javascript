@@ -8,7 +8,6 @@ function sayMyName(name) {
     return undefined;
 }
 
-
 function getFirstElementOf(array) {
     return undefined;
 }
