@@ -41,6 +41,11 @@ of stories: **Must-Have's** and **Nice-To-Have's**. Start with the Must-Have's, 
     - Certainly log all interactions with the application that can be defined as "errors"
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
 - Provide, through OpenAPI and Swagger(UI) an online manual / documentation for your Web API.
+- **If you have already seen JPA**: use JPA (Hibernate or EclipseLink) in combination with a PostgreSQL or Oracle Database to store and access the data.
+    - Setup a proper test configuration, which runs the integration tests against an in-memory database (e.g. H2)
+        - Make it a separate technical story.
+    - Correctly setup and handle the transactions.
+    - Write your DDL (create tables,...) in a separate `.sql` file, which you also put under version control.
 - Use Travis or Jenkins to set up a Continuous Integration (CI) pipeline.
     - Additionally, but optional, deploy to Heroku!
 - Think about Security: authentication and authorization. It is not a priority, but if you have the time, implement it properly.
