@@ -88,7 +88,7 @@ My starhip's name is: Falcon
 ## Executing code from inside HTML
 
 To execute a Javascript application that consists of multiple source files and is using JavaScript modulues 
-(import / eport different files for classes, interfaces,...) from inside an HTML file is not that trivial without a proper configuration. 
+(import / export different files for classes, interfaces,...) from inside an HTML file is not that trivial without a proper configuration. 
 - The main reason: Browser (still) not yet (fully) implement ES6 modules.
 
 Therefore, we'll stick to executing our code with **Node** for now.
