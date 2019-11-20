@@ -18,6 +18,7 @@ You're contracted to write a small application.
     - Additionally, we can ask a dog if he/she's been a good boy/girl. A dog is a good boy/girl when it has a name that starts with letter a, b or c, OR, if its name contains exactly 5 characters.
 5. A Human has a name and multiple pets.
     - On a human, we should be able to call a method to let all of its pets make a sound.
+    - Furthermore, we should be able to add new pets (one by one) to the pets of a human.
     
 Lastly, create special class that creates some pets, both cats and dogs and interacts with them. 
 It should print the results to the console. Also create a human to which you add pets. As well, interact with it and print the results to the console.
