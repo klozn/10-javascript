@@ -89,9 +89,48 @@ My starhip's name is: Falcon
 
 To execute a Javascript application that consists of multiple source files and is using JavaScript modulues 
 (import / export different files for classes, interfaces,...) from inside an HTML file is not that trivial without a proper configuration. 
-- The main reason: Browser (still) not yet (fully) implement ES6 modules.
+- The main reason: Some browsers (still) not yet (fully) implement ES6 modules.
 
-Therefore, we'll stick to executing our code with **Node** for now.
+Therefore, we'll stick to executing our code with **Node** for now...
+However, below you'll find some information on how to run ES6 code from HTML.
 
- 
+### Executing ES6 (modules) code from HTML
+
+Make sure you're using a recent version of any version browser:
+
+1. Compile the TypeScript code as ES6 code (not ES5): `tsc main.ts --target es2015`
+2. Create `codelab02.html` and copy/paste the following code into it:
+    ```html
+       <!DOCTYPE html>
+       <html lang="en">
+           <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+               <meta name="viewport" content="width=device-width">
+               <title>My page title</title>
+           </head>
+       
+           <body>
+               <section id="content">
+                   <!-- In here, we'll generate content -->
+               </section>
+       
+               <script type="module">
+                   import {Starship} from "./starship.js";
+       
+                   const starship = new Starship('Dreadnought');
+                   document.getElementById('content').innerText = starship.name;
+               </script>
+           </body>
+       
+       </html>
+    ```
+3. Closely Inspect the `<script type="module"> ... </script>` part.
+    - The `type="module"` option is essential! It allows us to inform the browser that we will import modules 
+    (browsers compatible with ES6 modules will react to this `type="module"` option.
+    - Secondly, do notice that we're importing from `"./starship.js"`, not `"./starship`. Without the extension, in HTML,
+    the import will fail.
+4. Run the HTML file from within Intellij (or VS Code), not just from your folder explorer.
+    - (IntelliJ will run a local web server to host the HTML, this will counter CORS issues)
+    - See the displayed output. 
 
