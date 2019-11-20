@@ -1,5 +1,6 @@
-# Running Jasmine tests against ES6
-> ES6 or (different name) ES2015
+# Exercise 03 
+Running Jasmine tests against ES6
+> ES6 is the alternative name for ES205. It included some major changes, such as the class syntax.
 
 ## Assignment
 
