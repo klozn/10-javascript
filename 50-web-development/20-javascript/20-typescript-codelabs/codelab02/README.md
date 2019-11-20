@@ -47,7 +47,7 @@ import {Starship} from './starship'
 
 const myStarship = new Starship('Falcon');
 
-console.log('My starhip\'s name is: ' + myStarship.name);
+console.log('My starship\'s name is: ' + myStarship.name);
 ```
 
 ## Compiling our code
@@ -82,7 +82,7 @@ node main.js
 
 You should see the following result in the console / cmd / terminal:
 ```
-My starhip's name is: Falcon
+My starship's name is: Falcon
 ```
 
 ## Executing code from inside HTML
