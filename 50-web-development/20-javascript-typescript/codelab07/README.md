@@ -22,6 +22,9 @@ const user = "Jimmy McJimmens";
 document.getElementById("content").innerText = generateGreeting(user);
 ```
 
+**Note**: If you're using Intellij, and it complains about (e.g.) document: do the following:
+- Go to `File > Settings > Lanuage & Frameworks > TypeScript`, uncheck option `Also for projects without tsconfig.json`. 
+
 ## Compiling our code
 
 Although we used a `.ts` extension, this code does not use anything specific to TypeScript. It's plain old Javascript.

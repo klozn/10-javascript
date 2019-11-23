@@ -4,5 +4,9 @@
   },
   "exclude": [
     "node_modules"
+  ],
+  "lib": [
+    "es2019",
+    "dom"
   ]
 }
