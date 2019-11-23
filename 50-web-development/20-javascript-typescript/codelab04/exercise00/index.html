@@ -1,25 +1,44 @@
-<html>
-  <head><script src="https://code.jquery.com/jquery-3.3.1.min.js"></script></head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>My page title</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
 
-    <img id="doggo" src="" alt="I love my doggo"/>
+<h1>Welcome to my Doggo Page!</h1>
+<p>I Love my doggo, he's the best doggo in the world.</p>
 
-    <script>
-      function updateImage(result) {
-        document
-          .getElementById('doggo')
-          .setAttribute('src', result.message);
-      }
+<img id="doggo" src="" alt="My little doggo"/>
 
-      function fetchRandomDog(callback) {
-        $.getJSON({
-          url: `https://dog.ceo/api/breeds/image/random`,
-          success: callback,
-          error: console.error,
-        });
-      }
+<script>
+  function updateImage(result) {
+    document
+            .getElementById('doggo')
+            .setAttribute('src', result.message);
+  }
 
-      fetchRandomDog(updateImage);
-    </script>
-  </body>
+  /**
+   * Can only be tested on Edge, as Chrome and Firefox no longer support Synchronous (XMLHttp)Requests
+   * Use the Developer Tools to set a breakpoint on line 21 in the updateImage method.
+   *      --> See how the screen remains completely white until the image is loaded in
+   *      (with an async call, we could already see the <h1> and <p> elements with their content before the image is loaded in.
+   */
+  function fetchRandomDogSync(callback) {
+    $.get({
+      url: 'https://dog.ceo/api/breeds/image/random',
+      success: callback,
+      async: false
+    });
+  }
+
+  fetchRandomDogSync(updateImage);
+
+</script>
+</body>
 </html>
