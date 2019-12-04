@@ -4,7 +4,7 @@ From [Simon Brown - Software Architecture for developers](https://www.codingthea
 
 1. Create the **Context diagram** for the financial risk system
 2. Create the **Container diagram** for the financial risk system
-3. Create the **Component diagram** for the financial risk system backend application
+3. (Create the **Component diagram**, e.g. for the financial risk system backend application)
 
 ### Background
 
