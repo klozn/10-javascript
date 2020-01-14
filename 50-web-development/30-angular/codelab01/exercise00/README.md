@@ -19,6 +19,16 @@ Hard to read, `true`, but no matter! This `mouseDrag$` variable gives you an obs
 > `subscribe` will take a function as the first argument, this function will get executed for every event at unknown times and you define what happens with them `(event) => { ... }`
 
 - Before the `subscribe`, add the `.pipe` method which allows you to chain **rxjs operators**
+
+> The `.pipe` method takes a variable number of parameters that have to be operators, imported from `rxjs/operators`, use them like this:
+> ```javascript
+> someObservable$.pipe(
+>   map(event => /* transform the event */),
+>   filter(event => /* drop some events */),
+>   tap(event => /* something that doesn't affect the event */)
+> ).subscribe(result => /* do whatever */)
+> ```
+
 - In this `pipe`, `map` the pointer events to the following string: `“Position = ${clientX}px on the X axis and ${clientY}px on the Y axis”`
 
 > (import and use the rxjs `map` from `rxjs/operators` operator)
