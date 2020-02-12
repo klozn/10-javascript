@@ -1,0 +1,82 @@
+= Cheat sheet for command line
+
+.Basics
+|===
+|Command |Function | Example
+
+| echo <parameter>| prints out the parameter in the console| echo "hello world!" or echo $SomeVariable
+
+| up/down arrow| Navigate through previous commands|
+
+| cls| will clear the console|
+
+| <variable_name> = <value>| Will assign <value> to <variable_name>.| SomeVariable="Hello World"
+
+| $<variable_name>| The way to access a variable| echo $SomeVariable
+
+| <command> --help, --man| Will explain the options for <command>| ls --help
+
+| exit| Will quit the console and close it|
+
+| env| prints out all variables and their values|
+|===
+
+.Navigation
+|===
+|Command |Function | Example
+
+| cd <directory_name>| Will change the current directory to <directory_name>. Literally "Change Directory"| cd /etc
+
+| ls| Shows the contents of the current folder. Literally "List"|
+
+| pwd| prints out the complete path of the current directory|
+
+| ~| reserved character that has as a value the path of the home folder| cd ~
+
+| /
+| the top of your directory structure
+| cd /
+
+rm -rf /
+
+don't use this last one it will delete EVERYTHING from your laptop even the operating system
+
+| .| the current folder| cd .
+
+ls .
+
+| ..| the parent directory| cd ..
+
+| pushd <directory_name>| pushes <directory_name> on the stack. Literally push directory| pushd .
+
+| popd| pops the top directory from the stack and set the current directory to that directory|
+
+|===
+
+.File management
+|===
+|Command |Function | Example
+
+| mv <file_name> <new_location>
+| moves <file_name> to <location>. Can also be used to rename a file. Literally "move".
+| mv HelloWorld.java sourceCode/HelloWorld.java
+
+| cp <file_name> <location> | copies <file_name> to <location>. Literally "copy". | cp HelloWorld.java HelloWorld.java.backup
+
+| mkdir <directory_name>| Will make a new directory named <directory_name>. Literally "make directory" | mkdirectory sourceCode
+
+| rm <file_name>| Will remove <file_name> from the filesystem. Literally "remove" | rm HelloWorld.java
+
+| cat <file_name> | Will print out the contents of a file (the command can do much more). Literally "concatenate" | cat HelloWorld.java
+
+| cat > <file_name>
+| Will let you create a file with some user input. Execute the command. Type in your text. When you're finished press ctrl+d to create the file with your input.
+| cat > HelloWorld.java
+
+| touch <file_name> | Will create <file_name> file if it doesn't exist yet. Otherwhise does nothing | touch HelloWorld.java
+
+| <some_command> > <file_name> | replaces contents of <file_name> with the output of <some_command> | echo "everything is gone" > HelloWorld.java
+
+| <some_command> >> <file_name> | concatenate <file_name> with the output of <some_command> | echo "byebye" >> HelloWorld.java
+
+|===
