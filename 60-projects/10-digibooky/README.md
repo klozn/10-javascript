@@ -62,6 +62,31 @@ Furthermore, use DTO's for encapsulating the payload of a request or of a respon
 (and ideally a different DTO for the request and for the response of a call to your web API)
 - https://martinfowler.com/eaaCatalog/dataTransferObject.html  
 
+## Project requirements
+
+- Define team rules
+    - Daily standup at X
+    - Scrummaster role (fixed, rotating)
+    - Ownership of stories
+    - Pairing/repairing
+    - Code review sessions
+- Review/discuss the project (board session)
+    - General understanding of the functionality (stories)
+    - General understanding of the technical set-up
+    - Domain modelling 
+- Create a fysical Kanban board to visualize work
+    - Define the process steps
+    - Define the transitions (DoD)
+    - Add tasks to the board (color coded, prioritized)
+        - Functional tasks (stories)
+            - Technical grooming
+            - Define subtasks
+		- Non-functional tasks
+		    - technical setup
+            - Github repository (add Switchfully trainers!)
+            - Setup communication channels
+		- Questions?
+
 ## Functional Stories
 
 The functional requirements are written down as stories. 
