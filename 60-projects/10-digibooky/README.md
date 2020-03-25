@@ -74,7 +74,7 @@ Furthermore, use DTO's for encapsulating the payload of a request or of a respon
     - General understanding of the functionality (stories)
     - General understanding of the technical set-up
     - Domain modelling 
-- Create a fysical Kanban board to visualize work
+- Create a Kanban board (Github project) to visualize work
     - Define the process steps
     - Define the transitions (DoD)
     - Add tasks to the board (color coded, prioritized)
