@@ -86,6 +86,8 @@ Furthermore, use DTO's for encapsulating the payload of a request or of a respon
             - Github repository (add Switchfully trainers!)
             - Setup communication channels
 		- Questions?
+ - Setup a shared drive to share usefull documentation
+    - domain model, detail of stories, team rules, ...
 
 ## Functional Stories
 
