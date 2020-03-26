@@ -173,7 +173,7 @@ let the server respond with 403 Forbidden and a custom message.
 ### Story 10A: Register a new book
 As a librarian I want to register a new book so I can keep the collections of books relevant.
 - The ISBN, title and author's last name are required.
-- If any other user besides a librarian or admin tries to register a new book, 
+- If any other user besides a librarian tries to register a new book, 
 let the server respond with 403 Forbidden and a custom message.
 - Prioritization: Must-Have
 
