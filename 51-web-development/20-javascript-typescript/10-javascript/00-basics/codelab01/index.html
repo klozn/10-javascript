@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Inline</h1>
+            <button class="button" onclick="alert('You\'re clicking on me!')">Alert me!</button>
+            <button class="button" onclick="console.log('You\'re clicking on me!')">Log me!</button>
+        </div>
+        <div class="exercise-field">
+            <h1>Tag</h1>
+            <button class="button" onclick="sayHelloWorld()">Alert me!</button>
+            <button class="button" onclick="logHelloWorld()">Log me!</button>
+        </div>
+        <div class="exercise-field">
+            <h1>Imported</h1>
+            <button class="button" onclick="importedAlert()">Alert me!</button>
+            <button class="button" onclick="importedLog()">Log me!</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function sayHelloWorld() {
+        alert("Hello World!");
+    }
+
+    function logHelloWorld() {
+        console.log("Hello World!");
+    }
+</script>
+<script src="script.js"></script>
+</html>

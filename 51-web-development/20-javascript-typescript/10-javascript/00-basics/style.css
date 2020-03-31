@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+.button {
+    padding: 5px;
+    margin: 5px;
+}
+
+.text-field {
+    margin: 20px 5px;
+    padding: 10px;
+    text-align: center;
+    border: black solid;
+}
+
+.input-field {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    padding: 7px;
+    font-size: 14px;
+    margin: 20px 5px;
+    width: 100%;
+}
+
+.exercise-field {
+    padding: 40px 0;
+    border-bottom: black solid;
+}

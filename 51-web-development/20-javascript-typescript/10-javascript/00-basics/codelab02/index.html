@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Changing a DOM element</h1>
+            <p id="text-to-change" class="text-field">Some text</p>
+            <button class="button" onclick="changeText()">Change text</button>
+        </div>
+        <div class="exercise-field">
+            <h1>Listening to input</h1>
+            <p id="output" class="text-field">Replace me</p>
+            <label for="input"></label>
+            <input id="input" type="text" maxlength="100" class="input-field" placeholder="Some text to replace"/>
+            <button class="button" onclick="listenToInput()">Change text</button>
+        </div>
+        <div class="exercise-field">
+            <h1>Adding an element</h1>
+            <ul id="list"></ul>
+            <button class="button" onclick="addListItem()">Add element</button>
+        </div>
+    </div>
+</div>
+<script>
+    function changeText() {
+        document.getElementById("text-to-change").innerHTML = "Some other text";
+    }
+
+    function listenToInput() {
+        document.getElementById("output").innerHTML = document.getElementById("input").value;
+    }
+
+    function addListItem() {
+        document.getElementById("list").appendChild(document.createElement("LI"))
+
+    }
+</script>
+</body>
