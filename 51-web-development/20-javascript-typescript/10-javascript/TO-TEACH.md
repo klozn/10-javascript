@@ -4,6 +4,7 @@
 * What is javascript used for?
 * How can you integrate it in a web page?
 * What can it do?
+* Loading a script
 
 ## Types and variables
 * Types and variables in javascript
@@ -19,6 +20,7 @@
 ## Functions
 * Definition
 * Variables
+* Expression vs declaration
 * Spread operator,...
 * Functions are objects
 
