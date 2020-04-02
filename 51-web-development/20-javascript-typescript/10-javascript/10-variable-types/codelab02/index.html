@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Strings</h1>
+            <p>A string with single quotes: </p><p id="single-quotes-output"></p>
+            <p>A string with double quotes: </p><p id="double-quotes-output"></p>
+            <p>A string with backticks: </p><p id="backticks-output"></p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function initEverything() {
+        document.getElementById('single-quotes-output').innerHTML = 0;
+        document.getElementById('double-quotes-output').innerHTML = 0;
+        document.getElementById('backticks-output').innerHTML = 0;
+    }
+    initEverything();
+</script>
+</html>

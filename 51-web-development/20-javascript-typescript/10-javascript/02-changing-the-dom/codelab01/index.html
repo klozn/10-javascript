@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Changing a value</h1>
+            <p id="text-to-change" class="text-field">Some text</p>
+            <button class="button" onclick="changeText()">Change text</button>
+        </div>
+    </div>
+</div>
+<script>
+    function changeText() {
+        document.getElementById('text-to-change').innerHTML = 'Some other text';
+    }
+</script>
+</body>
