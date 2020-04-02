@@ -8,15 +8,38 @@
 <div class="container">
     <div>
         <div class="exercise-field">
+
+            <!--
+                We've seen how to update or read elements of the DOM. The other CRUD operations (create and delete) are also possible.
+
+                Implement the <script> tag so that you can add and remove list items <li> to the unordered list <ul>.
+
+                So pressing add will change:
+
+                *
+
+                to
+
+                *
+                *
+
+                and pressing delete will change
+
+                *
+                *
+
+                to
+
+                *
+            -->
             <h1>Adding an element</h1>
-            <ul id="list"></ul>
+            <ul id="list"><li></li></ul>
             <button class="button" onclick="addListItem()">Add element</button>
+            <button class="button" onclick="removeListItem()">Remove element</button>
         </div>
     </div>
 </div>
 <script>
-    function addListItem() {
-        document.getElementById('list').appendChild(document.createElement('LI'))
-    }
+    //implement me
 </script>
 </body>
