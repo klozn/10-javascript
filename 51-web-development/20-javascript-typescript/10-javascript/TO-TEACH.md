@@ -19,6 +19,9 @@
 
 ## Functions
 * Definition
+* Parameters
+* Callbacks
+* Functions as parameters
 * Variables
 * Expression vs declaration
 * Spread operator,...

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Asynchronous</h1>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../jquery-3.4.1.min.js"></script>
+<script>
+    /*
+       We're going to add a very well know and often used javascript pattern: the callback function.
+
+       The callback function is used to do something with the result of an asynchronous call.
+       It might be handy that you can download data asynchronously, but if you don't do something with the outcome, that result is quiet useless.
+       In essence a callback function is any function that will take in the result and do something with it.
+
+       Exercise:
+       - call the getPerson function with a callback function that will log the the result of the http call
+       - call the getPerson function with a callback function that will display the result on the html page.
+     */
+
+    function getPerson(callBack) {
+        $.ajax({
+            url: 'https://tax-system.herokuapp.com/persons',
+            type: 'GET',
+            success: function (result) {
+                callBack(JSON.stringify(result));
+            }
+        });
+    }
+
+</script>
+</html>
