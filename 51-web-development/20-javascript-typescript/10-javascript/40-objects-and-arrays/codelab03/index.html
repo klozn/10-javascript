@@ -15,7 +15,6 @@
     </div>
 </div>
 </body>
-<script src="../../jquery-3.4.1.min.js"></script>
 <script>
     /*
       The last datatype in javascript is the array.
@@ -28,19 +27,18 @@
         - Let's go back to the tax system and write the javascript code to give a nice overview of all the users in the system
             -> The function to get the information from the api is already written, you only need to implement the callback function.
             -> You can use the addPersonToHtml function to modify the DOM or write your own function.
+            -> Hint: A for-loop in javascript works exactly the same way as in java
      */
 
     function getAllPeople(callBack) {
-        $.ajax({
-            url: `https://tax-system.herokuapp.com/persons`,
-            type: 'GET',
-            success: function (result) {
-                callBack(result);
-            }
-        });
+        fetch(`https://tax-system.herokuapp.com/persons`, {
+            method: 'GET'
+        })
+            .then(result => result.json())
+            .then(callBack);
     }
 
-    getAllPeople(function (personData) {
+    getAllPeople(function (personArray) {
         //implement me
     });
 

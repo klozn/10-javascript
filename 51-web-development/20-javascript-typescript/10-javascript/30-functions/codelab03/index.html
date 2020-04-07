@@ -14,7 +14,6 @@
     </div>
 </div>
 </body>
-<script src="../../jquery-3.4.1.min.js"></script>
 <script>
 
     /*
@@ -49,13 +48,10 @@
      */
 
     console.log('Before');
-    $.ajax({
-        url: 'https://tax-system.herokuapp.com/persons',
-        type: 'GET',
-        success: function () {
-            console.log('Http call finished');
-        }
-    });
+    fetch('https://tax-system.herokuapp.com/persons', {
+        method: 'GET'
+    })
+        .then(() => console.log('Http call finished'));
     console.log('After');
 
 </script>

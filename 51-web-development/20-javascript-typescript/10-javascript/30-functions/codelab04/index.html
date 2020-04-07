@@ -14,7 +14,6 @@
     </div>
 </div>
 </body>
-<script src="../../jquery-3.4.1.min.js"></script>
 <script>
     /*
        We're going to add a very well know and often used javascript pattern: the callback function.
@@ -29,13 +28,11 @@
      */
 
     function getPerson(callBack) {
-        $.ajax({
-            url: 'https://tax-system.herokuapp.com/persons',
-            type: 'GET',
-            success: function (result) {
-                callBack(JSON.stringify(result));
-            }
-        });
+        fetch('https://tax-system.herokuapp.com/persons', {
+            method: 'GET'
+        })
+            .then((result) => result.json())
+            .then((result) => callBack(JSON.stringify(result)));
     }
 
 </script>

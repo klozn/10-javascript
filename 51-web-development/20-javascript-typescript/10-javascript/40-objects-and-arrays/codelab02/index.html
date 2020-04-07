@@ -15,32 +15,32 @@
     </div>
 </div>
 </body>
-<script src="../../jquery-3.4.1.min.js"></script>
 <script>
     /*
         Creating an object is very easy. Just use the following syntax. let object = {property1: value1, property2: value2, ...}
 
         Exercise:
         - Use this knowledge to initialize the newPerson variable so that it create a new person when the button is clicked.
+            --> a person needs to have an id, firstName and lastName
      */
 
     function savePerson(personDTO, callBack) {
-        $.ajax({
-            url: `https://tax-system.herokuapp.com/persons`,
-            type: 'POST',
+        fetch(`https://tax-system.herokuapp.com/persons`, {
+            method: 'POST',
             headers: {'Content-type': 'application/json'},
-            data: JSON.stringify(personDTO),
-            success: callBack,
-            error: function(result) {
+            body: JSON.stringify(personDTO)
+        })
+            .then((result) => result.json())
+            .then(callBack)
+            .catch(function (result) {
                 document.getElementById('result').innerHTML = 'Failure!';
                 console.log(result);
-            }
-        });
+            });
     }
 
     function addPerson() {
         let newPerson; //initialize me
-        savePerson(newPerson, function() {
+        savePerson(newPerson, function () {
             document.getElementById('result').innerHTML = 'Success!'
         });
     }

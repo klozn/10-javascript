@@ -21,7 +21,6 @@
     </div>
 </div>
 </body>
-<script src="../../jquery-3.4.1.min.js"></script>
 <script>
     /*
         In chapter 10-variable-types we've handled all the primitive data types.
@@ -44,13 +43,11 @@
      */
 
     function getPerson(personId, callBack) {
-        $.ajax({
-            url: `https://tax-system.herokuapp.com/persons/${personId}`,
-            type: 'GET',
-            success: function (result) {
-                callBack(result);
-            }
-        });
+        fetch(`https://tax-system.herokuapp.com/persons/${personId}`, {
+            method: 'GET'
+        })
+            .then(result => result.json())
+            .then(callBack);
     }
 
     getPerson(1, function (personData) {

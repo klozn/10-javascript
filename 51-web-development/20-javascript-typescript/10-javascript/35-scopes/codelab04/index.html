@@ -29,7 +29,7 @@
        function parent() {
             let someVariable;
             function child() {
-                //doSomething
+                //doSomething with someVariable
             }
             return child;
        }
@@ -42,7 +42,7 @@
        let childReference = (function() {
             let someVariable;
             return function() {
-              //doSomething
+              //doSomething with someVariable
             }
        })();
 
@@ -60,9 +60,11 @@
         return counter++;
     }
 
-    console.log(counter());
-    console.log(counter());
-    console.log(counter());
+
+    //This should keep working without beeing changed
+    console.log(increaseCounter());
+    console.log(increaseCounter());
+    console.log(increaseCounter());
 
 
 </script>
