@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Creating objects</h1>
+            <p id="result"></p>
+            <button onclick="addPerson()">Add a person</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../jquery-3.4.1.min.js"></script>
+<script>
+    /*
+        Creating an object is very easy. Just use the following syntax. let object = {property1: value1, property2: value2, ...}
+
+        Exercise:
+        - Use this knowledge to initialize the newPerson variable so that it create a new person when the button is clicked.
+     */
+
+    function savePerson(personDTO, callBack) {
+        $.ajax({
+            url: `https://tax-system.herokuapp.com/persons`,
+            type: 'POST',
+            headers: {'Content-type': 'application/json'},
+            data: JSON.stringify(personDTO),
+            success: callBack,
+            error: function(result) {
+                document.getElementById('result').innerHTML = 'Failure!';
+                console.log(result);
+            }
+        });
+    }
+
+    function addPerson() {
+        let newPerson; //initialize me
+        savePerson(newPerson, function() {
+            document.getElementById('result').innerHTML = 'Success!'
+        });
+    }
+
+
+</script>
+</html>

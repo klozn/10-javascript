@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Objects</h1>
+            <div id="person-overview" class="person-overview">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../jquery-3.4.1.min.js"></script>
+<script>
+    /*
+      The last datatype in javascript is the array.
+      Luckily this is an easy one and in works in exactly the same way as in java. Except that it doesn't have a fixed length.
+
+      You can get an element with array[index].
+      Since the length isn't fixed you can add or get a value to/from whatever index you want, without getting errors.
+
+      Exercise:
+        - Let's go back to the tax system and write the javascript code to give a nice overview of all the users in the system
+            -> The function to get the information from the api is already written, you only need to implement the callback function.
+            -> You can use the addPersonToHtml function to modify the DOM or write your own function.
+     */
+
+    function getAllPeople(callBack) {
+        $.ajax({
+            url: `https://tax-system.herokuapp.com/persons`,
+            type: 'GET',
+            success: function (result) {
+                callBack(result);
+            }
+        });
+    }
+
+    getAllPeople(function (personData) {
+        //implement me
+    });
+
+
+    function addPersonToHtml(person) {
+        let htmlDivElement = document.createElement("div");
+        htmlDivElement.innerHTML = `
+                <div class="person">
+                    <div class="info-field">
+                        <h2>FirstName:</h2>
+                        <p>${person.firstName}</p>
+                    </div>
+                    <div class="info-field">
+                        <h2>LastName:</h2>
+                        <p>${person.lastName}</p>
+                    </div>
+                </div>`;
+        document.getElementById('person-overview').appendChild(htmlDivElement);
+    }
+</script>
+</html>
