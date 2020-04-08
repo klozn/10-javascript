@@ -8,42 +8,47 @@
 <div class="container">
     <div>
         <div class="exercise-field">
-            <h1>Creating objects</h1>
-            <p id="result"></p>
-            <button onclick="addPerson()">Add a person</button>
+            <h1>Objects</h1>
+            <div class="info-field">
+                <h2>FirstName:</h2>
+                <p id="firstName"></p>
+            </div>
+            <div class="info-field">
+                <h2>LastName:</h2>
+                <p id="lastName"></p>
+            </div>
         </div>
     </div>
 </div>
 </body>
 <script>
     /*
-        Creating an object is very easy. Just use the following syntax. let object = {property1: value1, property2: value2, ...}
+        You can read, update, add or remove properties from every object. There are no limitations.
+
+        To read a property on an object simply write either object.property or object['property'].
+        To create a new property simply write object.newProperty = someValue or object['newProperty'] = someValue.
+        To update a property simply write object.property = newValue or object['property'] = newValue.
+        To delete a property simply write delete object.property or delete object['property'].
 
         Exercise:
-        - Use this knowledge to initialize the newPerson variable so that it create a new person when the button is clicked.
-            --> a person needs to have an id, firstName and lastName
+        - following function will get a person from the tax-system api. Modify the callback function so that the information is nicely displayed.
+           - fill in the firstName and lastName tags with the personData you get from the api.
+           - add a new property 'country' to personData and give it the value 'America'
+           - modify the property firstName of personData before assigning it to the html by adding the word "bobby" add the end.
+
      */
 
-    function savePerson(personDTO, callBack) {
-        fetch(`https://tax-system.herokuapp.com/persons`, {
-            method: 'POST',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify(personDTO)
+    function getPerson(personId, callBack) {
+        fetch(`https://tax-system.herokuapp.com/persons/${personId}`, {
+            method: 'GET'
         })
-            .then((result) => result.json())
-            .then(callBack)
-            .catch(function (result) {
-                document.getElementById('result').innerHTML = 'Failure!';
-                console.log(result);
-            });
+            .then(result => result.json())
+            .then(callBack);
     }
 
-    function addPerson() {
-        let newPerson; //initialize me
-        savePerson(newPerson, function () {
-            document.getElementById('result').innerHTML = 'Success!'
-        });
-    }
+    getPerson(1, function (personData) {
+        //implement me
+    });
 
 
 </script>
