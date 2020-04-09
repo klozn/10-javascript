@@ -16,9 +16,28 @@
 <script type="module">
 
     /*
-        Import and use the person class
-        Define your own class in a separate file and import that as well
-        In javascript every class should be in a separate module
+        We've already seen how we can load multiple javascript files into our browser by adding additional <script> tags.
+        There are however some downsides to this. Naming conflicts, no encapsulation, etc...
+
+        A better system is to work with modules.
+        With a module you decide which variables get exposed from your file and which don't.
+        To activate modules don't forget to write 'type="module"' in your script tag.
+
+        Inspect the aModule.js file. You'll see that it exposes two named variables and one default variable.
+
+        To import a named variable write "import {variableName} from 'fileName.js'"
+        To import a default variable write "import someName from 'fileName.js'"
+
+        Exercise:
+        - import the three variables from aModule.js and print them to the console.
+        - import the Person class from person.js. Make a person object and call the sayHello() method.
+        - define your own cat class in a separate cat.js file. import this class and use it.
+
+        The convention is that each class in javascript is its own module.
      */
+
+    import * as module from './aModule.js';
+
+    console.log(module.default);
 </script>
 </html>
