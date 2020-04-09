@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>This keyword</h1>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+        Advanced exercise:
+
+        Be careful with the this keyword. This always points to the current object.
+        Which means that if:
+        - you call this in the global scope, this is pointing to the global (window) object. ! The global object is not the same as the global scope!
+        - if you call a function in the global scope and that function is using this, then that this is also pointing to the global object.
+        - if an object has a function and that function is using this, then that this is pointing to that object if you call the function from it.
+
+        You can also explicitly set the value of this by using the apply(), call() or bind() functions.
+
+        Exercise:
+        - Try to figure out what the following executions will print out and why.
+     */
+
+    //Execution 1
+    let obj1 = {
+        name: 'object 1', sayName: function () {
+            console.log(this.name);
+        }
+    };
+    obj1.sayName();
+
+
+    //Execution 2
+    let obj2 = {name: 'object 2', sayName: obj1.sayName};
+    obj2.sayName();
+
+
+    //Execution 3
+    let sayName = obj1.sayName;
+    window.name = 'global object';
+    sayName();
+
+
+    //Execution 4
+    let obj3 = {
+        name: 'object 3', sayName: (function () {
+            let _this = this;
+            return function () {
+                console.log(_this.name)
+            };
+        })()
+    };
+    obj3.sayName();
+
+    //Execution 5
+    sayName.bind(obj1)();
+
+    //Execution 6
+    sayName.call(obj1);
+
+    //Execution 7
+    sayName.apply(obj1);
+
+</script>
+</html>

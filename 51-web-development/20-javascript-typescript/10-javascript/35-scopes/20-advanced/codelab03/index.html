@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Functions in functions</h1>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+       Advanced exercise
+
+       In javascript functions are variables meaning they too have a scope.
+       This also means that you can define functions in functions (and other functions in those functions, and so on...).
+
+       Variables defined in a parent function can also be accessed from the child function.
+       Same with functions, a function can be called from its scope or any of it's child scopes.
+       However a parent can not access the scope of it's children.
+
+       Since we start from the global scope, you can always access all variables and functions defined there.
+
+       Also variables and functions can be overwritten. Where the variable in the child scope takes precedence over the one in the parent.
+
+       Exercise:
+       - Given the scopes of functionA, functionB and functionC. Which sayXXX functions can be called from which scope and what is going to be the result?
+           - You can call/not call following functions from the scope of functionA:
+                - sayHowDoYouDo
+                - sayBye
+                - sayHello
+                - sayGoodMorning
+          - You can call/not call following functions from the scope of functionB:
+                - sayHowDoYouDo
+                - sayBye
+                - sayHello
+                - sayGoodMorning
+          - You can call/not call following functions from the scope of functionC:
+                - sayHowDoYouDo
+                - sayBye
+                - sayHello
+                - sayGoodMorning
+
+          Think of the solution first before trying it out!
+     */
+
+
+    function functionA() {
+        function functionB() {
+            function sayHowDoYoDo() {
+                console.log('How do you do?')
+            }
+
+            function sayBye() {
+                console.log('Bye but special')
+            }
+
+            //Call function for functionB here
+        }
+
+        function sayBye() {
+            console.log('Bye');
+        }
+
+        //Call function for functionA here
+    }
+
+    function functionC() {
+        function sayHallo() {
+            console.log('Hallo')
+        }
+
+        //Call function for functionC here
+    }
+
+    function sayGoodmorning() {
+        console.log('Goodmorning');
+    }
+</script>
+</html>

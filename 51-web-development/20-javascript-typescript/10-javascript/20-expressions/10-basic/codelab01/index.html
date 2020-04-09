@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Expressions</h1>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+        In javascript most expression work exactly the same as with java.
+        One key difference is that you can build expressions with variables of different types.
+        Which sometimes can lead to strange results.
+
+        Try to think what the result of the following expressions will be and then try them out:
+        - 50 * false
+        - "hello" + true
+        - "hello" / false
+        - "50" - 5
+        - "50" + 5
+        - true && 1
+        - false && 1
+        - true == 1
+        - true != 1
+        - true !== 1
+        - true === 1
+        - true + true
+        - true + true == 2
+        - true + true === 2
+
+        These things happen because of type coercion and this is the main reason you should avoid combining different data types in an expression.
+        A more in depth explanation you can find on https://dev.to/neutrino2211/avoiding-weird-javascript-behaviour-true--true--2-but-true--1-pn9.
+
+        The main thing you should remember is to always use === instead of == to compare values.
+     */
+    let expression;
+
+    document.getElementById('result').innerHTML = expression;
+</script>
+</html>

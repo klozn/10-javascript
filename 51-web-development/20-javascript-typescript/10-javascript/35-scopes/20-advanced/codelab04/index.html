@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Functions in functions</h1>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+       Advanced exercise
+
+       A variable in a function scope ceases to exist as soon as the function of that scopes has been executed.
+       However if something is still referencing an element of this scope the scope is kept alive.
+
+       We can use this principle to create private variables!
+       If a function, let's call it the parent function, returns another function, let's call it the child function, then
+       the scope of the parent function is kept alive as long as somebody is referencing the returned child function.
+
+       So in
+
+       function parent() {
+            let someVariable;
+            function child() {
+                //doSomething with someVariable
+            }
+            return child;
+       }
+       let childReference = parent();
+
+       the variable someVariable is kept alive! Nobody except childRefence could access it, making it private.
+
+       A common way to write this pattern shorter is as follows:
+
+       let childReference = (function() {
+            let someVariable;
+            return function() {
+              //doSomething with someVariable
+            }
+       })();
+
+       This pattern is an IIFE (pronounced iffy) and is the go to way to create closures in javascript.
+
+
+       Exercise:
+       - Let's go back to a counter solution. This solution is unsafe because counter is defined in the global scope
+       and anybody could modify or access it. Make the counter variable private using an IIFE.
+     */
+
+    let counter = 0;
+
+    function increaseCounter() {
+        return counter++;
+    }
+
+
+    //This should keep working without beeing changed
+    console.log(increaseCounter());
+    console.log(increaseCounter());
+    console.log(increaseCounter());
+
+
+</script>
+</html>
