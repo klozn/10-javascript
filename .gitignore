@@ -10,6 +10,11 @@ out
 target
 *.class
 
+### Javascript ###
+dist/
+.cache/
+package-lock.json
+
 ### Gradle ###
 .gradle
 build
