@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Asynchronous</h1>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    /*
+        Let us try out one of the most recognizable javascript patterns: the callback function.
+
+        Before we start with we need to talk about synchronicity. Which sounds complicated but don't worry it really isn't.
+        A program can either be synchronous or asynchronous.
+
+        A synchronous program will execute all statements one after another and only when the previous command has finished.
+        So if you have statements 'a', 'b', 'c', 'd' (in that order) then the program will execute them in the order 'a', 'b', 'c', 'd'.
+        And 'b' will only start once 'a' has been completely executed, etc...
+
+        Asynchronous means that the statements can be executed in a different order than they appear.
+        This is because you want two or more statements run at the same time.
+        An example: Say you want to start executing 'a' but don't want to wait for the result.
+        So everything has to continue immediately after 'a' has started.
+        No matter if 'a' will take a few seconds, a few hours or will never finish at all.
+        In this case we say that 'a' runs asynchronously.
+
+        A good example is loading an image on a website.
+        If downloading an images takes a while you don't want your website to wait on that image to display all the rest of your site.
+        No, you start downloading the image in the background, load the rest of the website and whenever the images has been downloaded you show the image.
+        Back in the old days this wasn't the case and you could look at a white screen for a few seconds before anything would show.
+        Now you get the basic structure of your site almost immediately and all the heavier files (like images) pop up as soon that they have been downloaded.
+
+        Asynchronicity is so popular that Chrome and Firefox only allow asynchronous http-calls.
+
+        Exercise:
+        Open the page and look at the console.
+        You'll see 'Http call finished' will be displayed after the data has been loaded.
+        The 'Before' and 'After' log messages will appear as normal.
+     */
+
+    console.log('Before');
+    fetch('https://tax-system.herokuapp.com/persons', {
+        method: 'GET'
+    })
+        .then(() => console.log('Http call finished'));
+    console.log('After');
+
+</script>
+</html>

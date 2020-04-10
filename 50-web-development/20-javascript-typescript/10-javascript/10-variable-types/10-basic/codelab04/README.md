@@ -1,4 +1,4 @@
-# Exercise 01 - Types
+# codelab04 - Typeof
 
 - In `index.js`, create a variable `foo` with value `5`
 - Check the type with `typeof foo` (log the result)
