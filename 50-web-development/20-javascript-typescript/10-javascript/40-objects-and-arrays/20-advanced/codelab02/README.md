@@ -1,4 +1,4 @@
-# Exercise 01 - Spread operator
+# Codelab02 - Spread operator
 
 In `index.js` we initialize a variable person with some data
 

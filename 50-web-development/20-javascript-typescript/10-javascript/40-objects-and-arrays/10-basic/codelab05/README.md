@@ -1,4 +1,4 @@
-# Exercise 00 - Objects
+# Codelab05 - Objects
 
 - Write a function that accepts an `object` and prints a summary of its properties
 

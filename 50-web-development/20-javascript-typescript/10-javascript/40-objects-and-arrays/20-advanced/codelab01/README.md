@@ -1,4 +1,4 @@
-# Exercise 01 - Arrays
+# Codelab 01 - Arrays
 
 Using the `string` and `array`'s prototype functions, write a `function countNonVowelsIn(word)` that
 
