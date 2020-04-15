@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="exercise-field">
+            <h1>Template strings</h1>
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+        Rewrite the following string to a template string.
+        Remember:
+        - a template string is initialized with backticks `
+        - you can place any variable in a template string with ${variableName}
+        - all text formatting (like newlines) will be shown in the final result.
+     */
+
+    function displayMessage(title, firstName, lastName, project, wish) {
+        let message = 'Greetings ' + title + ' ' + firstName + ' ' + lastName + ',\n'
+            + '\n'
+            + 'Congratulations with your ' + project + ' project.\n'
+            + 'It truly shows what men can accomplish when they set their mind to it.\n'
+            + 'We wish you ' + wish + ' in all your future endeavours.';
+        document.getElementById('result').innerText = message;
+    }
+
+    displayMessage('Mr.', 'Elon', 'Musk', 'SpaceX', 'all the best');
+</script>
+</html>
