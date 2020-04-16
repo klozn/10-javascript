@@ -75,14 +75,14 @@ Furthermore, use DTO's for encapsulating the payload of a request or of a respon
 
 The Parkshark project is supposed to be organized as a project following the SCRUM methodology.
 
-- We want to see a clear visualized product backlog
-- We want to see a project kickoff followed by 2 sprints of two days.
-- At the start of the sprint we want to see a sprint kickoff meeting defining the sprint backlog (estimated and prioritized) of that sprint
+- We want to see a clear visualized **product backlog**
+- We want to see a **project kickoff** followed by **2 sprints** of two days.
+- At the start of the sprint we want to see a **sprint kickoff meeting** defining the **sprint backlog** (estimated and prioritized) of that sprint
 - We want to see a clear visualized sprint backlog and up-to-date kanban board 
-- We want to see daily standups (at least once a day on fixed timeslots) discussing the current sprint progress by using a kanban board
-- We want to see a spritn review (=demo) and retrospective at the end of the project
+- We want to see **daily standups** (at least once a day on fixed timeslots) discussing the current sprint progress by using a kanban board
+- We want to see a **sprint review** (=demo) and **retrospective** at the end of the project
 
-Project kickoff tasks:
+**Project kickoff guidelines:**
 - Define team rules
     - Daily standup at X
     - Scrummaster role (fixed, rotating)
