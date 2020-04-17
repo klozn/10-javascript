@@ -82,6 +82,10 @@ The Parkshark project is supposed to be organized as a project following the SCR
 - We want to see **daily standups** (at least once a day on fixed timeslots) discussing the current sprint progress by using a kanban board
 - We want to see a **sprint review** (=demo) and **retrospective** at the end of the project
 
+- In Sococo we want to see a link to:
+    - kanban board
+    - team calendar (daily standup, sprint kickoff, scrumboard, whiteboard, ...)
+
 **Project kickoff guidelines:**
 - Define team rules
     - Daily standup at X
