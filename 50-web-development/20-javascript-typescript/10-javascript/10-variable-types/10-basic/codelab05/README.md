@@ -1,4 +1,4 @@
-# codelab04 - Constants
+# codelab05 - Constants
 
 Just like in java you can define constants. 
 Use `const` instead of `let` to make a variable constant
