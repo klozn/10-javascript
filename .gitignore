@@ -19,6 +19,8 @@ package-lock.json
 .gradle
 build
 
+
+coverage/
 node_modules/
 bin/
 obj/
