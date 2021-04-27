@@ -12,3 +12,8 @@
 1. Create array with simply '[]' no length or type required
 1. No main method
 1. Using push to add something to an array
+1. No import statements
+1. 'function' keyword
+1. No access modifiers
+1. No class
+1. let and const to initiate variables
