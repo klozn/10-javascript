@@ -1,0 +1,14 @@
+#Solution
+
+1. No types on variables
+1. No types on method arguments
+1. No types on returns
+1. Using typeof instead of instanceof
+1. '===' to check equality
+1. functions as arguments
+1. console.log instead of system.out.println
+1. Can return both a string and nothing in the same method
+1. Strings with '' instead of ""
+1. Create array with simply '[]' no length or type required
+1. No main method
+1. Using push to add something to an array
