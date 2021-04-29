@@ -7,7 +7,9 @@ to look the potential solution for these issues up yourself (if necessary). If y
 - We can add a pet, but we can not delete one. Write a function that allows us to **delete** a pet. You will have to extend the backend for this as well. The Delete Pet button can
 be added to the same section that opens up when we click a pet.
     - Sidenote: we want to delete based on the pet's id(we'll get in trouble if we delete by name since it's not unique)
-  
+
+- Right now, this app just runs locally on your computer. We want it out there in the wild! Get the backend to Heroku and deploy the frontend to Netlify. Change your code so they fetch data where they
+need to.
 
 - Add the functionality to setup a date with a pet. In the backend, you will see an endpoint that takes care of sending a message over WhatsApp when a date is being made. Add a field to
 the setup-date component where you can enter a name of your choosing. When you click on "let's play!", we want to fire that sendMessage endpoint. Adjust the message it sends to a sentence that also includes the name
