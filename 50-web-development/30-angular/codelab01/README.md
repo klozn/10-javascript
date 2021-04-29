@@ -3,7 +3,8 @@
 ## Let's fire up an Angular app
 
 Just like setting up a new Java application, we'll have a few steps to follow to get started with a new Angular application. 
-Let's see how we can do this!
+Let's see how we can do this! First things first: we'll need to install the Angular CLI. You can do this with the following command: ``npm install -g @angular/cli``.
+npm install speaks for itself, the -g means it will be installed globally which makes the CLI available in your entire system.
 
 - We will start by creating our new application folder. No need to start right clicking and making new directories straight away. 
   Angular has a nice way of doing multiple steps by issueing one single command: ``ng new``! Create a new app by typing ``ng new <appName>`` 
