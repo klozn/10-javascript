@@ -10,6 +10,8 @@ npm install speaks for itself, the -g means it will be installed globally which 
   Angular has a nice way of doing multiple steps by issueing one single command: ``ng new``! Create a new app by typing ``ng new <appName>`` 
   in the terminal. You can choose any name, just remember we're making a dating service for pets :heart_eyes:. Be creative.
   
+- You'll notice some questions being asked while generating your app. We want the default options installed: ``Regular CSS`` as styling and ``routing`` installed!
+  
   
 - After doing this, a new app will be created and it will even work if you fire it up. Angular applications can be started by typing
 ``ng-serve`` in the terminal. Doing so will compile your code and start a server. By default, you'll be be able to access it through
