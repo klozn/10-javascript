@@ -17,3 +17,6 @@
 1. No access modifiers
 1. No class
 1. let and const to initiate variables
+1. Function in functions
+1. Executed in html
+1. Array can have multiple types

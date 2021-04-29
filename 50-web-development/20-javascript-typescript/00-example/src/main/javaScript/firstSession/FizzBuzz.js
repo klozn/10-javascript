@@ -20,7 +20,7 @@ function fizzBuzz(amount, callBack) {
         result.push(convertToFizzBuzz(number));
     }
 
-    return callBack(result);
+    callBack(result);
 }
 
 fizzBuzz(15, function (list) {

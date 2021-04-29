@@ -1,4 +1,4 @@
-package com.switchfully;
+package com.switchfully.firstsession;
 
 import java.util.ArrayList;
 import java.util.List;
