@@ -28,7 +28,7 @@ Angular ships as a collection of JavaScript modules (also called libraries). Eac
 > So in short: components are the building blocks of your Angular app. Modules are collections of these blocks dedicated to a single purpose. In this codelab, we will create the layout module which will consist of a header and footer component.
 
 - Let's get back to our code. Now that we know what modules and components are, let's make the header and footer component in our layout module. To do so, navigate to the corresponding layout folder in your terminal. Once inside that folder, type
-``ng g component header`` and ``ng g component footer``. This will create two components that are tied to the layout module. Want to be sure everything is correctly configured? Head over to ``layout.module.ts`` and check the contents of that file. 
+``ng g component header`` and do the same for ``footer`` and ``layout``. This will create three components that are tied to the layout module. Want to be sure everything is correctly configured? Head over to ``layout.module.ts`` and check the contents of that file. 
   As said before, the header and footer component should be under declarations. If they are not there, you can add them yourself. Your declarations should look like this:
   > @NgModule({ 
   > declarations: [ <br>
@@ -36,9 +36,10 @@ Angular ships as a collection of JavaScript modules (also called libraries). Eac
   HeaderComponent,<br>
   FooterComponent<br>
   ],
-  
-- In order to use header and footer inside our layout, we also want to add a layout component. In the layout folder, generate another component called layout. By now you know how to do this.
-  
+
+- Inside your ``layout.component.html``, you'll find the tag ``<router-outlet></router-outlet>``. This has to do with us including Routing capabilities to our application. More on that later, but you'll notice it will break your application. To solve this, our layout module 
+needs to know the ``RouterModule``. Make sure to import this module as well.
+
 
 - Time to add some html to our html template files (don't forget to put ``heart.png`` in the right folder). Copy the html code you find in the header, footer and layout files in this codelab to the corresponding files in your application. Still serving your application? You'll no doubt have noticed everything broke.
 Can you spot the errors? It includes some things we did in the previous codelab.
@@ -62,7 +63,7 @@ it for yourself. Just a few hints to get you going:
   > just like in Java, you can call methods on certain classes to do things (perhaps there is even a Date class?)
    
 - After finishing this, make sure you are showing the right module and its components. Unless you changed it, you'll probably still seeing the original implemantation. The problem lies in the ``app.component.html`` file. This file doesn't show our layout module yet. You can change this by deleting the contents and writing
-``<app-layout></app-layout>``. By doing this, you will instruct this html file to show the contents it can find under the component that is defined by the name ``app-layout``.
+``<app-layout></app-layout>``. By doing this, you will instruct this html file to show the contents it can find under the component that is defined by the name ``app-layout``. Still not working? Make sure the ``LayoutComponent`` is being exported, otherwise our ``app.module`` can't find it.
   
 > Some more info on this: app-layout is the name of our layout component. You can find it in **layout.component.ts**.
 > @Component({<br>
