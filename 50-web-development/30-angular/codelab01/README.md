@@ -14,7 +14,7 @@ npm install speaks for itself, the -g means it will be installed globally which 
   
   
 - After doing this, a new app will be created and it will even work if you fire it up. Angular applications can be started by typing
-``ng-serve`` in the terminal. Doing so will compile your code and start a server. By default, you'll be be able to access it through
+``ng serve`` in the terminal. Doing so will compile your code and start a server. By default, you'll be be able to access it through
   http://localhost:4200. Start up your freshly made application and check what it looks like in your browser.
 
 
