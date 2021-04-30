@@ -8,6 +8,7 @@ how to fetch this data from within our Angular app and show it to the world! Eve
 locally and spin it up ourselves. This way, we can check and/or change backend code if needed (spoiler: you won't have to change a lot). It helps understanding
 what is needed to enable our back- and frontend to talk to each other.
 
+### Making a pet galery
 - From this point on, we will have to take our backend into account. We're not just showing pets, we're going to fetch them from a backend which has
 its own peculiarities and rules. In our Java code, we have defined what a Pet object needs before it can be a real Pet object. Have a look at it and check the
   necessary fields for a Pet object.
@@ -26,11 +27,12 @@ variable1: type;
 For most fields, this will be easy. There's only one field where the type uses a different naming. (pro-tip: you've used this type in the previous codelab).
   
 
-- We will be showing our pets in some sort of profile gallery. This profile gallery calls for a new component. Start by making a new component called ``profile-gallery``. Next to 
-this, we will also need a service that contains the logic that tells our app where and how to get its data. Again, the Angular CLI provides us with an easy way to do this. In your root
-  directory, type ``ng g service service/pet``. You'll see that ``pet.service.ts`` has been created inside the service directory. Open it and inspect its content.
+- We will be showing our pets in some sort of profile gallery. This profile gallery calls for a new component. Start by making a new component called ``profile-gallery``. 
   
-
+### Creating a service
+- Next to this, we will also need a service that contains the logic that tells our app where and how to get its data. Again, the Angular CLI provides us with an easy way to do this. In your root directory, type ``ng g service service/pet``. You'll see that ``pet.service.ts`` has been created inside the service directory. Open it and inspect its content.
+  
+### Dependency injection
 - There is one, very important, part in this file which we need before our service can be used. Our profile-gallery component needs to be able to use our service. We will enable this through dependency 
 injection. The Angular docs describe this as follows:
   
@@ -43,7 +45,9 @@ you'll notice the ``@Injectable`` annotation. This decorator specifies that Angu
   
     > Little sidenote: it is best-practice to separate components and services. It is possible to combine a component and a service in the same file, but this doesn't help general readability of your codebase.
      However, should you decide to do so (please don't :wink:) , you have to define the component before the service. Angular will return a null reference error if you would do it the other way around.
-  
+  > 
+
+### HTTP calls
 - All right, now that we are up to speed with the creation of a service and what the basic look of such a service is, let's start with adding logic to it. What do we want our service to do for now? We want it to talk to
 our backend through use of its api. In other words: we want our app to fetch the response one of our backend endpoints gives us. In this case, we want to get the data that we receive by going to ``http://localhost:8080/pets``.
   To do this, we need to add a few basic things.
@@ -58,11 +62,12 @@ our backend through use of its api. In other words: we want our app to fetch the
       it right now!  
       
 
+### The environment class
 - As you probably have guessed by yourself, backendUrl is a variable which our service will go look for in the environment class. In your app, you will notice a folder ``environments``. Inside of it, there are two files. One is being used
 for production (your live app) and one for development purposes. Since we are working with localhost, let's open the one intended for development purposes: ``environment.ts``. In there, you will see the production variable which is set to
   false at the moment. Below that, add the backendUrl variable and set it to ``'http://localhost:8080'``. This should solve the problem in our service.  
   
-
+### Observables
 - Back to our PetService! We're almost done here, the only thing left to add is a function which will go to this url and return the response. Let's write our ``getPets()`` function!
 
      - A function in TypeScript can be written as follows: ``methodName(): returnType {...}``. In the case of this method, we will call it getPets() and the return type will be an Observable. A small word on that:
@@ -74,7 +79,7 @@ for production (your live app) and one for development purposes. Since we are wo
     - Our return type will be ``Observable<any>``, enabling our Observable to deliver multiple values of any type—literals, messages, or events, depending on the context.
     - Inside our ``getPets()`` body, we will make the call to our backend and return the response. This can be simply done by typing ``return this.http.get(this.yourVariableName);``
 
-    
+### OnInit    
 - That's it for our service! It should now have all the logic required to enable our component to make a call to our backend and return the response. Let's change our focus to our component now. Go to ``profile.gallery.component.ts``. Inside of this
   component, you will notice the same structure as we saw in the previous codelab with our header and footer components. In order for our html to show us our pets on screen, we are going to add variables and functions here that can take care of this for us.
   Let's think about **what** we will be showing. On our screen, we'll see a few rows of pets, with the photo and name of each pet in our database. The styling will be done through our HTML/CSS, no need to worry about that. We'll add it later. What we are talking
@@ -84,7 +89,7 @@ for production (your live app) and one for development purposes. Since we are wo
   > A lifecycle hook that is called after Angular has initialized all data-bound properties of a directive. Define an ngOnInit() method to handle any additional initialization tasks.  
   
   Basically, the implementation of this interface will allow us to use the ngOnInit() method. The ngOnInit() method is called to handle any additional initialization tasks. So why would we have both a ngOnInit() and a constructor present? Don't they serve the same purpose?
-Some clarification on this:
+  Some clarification on this:
   
   > Construction happens when the JavaScript class is constructed. It's essentially the first thing that can happen to a class instance. Initialization, on the other hand, happens after that when the component is fully initialized. In essence, this means when Angular is done plugging all the pieces together.
    Construction is first, but happens when the component isn't really a component yet. So therefore the constructor should only contain very basic simple code relating to basic initialization of the class. You will have the injected services, but that's about it.
@@ -104,6 +109,7 @@ Some clarification on this:
   our constructor. As this returns an Observable, we need to ``subscribe`` to this function. You'll notice that ``subscribe`` is available when you type the . operator behind getPets(). As a parameter for subscribe(), you can declare a variable pets which gets set to your current Array of Pets.
       In TS, it translates to ``(pets => this.yourArrayOfPets = pets);``.  
       
+### ngFor
 * All right! Almost done (phew). We just need to add code to our html template to actually show what we just coded. To do this, copy the code which you find in ``profile-gallery.component.html`` in this repo and paste it into the same html file in your Angular app. Everything you need is there, except
 the final parts. In the lowest level ``<div>``, we need to provide some changes for our collection of pets to be shown on the screen. To do this, we will use ``ngFor``. This is one of Angular's built-in directives. Take a look at https://angular.io/guide/built-in-directives and see if you can get it working.
   Can't get it done? Remember to **timebox** your search (not longer than 1 hour) for the solution and ask for help if needed! 
@@ -116,11 +122,13 @@ the final parts. In the lowest level ``<div>``, we need to provide some changes 
   > 2. To list your items, assign the short hand let item of items to *ngFor.
   > If you want more info on this, the Angular website has a more extensive explanation. For now, know that you can compare it to a foreach in Java.- 
 
+### Testing the result
 * Time to try out your code! Open up your localhost:4200 and see what it is you're showing on your screen. Not seeing any pets? Getting weird message about CORS and such? That is because we forgot one important thing. Our application needs to be "allowed" to talk to our 
 backend. To do this, we need to add one small annotation in our backend. Go to our ``PetController``. Above the class definition, type ``@CrossOrigin(origins = "http://localhost:4200")``. Reboot your server and try again. Everything should work now!
   
   > Want some more info on CORS and some more specific use-cases? Take a look at https://www.baeldung.com/spring-cors 
 
+## Conclusion
 - All these steps should have given you an app that now shows you each pet in the database, with the corresponding image and the pet's name. In the next codelab
 we will focus on filtering this list and adding the ability to create a new pet! But don't forget to take a break first, you earned that :coffee:! :muscle: 
 
