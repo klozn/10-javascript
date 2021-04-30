@@ -6,12 +6,13 @@ When setting up our frontend, there's A LOT of things we want to get working. Th
 up a basic, working application. We did this in codelab01. Let's extend on this by creating a basic layout. No specific logic just yet,
 only a structured layout. Both in our codebase and in our browser.
 
+### Creating a module
 - Right now, we have a general app module and component in our application. Adding all our logic into this single component is possible, but it defeats the 
 purpose of the Angular framework. Working with multiple components defines the building blocks that complete our entire app and makes everything more 
   manageable and structured. Let's start by separating our layout, by making a dedicated module for this. We can generate this through the Angular CLI by typing 
   ``ng g module layout``. The ``g`` is short for ``generate``. Both short version and full word can be used and will yield the same result.
   
-
+### Creating a component
 - Right now we have a layout module in our Angular app. We want to divide our layout in three parts. A header, a footer and the main body in between. For both header and footer,
 we will create two separate components inside our layout module. Before we do this, let's take a look at the difference between a component and a module. 
   
@@ -37,10 +38,14 @@ Angular ships as a collection of JavaScript modules (also called libraries). Eac
   FooterComponent<br>
   ],
 
+
+### Adding routing
 - Inside your ``layout.component.html``, you'll find the tag ``<router-outlet></router-outlet>``. This has to do with us including Routing capabilities to our application. More on that later, but you'll notice it will break your application. To solve this, our layout module 
 needs to know the ``RouterModule``. Make sure to import this module as well.
 
 
+## Adapting components
+### Binding the controller (.ts) with the view (.html)
 - Time to add some html to our html template files (don't forget to put ``heart.png`` in the right folder). Copy the html code you find in the header, footer and layout files in this codelab to the corresponding files in your application. Still serving your application? You'll no doubt have noticed everything broke.
 Can you spot the errors? It includes some things we did in the previous codelab.
   
@@ -62,6 +67,7 @@ it for yourself. Just a few hints to get you going:
   > a date is a number in js<br>
   > just like in Java, you can call methods on certain classes to do things (perhaps there is even a Date class?)
    
+### Using the selector of a component
 - After finishing this, make sure you are showing the right module and its components. Unless you changed it, you'll probably still seeing the original implemantation. The problem lies in the ``app.component.html`` file. This file doesn't show our layout module yet. You can change this by deleting the contents and writing
 ``<app-layout></app-layout>``. By doing this, you will instruct this html file to show the contents it can find under the component that is defined by the name ``app-layout``. Still not working? Make sure the ``LayoutComponent`` is being exported, otherwise our ``app.module`` can't find it.
   
@@ -74,3 +80,7 @@ styleUrls: ['./layout.component.css']<br>
 > 
 > Every component has a selector, making it easy to use them as building blocks for your apps. Take a moment to go through each component you made. Check the selectors, check where they are already used and how
 > everything is tied together. It will help you understand Angular apps and how they work.
+
+## Conclusion
+You've learned how to create modules and components. You've seen some basic bindings between the controller and the view.
+You know how to add a component to your app by using its selector. 
