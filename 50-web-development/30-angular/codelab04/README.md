@@ -21,7 +21,7 @@ Since we are going to make this permanent, we can simply alter our ``getPets()``
      
 - So we are using pipes to link operators together and to combine multiple functions into one. This is a statement that says alot and at the same time not that much. What kind of operators are we talking
 about and how do we call such a pipe? Luckily, we have the Angular docs to provide us with more information:
-    >Operators are functions that build on the observables foundation to enable sophisticated manipulation of collections. For example, RxJS defines operators such as map(), filter(), concat(), and flatMap().
+    >Operators are functions that build on the observables' foundation to enable sophisticated manipulation of collections. For example, RxJS defines operators such as map(), filter(), concat(), and flatMap().
     Operators take configuration options, and they return a function that takes a source observable. When executing this returned function, the operator observes the source observable’s emitted values, transforms them, 
     and returns a new observable of those transformed values.   
   > For some more extensive info and a list on allowed RxJS operators: https://angular.io/guide/rx-library, https://rxjs.dev/api
@@ -63,8 +63,10 @@ Start by adding the following code to your ``profile.gallery.component.ts`` file
     </div>
   </div>       
   ```
-  This should already show you a nice block to the right of your screen. We want to fix two things here. We need to show the name and profileText for our selectedPet and we want this section to only appear whenever we click a Pet.
-You should be able to adjust the code so it displays the correct fields for our selectedPet. The conditional showing of this block isn't too hard either. Take a look at https://angular.io/api/common/NgIf and implement this. We only want
+- This should already show you a nice block to the right of your screen. We want to fix two things here. We need to show the name and profileText for our selectedPet and we want this section to only appear whenever we click a Pet.
+
+
+- You should be able to adjust the code so it displays the correct fields for our selectedPet. The conditional showing of this block isn't too hard either. Take a look at https://angular.io/api/common/NgIf and implement this. We only want
   to show the block with name and profileText when we click the corresponding Pet. (in other words, when there is a ``selectedPet``).
   
 ## Filtering
@@ -73,21 +75,29 @@ of pets in there? It's a million dollar idea, going viral isn't a chance. It's p
 When our list becomes really long, we would like to be able to, at least, filter by name. Let's implement this!
   
 ### Custom pipes  
-- When applying a filter to our entire incoming response, we can do it the way we did at first in our ``getPets()`` function. For this requirement however, we only want to filter when we type a name in our search box. We'll turn to Angular's Pipe interface.
+When applying a filter to our entire incoming response, we can do it the way we did at first in our ``getPets()`` function. For this requirement however, we only want to filter when we type a name in our search box. We'll turn to Angular's Pipe interface.
 You can find more information about this here: https://angular.io/api/core/Pipe. We can use Pipes to transform incoming data. The logic for this is written in a specific ts file for this, the pipe itself will be called in our html.
+
   
-  - Generate a file called ``name-filter``. Make sure this is a pipe file and make sure it is placed in a folder called pipes. Check back on previous codelabs if necessary. ``ng g pipe`` is possible.
-  - Inside that ``NameFilterPipe``, you will see that the class implements the ``PipeTransform`` interface. Inside the body, you'll notice a ``transform`` function. Above all that, you'll see the ``@Pipe`` decorator, where you can also change the name for your pipe.
+- Generate a file called ``name-filter``. Make sure this is a pipe file and make sure it is placed in a folder called pipes. Check back on previous codelabs if necessary. ``ng g pipe`` is possible.
+
+
+- Inside that ``NameFilterPipe``, you will see that the class implements the ``PipeTransform`` interface. Inside the body, you'll notice a ``transform`` function. Above all that, you'll see the ``@Pipe`` decorator, where you can also change the name for your pipe.
   This name is important since you'll be calling this from your html file.
-  - Our logic will be added to the transform function. This function accepts two arguments. The first one is the data you will be transforming, the second one is the argument used as a filter. We will be transforming our Array of Pets and we will filter it by name, which
-    means we'll be taking in a string. Now write the logic to perform this filter. Some pointers:
-      - We don't want to be case-sensitive here, so put your string to lowercase first.
-      - You can call the ``filter`` function on your array. This will allow you to check if any of the Pets in our Array ``include`` our search string.
 
 
-- Now that we made a pipe that will filter names, all that's left to do is call this pipe when necessary.
+- Our logic will be added to the transform function. This function accepts two arguments. The first one is the data you will be transforming, the second one is the argument used as a filter. We will be transforming our Array of Pets and we will filter it by name, which
+  means we'll be taking in a string. Now write the logic to perform this filter. 
+  
 
-### Double binding
+- Some pointers:
+  - We don't want to be case-sensitive here, so put your string to lowercase first.
+  - You can call the ``filter`` function on your array. This will allow you to check if any of the Pets in our Array ``include`` our search string.
+
+
+Now that we made a pipe that will filter names, all that's left to do is call this pipe when necessary.
+
+### ngModel
 - Add the following code to ``profile-gallery.component.html``:
   ```
   <section class="tiny-dialog">
@@ -104,18 +114,22 @@ You can find more information about this here: https://angular.io/api/core/Pipe.
   ```
   Nothing out of the ordinary here, except the ``[(ngModel)]`` part. You can find more information on this ``directive`` at https://angular.io/api/forms/NgModel. 
 
-
+### Putting it all together
 - Like we said before, we still need to call our pipe somewhere. We will be filtering our Array of Pets, so we want to call it where the Array is being processed. Look for the place in our html where this is happening and add the pipe to the statement. 
 The syntax for this is ``| nameFilter: searchText``. You just add it to the statement that processes our Array and change the values if you chose different ones in your application.
   
+
 - After doing this, you'll notice your application still won't run. Inspect the error message and try to fix it.
+
   
 - When you fixed that last bug and check your app in the browser, you'll see a new section to the right where you can type a pet's name. The application will filter the list in real-time. Nice work! :thumbsup:
 
-### Conclusion
-You've learned about the pipe operator and about build in pipe functions. 
-You've learned how to make your own custom pipe function.
-You've learned how to listen to click events.
-You've learned about ngIf.
-You've learned about double binding variables ```[(someVar)]```
+## Conclusion
+You've learned: 
+- about the pipe operator ``|``
+- about build in pipe functions like ``sort``. 
+- how to listen to events in your view and more specifically click events.
+- how to use ``ngIf``.
+- how to make your own custom pipe function with ``ng pipe <pipe_name>``.
+- about binding the input of a user to a variable using  ```[(ngModel)]```
     

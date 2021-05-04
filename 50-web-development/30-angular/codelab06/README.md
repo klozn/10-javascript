@@ -3,6 +3,7 @@
 Petinder starts looking like a real app by now. We have our list of pets. We can filter them by name. We can see our chosen pet's name and profile text. We can even
 add our own pets to the app! However, there is one elementary thing missing from our app. We can't arrange a date yet!
 
+## Setting up the date component
 - We've been showing all the content in just one single place until now. For this date component, we will show a new component in our application. Let's start by generating 
 a new component. We want to have a ``setup-date`` component in a folder called ``date``.
   
@@ -19,18 +20,24 @@ a new component. We want to have a ``setup-date`` component in a folder called `
   </div>       
   ```
 
-    Our first focus will be to show this component on our screen when we click the ``date`` button in our pet's information window. To do this, we need to use the Routing Angular offers us.
-Remember how we were asked the question if we wanted to include routing in our new Angular application (seems ages ago when you typed ng new right?!). We chose to include it and this is why, we
-  want to enable moving between components in our application.  
-  Check out our app. You'll see a file called ``app-routing.module.ts`` in our app folder. It's in this particular module where we will add our routing configuration. Another option is to add it 
-  straight into ``app.module.ts``, but it's best practice to use the ``app-routing.module.ts`` file for this. The only thing we have to do here, is add routes we want to use in our app. To do so,
+## Creating a route
+
+Our first focus will be to show this component on our screen when we click the ``date`` button in our pet's information window. To do this, we need to use the Routing Angular offers us.
+
+- Remember how we were asked the question if we wanted to include routing in our new Angular application (seems ages ago when you typed ng new right?!). We chose to include it and this is why, we want to enable moving between components in our application.  
+  
+- Check out our app. You'll see a file called ``app-routing.module.ts`` in our app folder. It's in this particular module where we will add our routing configuration. Another option is to add it 
+  straight into ``app.module.ts``, but it's best practice to use the ``app-routing.module.ts`` file for this. 
+  
+- The only thing we have to do here, is add routes we want to use in our app. To do so,
   take a look at ``const routes: Routes = [];``. This Array of routes will contain the configuration of every route we want to have. The syntax looks like this:  
-  ``const routes: Routes = [{path: 'your-desired-path', component: NameOfTheComponentYouWantToLoad}]``  
-  You can add multiple routes, just separate them using commas. Try adding a route for our ``setup-date`` component. It should point to ``setup-date/name`` and of course load the ``SetupDateComponent``.
+  ``const routes: Routes = [{path: 'your-desired-path', component: NameOfTheComponentYouWantToLoad}]``
+  
+- You can add multiple routes, just separate them using commas. Try adding a route for our ``setup-date`` component. It should point to ``setup-date/name`` and of course load the ``SetupDateComponent``.
   You'll notice the name needs to change depending on the pet we're trying to set up a date with. This is called a ``route parameter``. Try to find out how to use name as a route parameter and make the change
   in our routing.
-  
-  
+
+## Creating links  
 - With our routes configured, we of course need a way to follow this route. Add a button to the part of our html where we show the selected pet's name and profile text. It can look like this:
   ```
     <div class="dialog-centered">

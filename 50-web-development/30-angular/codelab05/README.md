@@ -6,7 +6,7 @@ add your own pet to the database!
 - Adding a Pet means we will be performing a post through our backend API. In a previous codelab, we added logic to perform another call to our API, which was a ``get`` in that specific case.
 Check back where we added this ``getPets()`` function. Try to add another function called ``addPet()``.
   
-  
+## Reactive forms  
 - Using our own input to create a Pet will happen through a Form. In the frontend, you will give values to specific parameters which in the end will be used to create our Pet through the backend. 
 To do this, we will use FormBuilder. Take a look at the Angular docs on FormGroups (https://angular.io/start/start-forms). This guide explains how it works through a small example. Try to follow their
   steps and adjust where necessary to meet the requirements of our app. 
@@ -21,7 +21,6 @@ To do this, we will use FormBuilder. Take a look at the Angular docs on FormGrou
     
 
 After going through all these steps, you'll be able to add your very own pet to our Petinder app! :tadaa:
-  
 
-
-
+## Conclusion
+You've learned how to use forms in Angular

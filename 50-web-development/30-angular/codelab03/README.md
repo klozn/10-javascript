@@ -129,6 +129,17 @@ backend. To do this, we need to add one small annotation in our backend. Go to o
   > Want some more info on CORS and some more specific use-cases? Take a look at https://www.baeldung.com/spring-cors 
 
 ## Conclusion
-- All these steps should have given you an app that now shows you each pet in the database, with the corresponding image and the pet's name. In the next codelab
+You've learned:
+- what services are and to create them with ``ng g service <service_name>``.
+- how to use services in your controllers using constructor dependency injection. 
+- how to use a ``HttpClient``.
+- how to use the ``environment.ts`` class.
+- how to use Observables.
+- how to use the ``OnInit`` interface and the ``ngOnInit`` function.
+- how to use `ngFor`.
+- how CORS works.
+
+
+All these steps should have given you an app that now shows you each pet in the database, with the corresponding image and the pet's name. In the next codelab
 we will focus on filtering this list and adding the ability to create a new pet! But don't forget to take a break first, you earned that :coffee:! :muscle: 
 

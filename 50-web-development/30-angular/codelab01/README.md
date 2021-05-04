@@ -45,7 +45,14 @@ We can use interpolation to display the value of this variable in the correspond
 - Not necessarily Angular related, but nevertheless very important in a HTML environment. Copy the contents of the ``styles.css`` file to the ``styles.css`` file you can find in
 the root dir of your app. Doing so should give already your app a different look.
 
-##Conclusion
+## Conclusion
 We now have a working Angular application. We got rid of the default contents and replaced it with the title of the app we're going to build. For now, we only have one component in
 this app, which consists of ``app.component.ts``, containing the component's logic, and ``app.component.html``, containing the template we will be showing in our browser.
 Afterwards we also added some prefab styling that we will use throughout the building of our app.
+
+You've learned:
+- how to create a new angular app with ```ng new```.
+- how to start your angular app with ```ng serve```.
+- that the view of a component can be found in it's `.html`-file.
+- that the controller of a component can be found in it's `.ts`-file.
+- that the style of a component can be found in it's `.css`-file.

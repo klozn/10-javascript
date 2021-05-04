@@ -82,5 +82,11 @@ styleUrls: ['./layout.component.css']<br>
 > everything is tied together. It will help you understand Angular apps and how they work.
 
 ## Conclusion
-You've learned how to create modules and components. You've seen some basic bindings between the controller and the view.
-You know how to add a component to your app by using its selector. 
+You've learned:
+- how to create a module with ```ng g module <module_name>```.
+- how to create a component with ```ng g component <component_name>```.
+- the differences between modules and components.
+- how to define variables in a controller.
+- how to encapsulate variables by adding ``private`` and using getters/setter.
+- how to access a variable in the view using the ``{{}}``-operator. 
+- how to add a component to your app by using the selector defined in the controller of the component. 
