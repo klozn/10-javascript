@@ -79,7 +79,7 @@ for production (your live app) and one for development purposes. Since we are wo
     - Our return type will be ``Observable<any>``, enabling our Observable to deliver multiple values of any type—literals, messages, or events, depending on the context.
     - Inside our ``getPets()`` body, we will make the call to our backend and return the response. This can be simply done by typing ``return this.http.get(this.yourVariableName);``
 
-### OnInit    
+### OnInit & ngOnInit   
 - That's it for our service! It should now have all the logic required to enable our component to make a call to our backend and return the response. Let's change our focus to our component now. Go to ``profile.gallery.component.ts``. Inside of this
   component, you will notice the same structure as we saw in the previous codelab with our header and footer components. In order for our html to show us our pets on screen, we are going to add variables and functions here that can take care of this for us.
   Let's think about **what** we will be showing. On our screen, we'll see a few rows of pets, with the photo and name of each pet in our database. The styling will be done through our HTML/CSS, no need to worry about that. We'll add it later. What we are talking

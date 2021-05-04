@@ -1,16 +1,17 @@
 # Codelab04 - Sorting the list, showing info and filtering by name
 
+We've been guiding you in a very detailed manner through the previous codelabs, it's time to shift gears a little bit. You should now grasp the basics of how
+an Angular app is structured and how the components all work together. From now on, we'll purposely not give you the entire solution anymore, which will pose more of
+a challenge (which is a good thing :innocent:). **Do let us know if you're stuck for longer than an hour, we'll happily help you out!**
+
+## Sorting
 We now have an application going that fetches all pets from our database and shows them on the screen. Time to start adding some features! Let's start by 
 applying some basic sorting to our list. We'll start with sorting our pets by name.
-
-We've been guiding you in a very detailed manner through the previous codelabs, it's time to shift gears a little bit. You should now grasp the basics of how
-an Angular app is structured and how the components all work together. From now on, we'll purposely not give you the entire solution anymore, which will pose more of 
-a challenge (which is a good thing :innocent:). Do let us know if you're stuck for longer than an hour, we'll happily help you out! 
 
 - Remember how we stated that the pets on our screen are in fact an Array of Pets? Just like in Java, we have functions available in Typescript to help us
 work with the contents of our Array. Let's write an easy sorting mechanism.
   
-  
+###Pipes ```|```
 - We want to add a permanent sorting based on the starting letter of our pet's name. In other words, we want to sort our pets alphabetically.
 Since we are going to make this permanent, we can simply alter our ``getPets()`` method in ``pet.service.ts``. Right now, it reads ``return this.http.get(this.yourVariableName);``.
   We will be changing this so that our response will be sorted. In order to do so, we will use the ``pipe`` function which can be invoked on our ``http.get`` command. A little background on that:
@@ -25,26 +26,31 @@ about and how do we call such a pipe? Luckily, we have the Angular docs to provi
     and returns a new observable of those transformed values.   
   > For some more extensive info and a list on allowed RxJS operators: https://angular.io/guide/rx-library, https://rxjs.dev/api
    
+### Sort function
 - Now that we know what the pipe function does and which operators it allows us to combine, it's time to try and invoke this on our ``getPets()`` function.
 ``return this.http.get<Pet[]>(this._petsUrl)`` is currently returning an Observable based on the response we receive from our http call to our backend api.
   Try to extend this with a pipe that will map each value in our response to the correct position after sorting. Remember, we are receiving an ``Array of Pets`` 
   so the ``sort`` function is available for this. If you did this correctly, refreshing your app should give you all the pets in a nicely sorted manner. If you're
   stuck, take a look at the examples provided in the Angular doc linked a bit up. It can help you writing the correct syntax.
   
+## Selecting
+Time to show our pet's info! Nobody swipes right without some extra personal info on Tinder, right?! :grimacing: The flow for showing this extra info is:  **Click on pet -> pet info shows up to the right of the screen.**  
 
-- Time to show our pet's info! Nobody swipes right without some extra personal info on Tinder, right?! :grimacing: The flow for showing this extra info is:  **Click on pet -> pet info shows up to the right of the screen.**  
-This means we will have to tell our application that the pet we *click* is a Pet object. For that Pet object, we want to display the name and the information.
-  Declare a variable in ``profile-gallery.component.ts`` for a selectedPet, make sure to use the correct type and check if any other part of this class needs updating. 
-  Now create a method called ``selectPet()`` where you pass in a Pet as an argument. Make sure our current selectedPet is equal to the pet we passed in.
+### Setting up the controller
+- This means we will have to tell our application that the pet we *click* is a Pet object. For that Pet object, we want to display the name and the information. 
+Declare a variable in ``profile-gallery.component.ts`` for a selectedPet, make sure to use the correct type and check if any other part of this class needs updating. 
+Now create a method called ``selectPet()`` where you pass in a Pet as an argument. Make sure our current selectedPet is equal to the pet we passed in.
 
-
+### Listening to click events
 - In order to show this info in our app, our template needs some additional code as well. Take a look at the div that takes care of showing all our pets. We will have to add code below our ``*ngFor`` statement. We want to do two things here.
 First of all, we want to invoke our selectPet() function when someone clicks one of the pets. Second, the CSS artist that lives deep inside all of us wants to highlight the pet we clicked on, making sure we never mistake which pet
   is active at the moment. Let's start with the first requirement!
   
+
 - Binding actions to an event is pretty straightforward. We first need to determine what kind of event we'll be having, in our case it will be a ``click``. After this, we'll bind that click event to the function we want to execute, in our case this is
 ``selectPet()``. This can be added as a statement to the div where we also loop over our pets. The syntax for this is ``(event) = "functionToPerform()"``.
 
+### NgIf
 - Last step to make this first requirement work is adding a new section which shows us what we actually want to see. Binding a click event is not enough in this case, we need to specify what we want to put where on our screen as well. 
 Start by adding the following code to your ``profile.gallery.component.ts`` file.
   ```
@@ -61,12 +67,12 @@ Start by adding the following code to your ``profile.gallery.component.ts`` file
 You should be able to adjust the code so it displays the correct fields for our selectedPet. The conditional showing of this block isn't too hard either. Take a look at https://angular.io/api/common/NgIf and implement this. We only want
   to show the block with name and profileText when we click the corresponding Pet. (in other words, when there is a ``selectedPet``).
   
-  
-- Time for our final sorting step! We've sorted our pets alphabetically. We made them clickable and are showing their name and information when we do. Right now, this seems enough but what will happen if our app goes viral and there are millions
+## Filtering
+Time for our final sorting step! We've sorted our pets alphabetically. We made them clickable and are showing their name and information when we do. Right now, this seems enough but what will happen if our app goes viral and there are millions
 of pets in there? It's a million dollar idea, going viral isn't a chance. It's programmed! :moneybag::moneybag::moneybag:  
-  When our list becomes really long, we would like to be able to, at least, filter by name. Let's implement this!
+When our list becomes really long, we would like to be able to, at least, filter by name. Let's implement this!
   
-  
+### Custom pipes  
 - When applying a filter to our entire incoming response, we can do it the way we did at first in our ``getPets()`` function. For this requirement however, we only want to filter when we type a name in our search box. We'll turn to Angular's Pipe interface.
 You can find more information about this here: https://angular.io/api/core/Pipe. We can use Pipes to transform incoming data. The logic for this is written in a specific ts file for this, the pipe itself will be called in our html.
   
@@ -80,6 +86,8 @@ You can find more information about this here: https://angular.io/api/core/Pipe.
 
 
 - Now that we made a pipe that will filter names, all that's left to do is call this pipe when necessary.
+
+### Double binding
 - Add the following code to ``profile-gallery.component.html``:
   ```
   <section class="tiny-dialog">
@@ -104,5 +112,10 @@ The syntax for this is ``| nameFilter: searchText``. You just add it to the stat
   
 - When you fixed that last bug and check your app in the browser, you'll see a new section to the right where you can type a pet's name. The application will filter the list in real-time. Nice work! :thumbsup:
 
-  
+### Conclusion
+You've learned about the pipe operator and about build in pipe functions. 
+You've learned how to make your own custom pipe function.
+You've learned how to listen to click events.
+You've learned about ngIf.
+You've learned about double binding variables ```[(someVar)]```
     
