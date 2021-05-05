@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    <link href='styles.css' rel='stylesheet'/>
+</head>
+<body>
+<header>
+    <div class="logo-group">
+        <img src="order-icon.png" alt="order-icon">
+        <span style="font-size: 35px; margin:auto;">&Ouml;rder</span>
+    </div>
+    <nav role="navigation">
+        <a href='#'>Customers</a>
+        <a href='#'>Nav #2</a>
+        <a href='#'>Nav #3</a>
+        <a href='#'>Nav #4</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Create Customer</h2>
+        <form>
+            <div class="row">
+                <div class="form-control">
+                    <label for="firstName">Firstname</label>
+                    <input id="firstName" type="text"/>
+                </div>
+                <div class="form-control">
+                    <label for="lastName">Lastname</label>
+                    <input id="lastName" type="text"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    <label for="email">email</label>
+                    <input id="email" type="email"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    <label for="phoneNumber">Phone number (mobile)</label>
+                    <input id="phoneNumber" type="tel"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    <label for="street">Street</label>
+                    <input id="street" type="text"/>
+                </div>
+                <div class="form-control">
+                    <label for="number">Number</label>
+                    <input id="number" type="text"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    <label for="postalCode">Postalcode</label>
+                    <input id="postalCode" type="text"/>
+                </div>
+                <div class="form-control">
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option>Belgium</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit">CREATE</button>
+                <button>CANCEL</button>
+            </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <img src="order-icon.png" alt="order-icon">
+    <h1>&Ouml;rder</h1>
+</footer>
+</body>
+</html>

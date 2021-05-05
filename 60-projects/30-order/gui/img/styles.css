@@ -1,0 +1,59 @@
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px;
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+    color: #5D6063;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 50px;
+
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.logo-group {
+    display: flex;
+    justify-content: initial;
+}
+
+
+nav {
+    display: flex;
+    justify-content: end;
+}
+
+nav > a {
+    margin: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav > a:hover {
+    background-color: blue;
+    color: white;
+}
+
+main {
+    padding: 50px;
+}
