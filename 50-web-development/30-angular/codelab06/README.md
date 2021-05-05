@@ -20,7 +20,7 @@ a new component. We want to have a ``setup-date`` component in a folder called `
   </div>       
   ```
 
-## Creating a route
+### Creating a route
 
 Our first focus will be to show this component on our screen when we click the ``date`` button in our pet's information window. To do this, we need to use the Routing Angular offers us.
 
@@ -37,7 +37,7 @@ Our first focus will be to show this component on our screen when we click the `
   You'll notice the name needs to change depending on the pet we're trying to set up a date with. This is called a ``route parameter``. Try to find out how to use name as a route parameter and make the change
   in our routing.
 
-## Creating links  
+### Creating links  
 - With our routes configured, we of course need a way to follow this route. Add a button to the part of our html where we show the selected pet's name and profile text. It can look like this:
   ```
     <div class="dialog-centered">
@@ -50,10 +50,25 @@ Our first focus will be to show this component on our screen when we click the `
     This adds the button to our app, but of course this doesn't work yet. To fix this, we'll use ``routerLink``. Take a look at https://angular.io/api/router/RouterLink and see if you can get it working. Make sure 
 the route corresponds to ``/setup-date/name-of-your-pet``.
   
+
+### Using route params
 - Once done, clicking the button will take you to the ``setup-date`` component. Let's extend this with some more functionality. You can start with copying the content of ``setup-date.component.html`` to the same file in your
-app. Change this so that ``name`` and ``profileText`` of the selected pet are shown. Do not worry about the ``Let's Play`` button yet. This is an advanced functionality and will be tackled in the next codelab.
-  
-- 
-    
+app.
+
+
+- Now let's add the logic. We've navigated to the date component to set up a date with a specific pet. To show this specific pet we'll first need to get the name from the url.
+You can use the `ActivatedRoute` component for this (https://angular.io/guide/router#getting-route-information).
+- Next we'll need to fetch the actual pet from the backend. You should know how to do this by now.
+- Finally, change the view so that the actual pet information is shown. 
+
+- Do not worry about the ``Let's Play`` button yet. This is an advanced functionality and will be tackled in the next codelab.
+
+## Conclusion
+You've learned:
+- How to create a route to a component using `app-routing.module.ts`.
+- How to create links to a specific route using `routerLink`.
+- How to get route information with `ActivatedRoute`.
+
+
 
 
