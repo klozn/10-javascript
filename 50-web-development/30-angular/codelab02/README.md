@@ -90,3 +90,5 @@ You've learned:
 - how to encapsulate variables by adding ``private`` and using getters/setter.
 - how to access a variable in the view using the ``{{}}``-operator. 
 - how to add a component to your app by using the selector defined in the controller of the component. 
+
+Next codelab we'll start talking to our backend by introducing services.

@@ -23,4 +23,5 @@ To do this, we will use FormBuilder. Take a look at the Angular docs on FormGrou
 After going through all these steps, you'll be able to add your very own pet to our Petinder app! :tadaa:
 
 ## Conclusion
-You've learned how to use forms in Angular
+You've learned
+- how to use reactive forms in Angular

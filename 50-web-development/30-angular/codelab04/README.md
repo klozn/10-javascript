@@ -133,3 +133,4 @@ You've learned:
 - how to make your own custom pipe function with ``ng pipe <pipe_name>``.
 - about binding the input of a user to a variable using  ```[(ngModel)]```
     
+Next will show you how to create your own pet by using forms.

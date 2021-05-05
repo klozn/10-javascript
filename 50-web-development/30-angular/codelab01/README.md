@@ -56,3 +56,6 @@ You've learned:
 - that the view of a component can be found in it's `.html`-file.
 - that the controller of a component can be found in it's `.ts`-file.
 - that the style of a component can be found in it's `.css`-file.
+
+
+Next codelab we'll show you how to make your first basic layout by creating your own modules and components.
