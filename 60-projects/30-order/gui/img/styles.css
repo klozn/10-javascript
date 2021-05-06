@@ -57,3 +57,54 @@ nav > a:hover {
 main {
     padding: 50px;
 }
+
+.section-title {
+    font-size: 25px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 500px;
+}
+
+form .row {
+    width: 100%;
+    display: flex;
+    justify-content: initial;
+}
+
+form .form-control {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+form .row label {
+    display: block;
+    padding-left: 5px;
+    color: lightgray;
+    font-size: 18px;
+}
+
+form .row input {
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+}
