@@ -159,3 +159,42 @@ form {
     color: white;
     background: limegreen;
 }
+
+.card {
+    list-style-type: none;
+    margin: 2rem;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.card-image {
+    margin-bottom: .5rem;
+}
+
+.card-footer {
+    font-size: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    position: relative;
+    top: -4px;
+}
+
+.stock {
+    display: flex;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
