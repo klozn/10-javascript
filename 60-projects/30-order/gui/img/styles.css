@@ -62,6 +62,11 @@ nav > a:hover {
 .logo-group {
     display: inline-flex;
     justify-content: initial;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 35px;
 }
 
 .section-title {
