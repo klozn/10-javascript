@@ -11,7 +11,7 @@ applying some basic sorting to our list. We'll start with sorting our pets by na
 - Remember how we stated that the pets on our screen are in fact an Array of Pets? Just like in Java, we have functions available in Typescript to help us
 work with the contents of our Array. Let's write an easy sorting mechanism.
   
-###Pipes ```|```
+### Pipes ```|```
 - We want to add a permanent sorting based on the starting letter of our pet's name. In other words, we want to sort our pets alphabetically.
 Since we are going to make this permanent, we can simply alter our ``getPets()`` method in ``pet.service.ts``. Right now, it reads ``return this.http.get(this.yourVariableName);``.
   We will be changing this so that our response will be sorted. In order to do so, we will use the ``pipe`` function which can be invoked on our ``http.get`` command. A little background on that:
