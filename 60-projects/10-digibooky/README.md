@@ -25,7 +25,7 @@ It's your job to implement this back-end.
         - E.g.: unauthorized access, illegal arguments, exceptions in general,...
 - Include OpenAPI using Swagger(UI) to provide a readable documentation/manual of your REST(ful) web API
 - Use Lists or HashMaps to store your data (fake in-memory database).
-    - Store them in a specific class / classes (e.g. `AutherTable` or `DigibookyDatabase`)
+    - Store them in a specific class / classes (e.g. `AuthorTable` or `DigibookyDatabase`)
     - (You can also try to store it in files, but that's not recommended)
 - (This only applies when ORM/JPA has been seen): use JPA (Hibernate / EclipseLink) in combination with PostgreSQL or Oracle to store and access the data in a persistent way
     - Correctly setup and handle the transactions.
