@@ -15,6 +15,7 @@ remember that admin rights might spoil the fun of a local setup. AWS is your fas
 
 **Remote database through Amazon Web Services (AWS)**
 - [ ] ~~Download and install pgAdmin~~
+- [ ] ~~Run pgAdmin and add a new server~~
 - [ ] Connect the AWS database to IntelliJ by adding it as a datasource and providing the necessary details (see below)
 - [ ] ~~Run the sql scripts we provided to populate your database with the right content (inspect the scripts, which one would we need to run first? Which one should we ignore for the time being?)~~
 - [ ] If the previous step was successful, you should be able to solve the codelabs
