@@ -68,7 +68,7 @@ where lower(job_title) like '%representative%'
 select *
 from employees
 where employee_id in (
-    select manager_id
+    select distinct manager_id
     from employees
     );
 
