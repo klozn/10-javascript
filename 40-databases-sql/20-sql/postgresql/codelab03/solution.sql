@@ -66,8 +66,8 @@ where salary::numeric between 5000 and 10000;
 --15
 select *
 from employees
-where ((salary::numeric between 800 and 6000) and commission_pct is not null)
-   or ((department_id not in (80, 90, 100)) and hire_date < '1990-01-01');
+where salary::numeric between 6000 and 8000 and commission_pct is not null
+   or department_id not in (80, 90, 100) and hire_date < to_date('1990-01-01', 'YYYY-MM-DD');
 --16
 select last_name, job_id, hire_date
 from employees
