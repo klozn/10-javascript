@@ -40,6 +40,16 @@
     </div>
 </div>
 <script>
-    //implement me
+    const list = document.getElementById('list');
+
+    function addListItem() {
+        list.appendChild(document.createElement('li'))
+    }
+
+    function removeListItem() {
+        if (list.childNodes.length > 0) {
+            list.removeChild(list.childNodes[0]);
+        }
+    }
 </script>
 </body>
