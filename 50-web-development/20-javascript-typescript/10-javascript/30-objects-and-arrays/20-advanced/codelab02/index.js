@@ -9,3 +9,11 @@ const person = {
     }
   }
 };
+
+const address = { ...person.address, number: 777};
+console.log(address);
+
+person.address.area.country = 'BE';
+console.log(address);
+
+console.log(person);
