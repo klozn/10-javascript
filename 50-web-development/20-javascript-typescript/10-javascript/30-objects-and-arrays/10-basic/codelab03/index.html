@@ -39,7 +39,10 @@
     }
 
     getAllPeople(function (personArray) {
-        //implement me
+        // for (let person of personArray) {
+        //     addPersonToHtml(person);
+        // }
+        personArray.forEach(addPersonToHtml);
     });
 
 

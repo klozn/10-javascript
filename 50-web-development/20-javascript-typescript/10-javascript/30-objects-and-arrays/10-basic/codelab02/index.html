@@ -17,6 +17,10 @@
                 <h2>LastName:</h2>
                 <p id="lastName"></p>
             </div>
+            <div class="info-field">
+                <h2>Country:</h2>
+                <p id="country"></p>
+            </div>
         </div>
     </div>
 </div>
@@ -47,7 +51,12 @@
     }
 
     getPerson(1, function (personData) {
-        //implement me
+        personData.firstName = personData.firstName + 'bobby';
+        personData.country = 'America';
+
+        document.getElementById('firstName').innerText = personData.firstName;
+        document.getElementById('lastName').innerText = personData.lastName;
+        document.getElementById('country').innerText = personData.country;
     });
 
 

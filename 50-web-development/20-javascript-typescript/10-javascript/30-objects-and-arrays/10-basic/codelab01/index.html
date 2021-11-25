@@ -42,7 +42,7 @@
     }
 
     function addPerson() {
-        let newPerson; //initialize me
+        let newPerson = {id: "1", firstName: "Tony", lastName: "Montana"}
         savePerson(newPerson, function () {
             document.getElementById('result').innerHTML = 'Success!'
         });
