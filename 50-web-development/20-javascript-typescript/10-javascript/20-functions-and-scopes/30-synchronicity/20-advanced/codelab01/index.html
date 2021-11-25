@@ -17,7 +17,7 @@
 <img id="doggo" src="" alt="My little doggo"/>
 
 <script>
-  function updateImage(result) {
+  async function updateImage(result) {
     document
             .getElementById('doggo')
             .setAttribute('src', result.message);
@@ -29,12 +29,13 @@
    *      --> See how the screen remains completely white until the image is loaded in
    *      (with an async call, we could already see the <h1> and <p> elements with their content before the image is loaded in.
    */
-  function fetchRandomDogSync(callback) {
+  async function fetchRandomDogSync(callback) {
+    return new Promise(() =>
     $.get({
       url: 'https://dog.ceo/api/breeds/image/random',
       success: callback,
       async: false
-    });
+    }));
   }
 
   fetchRandomDogSync(updateImage);

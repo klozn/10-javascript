@@ -35,5 +35,8 @@
             .then((result) => callBack(JSON.stringify(result)));
     }
 
+    getPerson(result => console.log(result));
+    getPerson(result => document.getElementById('result').innerText = result);
+
 </script>
 </html>
