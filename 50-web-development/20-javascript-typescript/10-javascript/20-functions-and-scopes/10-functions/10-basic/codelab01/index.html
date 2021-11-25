@@ -22,7 +22,9 @@
         Let's start with the first function:
         - use the sum function to calculate the sum of 5 and 6 and log the result in the console.
         - now call the sum function with only one argument. What happens? Why?
+            => NaN is returned because you rightHandSide will be undefined and number + undefined => NaN
         - now call the sum function with three arguments (5, 6 and 7). What happens? Why?
+            => returns sum of first two arguments, third argument is ignored
         - use the sum function to calculate the sum of two words "Hello" and "world"
 
         As you can see different than with java, javascript isn't really strict on the number of arguments you provide or their types.
@@ -30,16 +32,21 @@
         Now let's go to the second function:
         - use the sumAll function to calculate the sum of 5, 6 and 7 and log the result in the console.
             - sumAll doesn't have any arguments in it's function signature. How then can it calculate the sum?
+                => apparently there is a standard variable called arguments in each function that is an array you can iterate over and that contains all arguments
 
 
         !!! A thing to remember with javascript is that all this flexibility comes with a cost.
         People try to make their functions too flexible and before you know it nobody understands what is going on.
         Keep your function simple and try to make very clear how your functions should be used by using a descriptive name and descriptive arguments.
      */
+    console.log(sum(5, 6));
+    console.log(sum(7));
+    console.log(sum(5, 6, 7));
+    console.log(sum("hello", "world"));
+    console.log(sumAll(5, 6, 7));
 
-
-    function sum(leftHandSide, righHandSide) {
-        return leftHandSide + righHandSide;
+    function sum(leftHandSide, rightHandSide) {
+        return leftHandSide + rightHandSide;
     }
 
     function sumAll() {

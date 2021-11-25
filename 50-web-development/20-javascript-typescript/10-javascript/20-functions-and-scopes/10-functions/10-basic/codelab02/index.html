@@ -33,14 +33,22 @@
         - call the functionExecutor with the expression function as argument
         - call the functionExecutor with an inline function. That function should log "I am an inline function"
     */
+    declaration();
 
     function declaration() {
         console.log('I am a declaration');
     }
 
+
+    //expression();
+
     let expression = function () {
         console.log('I am an expression');
     };
+
+    functionExecutor(declaration);
+    functionExecutor(expression);
+    functionExecutor(function () {console.log('I am an inline function')});
 
     function functionExecutor(anotherFunction) {
         anotherFunction();
