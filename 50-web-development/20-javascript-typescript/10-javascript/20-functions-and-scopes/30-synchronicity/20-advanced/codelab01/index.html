@@ -17,7 +17,7 @@
 <img id="doggo" src="" alt="My little doggo"/>
 
 <script>
-  async function updateImage(result) {
+  function updateImage(result) {
     document
             .getElementById('doggo')
             .setAttribute('src', result.message);
@@ -30,12 +30,12 @@
    *      (with an async call, we could already see the <h1> and <p> elements with their content before the image is loaded in.
    */
   async function fetchRandomDogSync(callback) {
-    return new Promise(() =>
+    return await
     $.get({
       url: 'https://dog.ceo/api/breeds/image/random',
       success: callback,
       async: false
-    }));
+    });
   }
 
   fetchRandomDogSync(updateImage);
