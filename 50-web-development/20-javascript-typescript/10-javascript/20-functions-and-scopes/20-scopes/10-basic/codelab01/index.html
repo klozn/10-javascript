@@ -9,13 +9,12 @@
     <div>
         <div class="exercise-field">
             <h1>Scope</h1>
-            <p id="result"></p>
+            <p id="result">0</p>
             <button class="button" onclick="increaseCounter()">increase</button>
             <button class="button" onclick="decreaseCounter()">decrease</button>
         </div>
     </div>
 </div>
-</body>
 <script>
     /*
         Another notable way that javascript is different than java is the variable scope.
@@ -34,6 +33,18 @@
         - define an increaseCounter function that will increase a counter variable with one
         - define a decreaseCounter function that will decrease that same counter variable with one
      */
+    let counter = 0;
+    const updateResult = () => document.getElementById('result').innerText = counter.toString();
+
+    function increaseCounter() {
+        counter++;
+        updateResult();
+    }
+    function decreaseCounter() {
+        counter--;
+        updateResult();
+    }
 
 </script>
+</body>
 </html>
