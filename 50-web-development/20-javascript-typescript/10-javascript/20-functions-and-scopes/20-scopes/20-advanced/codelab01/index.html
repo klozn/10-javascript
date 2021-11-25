@@ -31,20 +31,20 @@
        Exercise:
        - Given the scopes of functionA, functionB and functionC. Which sayXXX functions can be called from which scope and what is going to be the result?
            - You can call/not call following functions from the scope of functionA:
-                - sayHowDoYouDo
-                - sayBye
-                - sayHello
-                - sayGoodMorning
+                - sayHowDoYouDo - false
+                - sayBye - true : 'Bye'
+                - sayHello - false
+                - sayGoodMorning - true : 'Goodmorning'
           - You can call/not call following functions from the scope of functionB:
-                - sayHowDoYouDo
-                - sayBye
-                - sayHello
-                - sayGoodMorning
+                - sayHowDoYouDo - true : 'How do you do?'
+                - sayBye - true : 'Bye but special'
+                - sayHello - false
+                - sayGoodMorning - true : 'Goodmorning'
           - You can call/not call following functions from the scope of functionC:
-                - sayHowDoYouDo
-                - sayBye
-                - sayHello
-                - sayGoodMorning
+                - sayHowDoYouDo - false
+                - sayBye - false
+                - sayHello - true : 'Hallo'
+                - sayGoodMorning - true : 'Goodmorning'
 
           Think of the solution first before trying it out!
      */
@@ -61,6 +61,10 @@
             }
 
             //Call function for functionB here
+            sayHowDoYoDo();
+            sayBye();
+            //sayHello();
+            sayGoodmorning();
         }
 
         function sayBye() {
@@ -68,6 +72,11 @@
         }
 
         //Call function for functionA here
+        //sayHowDoYoDo();
+        sayBye();
+        //sayHello();
+        sayGoodmorning();
+        functionB();
     }
 
     function functionC() {
@@ -76,10 +85,17 @@
         }
 
         //Call function for functionC here
+        //sayHowDoYoDo();
+        //sayBye();
+        sayHello();
+        sayGoodmorning();
     }
 
     function sayGoodmorning() {
         console.log('Goodmorning');
     }
+
+    functionA();
+    functionC();
 </script>
 </html>
