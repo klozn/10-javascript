@@ -24,11 +24,11 @@
      */
 
     function displayMessage(title, firstName, lastName, project, wish) {
-        let message = 'Greetings ' + title + ' ' + firstName + ' ' + lastName + ',\n'
-            + '\n'
-            + 'Congratulations with your ' + project + ' project.\n'
-            + 'It truly shows what men can accomplish when they set their mind to it.\n'
-            + 'We wish you ' + wish + ' in all your future endeavours.';
+        let message = `Greetings ${title} ${firstName} ${lastName},
+
+            Congratulations with your ${project} project.
+            It truly shows what men can accomplish when they set their mind to it.
+            We wish you ${wish} in all your future endeavours.`;
         document.getElementById('result').innerText = message;
     }
 

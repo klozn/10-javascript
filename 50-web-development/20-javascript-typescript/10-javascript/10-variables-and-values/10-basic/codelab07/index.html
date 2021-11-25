@@ -21,27 +21,31 @@
         Which sometimes can lead to strange results.
 
         Try to think what the result of the following expressions will be and then try them out:
-        - 50 * false
-        - "hello" + true
-        - "hello" / false
-        - "50" - 5
-        - "50" + 5
-        - true && 1
-        - false && 1
-        - true == 1
-        - true != 1
-        - true !== 1
-        - true === 1
-        - true + true
-        - true + true == 2
-        - true + true === 2
+
+        (guesses are after equal sign, corrections after arrow)
+
+        - 50 * false (= 0)
+        - "hello" + true (= hellotrue)
+        - "hello" / false (= NaN)
+        - "50" - 5 (= "45" -> 45)
+        - "50" + 5 (= "55" -> "505")
+        - true && 1 (= true -> 1)
+        - false && 1 (= false)
+        - true == 1 (= true)
+        - true != 1 (= false)
+        - true !== 1 (= true)
+        - true === 1 (= false)
+        - true + true (= 2)
+        - true + true == 2 (= true)
+        - true + true === 2 (= false -> true (true + true is coerced to number 2))
 
         These things happen because of type coercion and this is the main reason you should avoid combining different data types in an expression.
         A more in depth explanation you can find on https://dev.to/neutrino2211/avoiding-weird-javascript-behaviour-true--true--2-but-true--1-pn9.
 
         The main thing you should remember is to always use === instead of == to compare values.
      */
-    let expression;
+    let expression = true + true === 2;
+    alert(typeof expression)
 
     document.getElementById('result').innerHTML = expression;
 </script>
