@@ -39,5 +39,15 @@
     import * as module from './aModule.js';
 
     console.log(module.default);
+    console.log(module.somethingThatWillBeExposed);
+    console.log(module.somethingElseThatWillBeExposed);
+
+    import Person from "./person.js";
+    let person = new Person('Frank');
+    person.sayHello();
+
+    import {Cat} from "./cat.js";
+    let cat = new Cat;
+    cat.sayHello();
 </script>
 </html>
