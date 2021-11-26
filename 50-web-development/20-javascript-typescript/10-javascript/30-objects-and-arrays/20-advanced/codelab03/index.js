@@ -1,9 +1,8 @@
-function makePainting(paintOptions) {
-    paintOptions = paintOptions === undefined ? {} : paintOptions;
-    var brush = paintOptions.brush === undefined ? 'flat' : paintOptions.brush;
-    var paint = paintOptions.paint === undefined ? 'oil' : paintOptions.paint;
-    var canvasDimensions = paintOptions.canvasDimensions === undefined ? { widthInCm: 30, heightInCm: 60 } : paintOptions.canvasDimensions;
-    var sellingPrice = paintOptions.sellingPrice === undefined ? {euros: 795, cents: 99} : paintOptions.sellingPrice;
+function makePainting({brush = 'flat',
+                          paint = 'oil',
+                          canvasDimensions = { widthInCm: 30, heightInCm: 60 },
+                          sellingPrice = {euros: 795, cents: 99}} = {}) {
+
     console.log(brush, paint, canvasDimensions, sellingPrice);
     // Create a nice painting...
 }
