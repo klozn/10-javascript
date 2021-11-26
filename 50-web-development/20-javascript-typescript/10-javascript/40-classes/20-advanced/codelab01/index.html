@@ -35,18 +35,18 @@
             console.log(this.name);
         }
     };
-    obj1.sayName();
+    obj1.sayName(); //'object 1'
 
 
     //Execution 2
     let obj2 = {name: 'object 2', sayName: obj1.sayName};
-    obj2.sayName();
+    obj2.sayName(); //'object 2'
 
 
     //Execution 3
     let sayName = obj1.sayName;
     window.name = 'global object';
-    sayName();
+    sayName(); //'global object'
 
 
     //Execution 4
@@ -58,16 +58,16 @@
             };
         })()
     };
-    obj3.sayName();
+    obj3.sayName(); //'object 3' -> 'global object' (unnamed callback function from global scope?)
 
     //Execution 5
-    sayName.bind(obj1)();
+    sayName.bind(obj1)(); //'object 1'
 
     //Execution 6
-    sayName.call(obj1);
+    sayName.call(obj1); //'object 1'
 
     //Execution 7
-    sayName.apply(obj1);
+    sayName.apply(obj1); //'object 1'
 
 </script>
 </html>

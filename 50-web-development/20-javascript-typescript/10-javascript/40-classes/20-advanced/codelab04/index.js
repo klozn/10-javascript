@@ -4,6 +4,8 @@ const scope = {
     console.log(`x is ${this.x}`);
   },
   delayedLog: function() {
-    setTimeout(this.log, 1000);
+    setTimeout(() => this.log(), 1000);
   }
 };
+
+scope.delayedLog();

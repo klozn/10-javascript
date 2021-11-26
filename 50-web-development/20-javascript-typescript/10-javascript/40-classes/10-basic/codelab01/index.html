@@ -51,5 +51,23 @@
         - create a method greeting that will return 'Hello ' + firstName + lastName;
         - create two Person objects and log their greeting in the console.
      */
+
+    class Person {
+
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        greeting() {
+            return `Hello ${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    let trainer1 = new Person('Karel', 'Van Roey');
+    let trainer2 = new Person('Christoph', 'Marckx');
+
+    console.log(trainer1.greeting());
+    console.log(trainer2.greeting());
 </script>
 </html>

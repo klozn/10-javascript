@@ -21,7 +21,7 @@
         Why? Well it may surprise you but javascript actually doesn't have any classes. *surprised noises*
 
         What is the class keyword then all about? Well, it's fake.
-        If you write a class in javascript it get's transformed behind the scenes into some other code.
+        If you write a class in javascript it gets transformed behind the scenes into some other code.
 
         The class syntax was made to make your life easier. It used to work in a different way.
 
@@ -65,13 +65,16 @@
        Transform the following old style class to the new class syntax
      */
 
-    function Person(name) {
-        this.name = name;
-    }
+    class Person {
 
-    Person.prototype.sayHello = function() {
-        console.log('Hello ' + this.name);
-    };
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHello() {
+            console.log('Hello ' + this.name);
+        }
+    }
 
     let person = new Person('Jef');
     person.sayHello();
